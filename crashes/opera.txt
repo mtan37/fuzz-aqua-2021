@@ -1,0 +1,40 @@
+Date/Time:      2005-12-11 17:16:15.949 -0600
+OS Version:     10.4.3 (Build 8F46)
+Report Version: 3
+
+Command: Opera
+Path:    /Applications/Opera.app/Contents/MacOS/Opera
+Parent:  WindowServer [110]
+
+Version:        Opera 8.51.2182 (8.51)
+Build Version:  ???
+Project Name:   ???
+Source Version: ???
+
+PID:    6377
+Thread: 0
+
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000000
+
+Thread 0 Crashed:
+0   Opera 7				0x200466f8 __code_start__ + 284500
+1   Opera 7				0x200466b8 __code_start__ + 284436
+2   Opera 7				0x2030ea98 __code_start__ + 3201780
+3   Opera 7				0x2030cea0 __code_start__ + 3194620
+4   Opera 7				0x2020a984 __code_start__ + 2136544
+5   Opera 7				0x20209b0c __code_start__ + 2132840
+6   Opera 7				0x205a9ae0 dyld_stub_CFURLCreateCopyDeletingLastPathComponent + 90480
+7   Opera 7				0x203326ec __code_start__ + 3348296
+8   Opera 7				0x201a0940 __code_start__ + 1702300
+9   Opera 7				0x201a09b4 __code_start__ + 1702416
+10  com.apple.CoreFoundation		0x90770aec __CFRunLoopDoTimer + 184
+11  com.apple.CoreFoundation		0x9075d464 __CFRunLoopRun + 1680
+12  com.apple.CoreFoundation		0x9075ca18 CFRunLoopRunSpecific + 268
+13  com.apple.HIToolbox			0x931861e0 RunCurrentEventLoopInMode + 264
+14  com.apple.HIToolbox			0x931857ec ReceiveNextEventCommon + 244
+15  com.apple.HIToolbox			0x931caca4 AcquireNextEventInMode + 72
+16  com.apple.HIToolbox			0x931caa94 RunApplicationEventLoop + 132
+17  com.operasoftware.Opera		0x000045cc dyld_stub_binding_helper + 436
+18  com.operasoftware.Opera		0x00004000 __code_start__ + 408
+19  com.operasoftware.Opera		0x00003ea4 __code_start__ + 60

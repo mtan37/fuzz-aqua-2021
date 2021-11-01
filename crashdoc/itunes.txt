@@ -1,0 +1,41 @@
+Date/Time:      2005-12-10 16:55:49.409 -0600
+OS Version:     10.4.3 (Build 8F46)
+Report Version: 3
+
+Command: iTunes
+Path:    /Applications/iTunes.app/Contents/MacOS/iTunes
+Parent:  WindowServer [110]
+
+Version:        6.0.1 (6.0.1)
+Build Version:  2
+Project Name:   iTunes
+Source Version: 6010300
+
+PID:    1010
+Thread: 0
+
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_INVALID_ADDRESS (0x0001) at 0x0655f1b0
+
+Thread 0 Crashed:
+0   com.apple.iTunes			0x001c8c18 0x1000 + 1866776
+1   com.apple.iTunes			0x001c7e1c 0x1000 + 1863196
+2   com.apple.iTunes			0x002709c4 0x1000 + 2554308
+3   com.apple.iTunes			0x0026e83c 0x1000 + 2545724
+4   com.apple.iTunes			0x0022b9e4 0x1000 + 2271716
+5   com.apple.iTunes			0x0022bb04 0x1000 + 2272004
+6   com.apple.iTunes			0x003d09b0 0x1000 + 3996080
+7   com.apple.iTunes			0x003cfea0 0x1000 + 3993248
+8   com.apple.iTunes			0x002a4d7c 0x1000 + 2768252
+9   com.apple.iTunes			0x003cf798 0x1000 + 3991448
+10  com.apple.iTunes			0x000057d8 0x1000 + 18392
+11  com.apple.iTunes			0x0000567c 0x1000 + 18044
+
+Thread 1:
+0   libSystem.B.dylib			0x9000b208 mach_msg_trap + 8
+1   libSystem.B.dylib			0x9000b15c mach_msg + 60
+2   com.apple.CoreFoundation		0x9075d114 __CFRunLoopRun + 832
+3   com.apple.CoreFoundation		0x9075ca18 CFRunLoopRunSpecific + 268
+4   com.apple.CoreFoundation		0x9076be78 CFRunLoopRun + 52
+5   com.apple.iTunes			0x00315dd0 0x1000 + 3231184
+6   libSystem.B.dylib			0x9002b200 _pthread_body + 96

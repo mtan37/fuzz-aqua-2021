@@ -1,0 +1,398 @@
+Date/Time:      2005-12-08 10:49:14.008 -0600
+OS Version:     10.4.3 (Build 8F46)
+Report Version: 3
+
+Command: thunderbird-bin
+Path:    /Applications/thunderbird.app/Contents/MacOS/thunderbird-bin
+Parent:  WindowServer [63]
+
+Version: 1.0.7 (1.0.7)
+
+PID:    616
+Thread: 0
+
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000000
+
+Thread 0 Crashed:
+0   org.mozilla.thunderbird        	0x0074d6f0 nsPopupSetFrame::ActivatePopup(nsPopupFrameList*, int) + 300
+1   org.mozilla.thunderbird        	0x0074ceb4 nsPopupSetFrame::HidePopup(nsIFrame*) + 72
+2   org.mozilla.thunderbird        	0x006841c4 nsMenuPopupFrame::HideChain() + 156
+3   org.mozilla.thunderbird        	0x008e6ec4 nsMenuDismissalListener::Rollup() + 80
+4   org.mozilla.thunderbird        	0x0088762c nsWindow::Destroy() + 104
+5   org.mozilla.thunderbird        	0x002cade0 nsView::~nsView [unified]() + 340
+6   org.mozilla.thunderbird        	0x0022aa6c nsFrame::Destroy(nsIPresContext*) + 164
+7   org.mozilla.thunderbird        	0x0064d350 nsContainerFrame::Destroy(nsIPresContext*) + 128
+8   org.mozilla.thunderbird        	0x00703510 nsBoxFrame::Destroy(nsIPresContext*) + 68
+9   org.mozilla.thunderbird        	0x0074c770 nsPopupSetFrame::Destroy(nsIPresContext*) + 88
+10  org.mozilla.thunderbird        	0x006a5264 nsFrameList::DestroyFrames(nsIPresContext*) + 64
+11  org.mozilla.thunderbird        	0x0064d324 nsContainerFrame::Destroy(nsIPresContext*) + 84
+12  org.mozilla.thunderbird        	0x00703510 nsBoxFrame::Destroy(nsIPresContext*) + 68
+13  org.mozilla.thunderbird        	0x006a5264 nsFrameList::DestroyFrames(nsIPresContext*) + 64
+14  org.mozilla.thunderbird        	0x0064d324 nsContainerFrame::Destroy(nsIPresContext*) + 84
+15  org.mozilla.thunderbird        	0x00703510 nsBoxFrame::Destroy(nsIPresContext*) + 68
+16  org.mozilla.thunderbird        	0x006a5264 nsFrameList::DestroyFrames(nsIPresContext*) + 64
+17  org.mozilla.thunderbird        	0x0064d324 nsContainerFrame::Destroy(nsIPresContext*) + 84
+18  org.mozilla.thunderbird        	0x0064a238 nsFrameManager::Destroy() + 132
+19  org.mozilla.thunderbird        	0x00186a88 PresShell::Destroy() + 484
+20  org.mozilla.thunderbird        	0x001cf02c DocumentViewerImpl::Destroy() + 364
+21  org.mozilla.thunderbird        	0x005493ac nsDocShell::Destroy() + 304
+22  org.mozilla.thunderbird        	0x0007c180 nsWebShell::Destroy() + 24
+23  org.mozilla.thunderbird        	0x008a5c28 nsXULWindow::Destroy() + 724
+24  org.mozilla.thunderbird        	0x00540408 nsWebShellWindow::Destroy() + 640
+25  org.mozilla.thunderbird        	0x0027b8b8 GlobalWindowImpl::ReallyCloseWindow() + 80
+26  org.mozilla.thunderbird        	0x0027ec6c GlobalWindowImpl::CloseWindow(nsISupports*) + 68
+27  org.mozilla.thunderbird        	0x006f47e0 nsJSContext::ScriptEvaluated(int) + 56
+28  org.mozilla.thunderbird        	0x006f3f08 nsJSContext::CallEventHandler(JSObject*, JSObject*, unsigned, long*, long*) + 376
+29  org.mozilla.thunderbird        	0x0027f614 GlobalWindowImpl::RunTimeout(nsTimeoutImpl*) + 832
+30  org.mozilla.thunderbird        	0x0027fd84 GlobalWindowImpl::TimerCallback(nsITimer*, void*) + 40
+31  libxpcom.dylib                 	0x07045c34 nsTimerImpl::Fire() + 168
+32  libxpcom.dylib                 	0x07045d5c handleTimerEvent(TimerEventType*) + 140
+33  libxpcom.dylib                 	0x07041cf8 PL_HandleEvent + 36
+34  libxpcom.dylib                 	0x07041c1c PL_ProcessPendingEvents + 128
+35  libxpcom.dylib                 	0x07042100 PL_IsQueueNative + 136
+36  com.apple.HIToolbox            	0x93184ff4 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 692
+37  com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+38  com.apple.HIToolbox            	0x931845c8 SendEventToEventTargetWithOptions + 40
+39  com.apple.HIToolbox            	0x9318b928 ToolboxEventDispatcherHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 704
+40  com.apple.HIToolbox            	0x93185244 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 1284
+41  com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+42  com.apple.HIToolbox            	0x9318b4ec SendEventToEventTarget + 40
+43  com.apple.HIToolbox            	0x931cc564 ToolboxEventDispatcher + 92
+44  com.apple.HIToolbox            	0x9326b5b8 TryEventDispatcher + 112
+45  com.apple.HIToolbox            	0x9326b20c GetOrPeekEvent + 304
+46  com.apple.HIToolbox            	0x9326af48 GetNextEventMatchingMask + 156
+47  com.apple.HIToolbox            	0x9326adf0 WNEInternal + 140
+48  com.apple.HIToolbox            	0x9326ad50 WaitNextEvent + 76
+49  org.mozilla.thunderbird        	0x0087e384 nsMacMessagePump::GetEvent(EventRecord&) + 116
+50  org.mozilla.thunderbird        	0x004e6c14 nsAppShell::GetNativeEvent(int&, void*&) + 60
+51  org.mozilla.thunderbird        	0x008a57d4 nsXULWindow::ShowModal() + 756
+52  org.mozilla.thunderbird        	0x00096a30 nsWindowWatcher::OpenWindowJS(nsIDOMWindow*, char const*, char const*, char const*, int, unsigned, long*, nsIDOMWindow**) + 3956
+53  org.mozilla.thunderbird        	0x0027ea5c GlobalWindowImpl::OpenInternal(nsAString const&, nsAString const&, nsAString const&, int, long*, unsigned, nsISupports*, nsIDOMWindow**) + 2136
+54  org.mozilla.thunderbird        	0x0027b070 GlobalWindowImpl::OpenDialog(nsIDOMWindow**) + 528
+55  libxpcom.dylib                 	0x0705997c _XPTC_InvokeByIndex + 216
+56  org.mozilla.thunderbird        	0x0089b36c XPCWrappedNative::CallMethod(XPCCallContext&, XPCWrappedNative::CallMode) + 2508
+57  org.mozilla.thunderbird        	0x00891200 XPC_WN_CallMethod(JSContext*, JSObject*, unsigned, long*, long*) + 220
+58  libmozjs.dylib                 	0x06029170 js_Invoke + 1716
+59  libmozjs.dylib                 	0x0603058c js_Interpret + 26324
+60  libmozjs.dylib                 	0x060291b0 js_Invoke + 1780
+61  libmozjs.dylib                 	0x060293bc js_InternalInvoke + 184
+62  libmozjs.dylib                 	0x06007354 JS_CallFunctionValue + 44
+63  org.mozilla.thunderbird        	0x006f3eec nsJSContext::CallEventHandler(JSObject*, JSObject*, unsigned, long*, long*) + 348
+64  org.mozilla.thunderbird        	0x00793690 nsJSEventListener::HandleEvent(nsIDOMEvent*) + 1232
+65  org.mozilla.thunderbird        	0x002207d4 nsEventListenerManager::HandleEventSubType(nsListenerStruct*, nsIDOMEvent*, nsIDOMEventTarget*, unsigned, unsigned) + 568
+66  org.mozilla.thunderbird        	0x00220ae4 nsEventListenerManager::HandleEvent(nsIPresContext*, nsEvent*, nsIDOMEvent**, nsIDOMEventTarget*, unsigned, nsEventStatus*) + 700
+67  org.mozilla.thunderbird        	0x0024c31c nsXULElement::HandleDOMEvent(nsIPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 2748
+68  org.mozilla.thunderbird        	0x0018fd14 PresShell::HandleDOMEventWithTarget(nsIContent*, nsEvent*, nsEventStatus*) + 124
+69  org.mozilla.thunderbird        	0x0075f7b8 nsButtonBoxFrame::DoMouseClick(nsGUIEvent*, int) + 424
+70  org.mozilla.thunderbird        	0x0075f5e8 nsButtonBoxFrame::HandleEvent(nsIPresContext*, nsGUIEvent*, nsEventStatus*) + 388
+71  org.mozilla.thunderbird        	0x0018fbcc PresShell::HandleEventInternal(nsEvent*, nsIView*, unsigned, nsEventStatus*) + 1096
+72  org.mozilla.thunderbird        	0x0018f764 PresShell::HandleEventWithTarget(nsEvent*, nsIFrame*, nsIContent*, unsigned, nsEventStatus*) + 68
+73  org.mozilla.thunderbird        	0x006584c4 nsEventStateManager::CheckForAndDispatchClick(nsIPresContext*, nsMouseEvent*, nsEventStatus*) + 452
+74  org.mozilla.thunderbird        	0x006567dc nsEventStateManager::PostHandleEvent(nsIPresContext*, nsEvent*, nsIFrame*, nsEventStatus*, nsIView*) + 1000
+75  org.mozilla.thunderbird        	0x0018fc34 PresShell::HandleEventInternal(nsEvent*, nsIView*, unsigned, nsEventStatus*) + 1200
+76  org.mozilla.thunderbird        	0x0018f66c PresShell::HandleEvent(nsIView*, nsGUIEvent*, nsEventStatus*, int, int&) + 1128
+77  org.mozilla.thunderbird        	0x00257d60 nsViewManager::HandleEvent(nsView*, nsGUIEvent*, int) + 784
+78  org.mozilla.thunderbird        	0x00257110 nsViewManager::DispatchEvent(nsGUIEvent*, nsEventStatus*) + 2520
+79  org.mozilla.thunderbird        	0x002cabc0 nsBox::QueryInterface(nsID const&, void**) + 308
+80  org.mozilla.thunderbird        	0x008898a8 nsWindow::DispatchEvent(nsGUIEvent*, nsEventStatus&) + 172
+81  org.mozilla.thunderbird        	0x00889934 nsWindow::DispatchWindowEvent(nsGUIEvent&) + 32
+82  org.mozilla.thunderbird        	0x008899f8 nsWindow::DispatchMouseEvent(nsMouseEvent&) + 112
+83  org.mozilla.thunderbird        	0x00885bdc nsMacEventHandler::HandleMouseUpEvent(EventRecord&) + 160
+84  org.mozilla.thunderbird        	0x00883fb8 nsMacEventHandler::HandleOSEvent(EventRecord&) + 380
+85  org.mozilla.thunderbird        	0x004ed1c0 nsMacWindow::DispatchEvent(void*, int*) + 56
+86  org.mozilla.thunderbird        	0x0087f178 nsMacMessagePump::DispatchOSEventToRaptor(EventRecord&, OpaqueWindowPtr*) + 96
+87  org.mozilla.thunderbird        	0x0087ee68 nsMacMessagePump::DoMouseUp(EventRecord&) + 76
+88  org.mozilla.thunderbird        	0x0087e470 nsMacMessagePump::DispatchEvent(int, EventRecord*) + 200
+89  org.mozilla.thunderbird        	0x004e6c64 nsAppShell::DispatchNativeEvent(int, void*) + 40
+90  org.mozilla.thunderbird        	0x008a5824 nsXULWindow::ShowModal() + 836
+91  org.mozilla.thunderbird        	0x00096a30 nsWindowWatcher::OpenWindowJS(nsIDOMWindow*, char const*, char const*, char const*, int, unsigned, long*, nsIDOMWindow**) + 3956
+92  org.mozilla.thunderbird        	0x0027ea5c GlobalWindowImpl::OpenInternal(nsAString const&, nsAString const&, nsAString const&, int, long*, unsigned, nsISupports*, nsIDOMWindow**) + 2136
+93  org.mozilla.thunderbird        	0x0027b070 GlobalWindowImpl::OpenDialog(nsIDOMWindow**) + 528
+94  libxpcom.dylib                 	0x0705997c _XPTC_InvokeByIndex + 216
+95  org.mozilla.thunderbird        	0x0089b36c XPCWrappedNative::CallMethod(XPCCallContext&, XPCWrappedNative::CallMode) + 2508
+96  org.mozilla.thunderbird        	0x00891200 XPC_WN_CallMethod(JSContext*, JSObject*, unsigned, long*, long*) + 220
+97  libmozjs.dylib                 	0x06029170 js_Invoke + 1716
+98  libmozjs.dylib                 	0x0603058c js_Interpret + 26324
+99  libmozjs.dylib                 	0x060291b0 js_Invoke + 1780
+100 libmozjs.dylib                 	0x060293bc js_InternalInvoke + 184
+101 libmozjs.dylib                 	0x06007354 JS_CallFunctionValue + 44
+102 org.mozilla.thunderbird        	0x006f3eec nsJSContext::CallEventHandler(JSObject*, JSObject*, unsigned, long*, long*) + 348
+103 org.mozilla.thunderbird        	0x00793690 nsJSEventListener::HandleEvent(nsIDOMEvent*) + 1232
+104 org.mozilla.thunderbird        	0x002207d4 nsEventListenerManager::HandleEventSubType(nsListenerStruct*, nsIDOMEvent*, nsIDOMEventTarget*, unsigned, unsigned) + 568
+105 org.mozilla.thunderbird        	0x00220ae4 nsEventListenerManager::HandleEvent(nsIPresContext*, nsEvent*, nsIDOMEvent**, nsIDOMEventTarget*, unsigned, nsEventStatus*) + 700
+106 org.mozilla.thunderbird        	0x0024c31c nsXULElement::HandleDOMEvent(nsIPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 2748
+107 org.mozilla.thunderbird        	0x0018fd14 PresShell::HandleDOMEventWithTarget(nsIContent*, nsEvent*, nsEventStatus*) + 124
+108 org.mozilla.thunderbird        	0x0075f7b8 nsButtonBoxFrame::DoMouseClick(nsGUIEvent*, int) + 424
+109 org.mozilla.thunderbird        	0x0075f5e8 nsButtonBoxFrame::HandleEvent(nsIPresContext*, nsGUIEvent*, nsEventStatus*) + 388
+110 org.mozilla.thunderbird        	0x0018fbcc PresShell::HandleEventInternal(nsEvent*, nsIView*, unsigned, nsEventStatus*) + 1096
+111 org.mozilla.thunderbird        	0x0018f764 PresShell::HandleEventWithTarget(nsEvent*, nsIFrame*, nsIContent*, unsigned, nsEventStatus*) + 68
+112 org.mozilla.thunderbird        	0x006584c4 nsEventStateManager::CheckForAndDispatchClick(nsIPresContext*, nsMouseEvent*, nsEventStatus*) + 452
+113 org.mozilla.thunderbird        	0x006567dc nsEventStateManager::PostHandleEvent(nsIPresContext*, nsEvent*, nsIFrame*, nsEventStatus*, nsIView*) + 1000
+114 org.mozilla.thunderbird        	0x0018fc34 PresShell::HandleEventInternal(nsEvent*, nsIView*, unsigned, nsEventStatus*) + 1200
+115 org.mozilla.thunderbird        	0x0018f66c PresShell::HandleEvent(nsIView*, nsGUIEvent*, nsEventStatus*, int, int&) + 1128
+116 org.mozilla.thunderbird        	0x00257d60 nsViewManager::HandleEvent(nsView*, nsGUIEvent*, int) + 784
+117 org.mozilla.thunderbird        	0x00257110 nsViewManager::DispatchEvent(nsGUIEvent*, nsEventStatus*) + 2520
+118 org.mozilla.thunderbird        	0x002cabc0 nsBox::QueryInterface(nsID const&, void**) + 308
+119 org.mozilla.thunderbird        	0x008898a8 nsWindow::DispatchEvent(nsGUIEvent*, nsEventStatus&) + 172
+120 org.mozilla.thunderbird        	0x00889934 nsWindow::DispatchWindowEvent(nsGUIEvent&) + 32
+121 org.mozilla.thunderbird        	0x008899f8 nsWindow::DispatchMouseEvent(nsMouseEvent&) + 112
+122 org.mozilla.thunderbird        	0x00885bdc nsMacEventHandler::HandleMouseUpEvent(EventRecord&) + 160
+123 org.mozilla.thunderbird        	0x00883fb8 nsMacEventHandler::HandleOSEvent(EventRecord&) + 380
+124 org.mozilla.thunderbird        	0x004ed1c0 nsMacWindow::DispatchEvent(void*, int*) + 56
+125 org.mozilla.thunderbird        	0x0087f178 nsMacMessagePump::DispatchOSEventToRaptor(EventRecord&, OpaqueWindowPtr*) + 96
+126 org.mozilla.thunderbird        	0x0087ee68 nsMacMessagePump::DoMouseUp(EventRecord&) + 76
+127 org.mozilla.thunderbird        	0x0087e470 nsMacMessagePump::DispatchEvent(int, EventRecord*) + 200
+128 org.mozilla.thunderbird        	0x004e6c64 nsAppShell::DispatchNativeEvent(int, void*) + 40
+129 org.mozilla.thunderbird        	0x008a5824 nsXULWindow::ShowModal() + 836
+130 org.mozilla.thunderbird        	0x00096a30 nsWindowWatcher::OpenWindowJS(nsIDOMWindow*, char const*, char const*, char const*, int, unsigned, long*, nsIDOMWindow**) + 3956
+131 org.mozilla.thunderbird        	0x0027ea5c GlobalWindowImpl::OpenInternal(nsAString const&, nsAString const&, nsAString const&, int, long*, unsigned, nsISupports*, nsIDOMWindow**) + 2136
+132 org.mozilla.thunderbird        	0x0027b070 GlobalWindowImpl::OpenDialog(nsIDOMWindow**) + 528
+133 libxpcom.dylib                 	0x0705997c _XPTC_InvokeByIndex + 216
+134 org.mozilla.thunderbird        	0x0089b36c XPCWrappedNative::CallMethod(XPCCallContext&, XPCWrappedNative::CallMode) + 2508
+135 org.mozilla.thunderbird        	0x00891200 XPC_WN_CallMethod(JSContext*, JSObject*, unsigned, long*, long*) + 220
+136 libmozjs.dylib                 	0x06029170 js_Invoke + 1716
+137 libmozjs.dylib                 	0x0603058c js_Interpret + 26324
+138 libmozjs.dylib                 	0x060291b0 js_Invoke + 1780
+139 libmozjs.dylib                 	0x060293bc js_InternalInvoke + 184
+140 libmozjs.dylib                 	0x06007354 JS_CallFunctionValue + 44
+141 org.mozilla.thunderbird        	0x006f3eec nsJSContext::CallEventHandler(JSObject*, JSObject*, unsigned, long*, long*) + 348
+142 org.mozilla.thunderbird        	0x00793690 nsJSEventListener::HandleEvent(nsIDOMEvent*) + 1232
+143 org.mozilla.thunderbird        	0x002207d4 nsEventListenerManager::HandleEventSubType(nsListenerStruct*, nsIDOMEvent*, nsIDOMEventTarget*, unsigned, unsigned) + 568
+144 org.mozilla.thunderbird        	0x00220ae4 nsEventListenerManager::HandleEvent(nsIPresContext*, nsEvent*, nsIDOMEvent**, nsIDOMEventTarget*, unsigned, nsEventStatus*) + 700
+145 org.mozilla.thunderbird        	0x0024c31c nsXULElement::HandleDOMEvent(nsIPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 2748
+146 org.mozilla.thunderbird        	0x004e90f0 MenuHelpersX::DispatchCommandTo(nsIWeakReference*, nsIContent*) + 560
+147 org.mozilla.thunderbird        	0x004e7870 nsMenuBarX::CommandEventHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 208
+148 com.apple.HIToolbox            	0x93184ff4 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 692
+149 com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+150 com.apple.HIToolbox            	0x9318b4ec SendEventToEventTarget + 40
+151 com.apple.HIToolbox            	0x9320405c SendHICommandEvent(unsigned long, HICommand const*, unsigned long, unsigned long, unsigned char, OpaqueEventTargetRef*, OpaqueEventTargetRef*, OpaqueEventRef**) + 380
+152 com.apple.HIToolbox            	0x93234368 SendMenuItemSelectedEvent + 136
+153 com.apple.HIToolbox            	0x9324fbe4 HandleKeyboardEvent(OpaqueEventRef*, unsigned char) + 340
+154 com.apple.HIToolbox            	0x93184ff4 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 692
+155 com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+156 com.apple.HIToolbox            	0x931845c8 SendEventToEventTargetWithOptions + 40
+157 com.apple.HIToolbox            	0x9324eef4 HandleKeyboardEvent(OpaqueEventRef*, unsigned long) + 320
+158 com.apple.HIToolbox            	0x9318b868 ToolboxEventDispatcherHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 512
+159 com.apple.HIToolbox            	0x93185244 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 1284
+160 com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+161 com.apple.HIToolbox            	0x9318b4ec SendEventToEventTarget + 40
+162 com.apple.HIToolbox            	0x931cc564 ToolboxEventDispatcher + 92
+163 com.apple.HIToolbox            	0x9326b5b8 TryEventDispatcher + 112
+164 com.apple.HIToolbox            	0x9326b20c GetOrPeekEvent + 304
+165 com.apple.HIToolbox            	0x9326af48 GetNextEventMatchingMask + 156
+166 com.apple.HIToolbox            	0x9326adf0 WNEInternal + 140
+167 com.apple.HIToolbox            	0x9326ad50 WaitNextEvent + 76
+168 org.mozilla.thunderbird        	0x0087e384 nsMacMessagePump::GetEvent(EventRecord&) + 116
+169 org.mozilla.thunderbird        	0x0087e268 nsMacMessagePump::DoMessagePump() + 48
+170 org.mozilla.thunderbird        	0x004e6a0c nsAppShell::Run() + 56
+171 org.mozilla.thunderbird        	0x0000dbc4 xre_main(int, char**, nsXREAppData const*) + 2752
+172 org.mozilla.thunderbird        	0x00009ec0 start + 432
+173 org.mozilla.thunderbird        	0x00009d40 start + 48
+
+Thread 1:
+0   libSystem.B.dylib              	0x9001f20c select + 12
+1   libnspr4.dylib                 	0x0301f7dc poll + 392
+2   libnspr4.dylib                 	0x0301c028 PR_OpenDir + 944
+3   org.mozilla.thunderbird        	0x000eba20 nsSocketTransportService::Run() + 408
+4   libxpcom.dylib                 	0x070449c4 nsThread::Main(void*) + 56
+5   libnspr4.dylib                 	0x0301d470 PR_Select + 828
+6   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 2:
+0   libSystem.B.dylib              	0x90053f68 semaphore_timedwait_signal_trap + 8
+1   libSystem.B.dylib              	0x90053dc8 pthread_cond_timedwait + 672
+2   libnspr4.dylib                 	0x03018390 PR_Unlock + 300
+3   libnspr4.dylib                 	0x030185f4 PR_WaitCondVar + 136
+4   libxpcom.dylib                 	0x070474d8 TimerThread::Run() + 428
+5   libxpcom.dylib                 	0x070449c4 nsThread::Main(void*) + 56
+6   libnspr4.dylib                 	0x0301d470 PR_Select + 828
+7   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 3:
+0   libSystem.B.dylib              	0x90053f68 semaphore_timedwait_signal_trap + 8
+1   libSystem.B.dylib              	0x90053dc8 pthread_cond_timedwait + 672
+2   libnspr4.dylib                 	0x03018390 PR_Unlock + 300
+3   libnspr4.dylib                 	0x030185f4 PR_WaitCondVar + 136
+4   org.mozilla.thunderbird        	0x000af9a8 nsIOThreadPool::ThreadFunc(void*) + 116
+5   libnspr4.dylib                 	0x0301d470 PR_Select + 828
+6   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 4:
+0   libSystem.B.dylib              	0x90053f68 semaphore_timedwait_signal_trap + 8
+1   libSystem.B.dylib              	0x90053dc8 pthread_cond_timedwait + 672
+2   libnspr4.dylib                 	0x03018390 PR_Unlock + 300
+3   libnspr4.dylib                 	0x030185f4 PR_WaitCondVar + 136
+4   org.mozilla.thunderbird        	0x00557710 nsHostResolver::GetHostToLookup(nsHostRecord**) + 132
+5   org.mozilla.thunderbird        	0x00557a20 nsHostResolver::ThreadFunc(void*) + 116
+6   libnspr4.dylib                 	0x0301d470 PR_Select + 828
+7   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 5:
+0   libSystem.B.dylib              	0x9002e44c kevent + 12
+1   com.apple.DesktopServices      	0x927ee5d4 TFSNotificationTask::FSNotificationTaskProc(void*) + 56
+2   ...ple.CoreServices.CarbonCore 	0x90b41a44 PrivateMPEntryPoint + 76
+3   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 6:
+0   libSystem.B.dylib              	0x9002b8a8 semaphore_wait_signal_trap + 8
+1   libSystem.B.dylib              	0x9003001c pthread_cond_wait + 488
+2   ...ple.CoreServices.CarbonCore 	0x90b41c34 MPWaitOnQueue + 224
+3   com.apple.DesktopServices      	0x927eee20 TNodeSyncTask::SyncTaskProc(void*) + 112
+4   ...ple.CoreServices.CarbonCore 	0x90b41a44 PrivateMPEntryPoint + 76
+5   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 7:
+0   libSystem.B.dylib              	0x90053f68 semaphore_timedwait_signal_trap + 8
+1   libSystem.B.dylib              	0x90053dc8 pthread_cond_timedwait + 672
+2   libnspr4.dylib                 	0x03018390 PR_Unlock + 300
+3   libnspr4.dylib                 	0x030185f4 PR_WaitCondVar + 136
+4   org.mozilla.thunderbird        	0x000af9a8 nsIOThreadPool::ThreadFunc(void*) + 116
+5   libnspr4.dylib                 	0x0301d470 PR_Select + 828
+6   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 8:
+0   libSystem.B.dylib              	0x90053f68 semaphore_timedwait_signal_trap + 8
+1   libSystem.B.dylib              	0x90053dc8 pthread_cond_timedwait + 672
+2   libnspr4.dylib                 	0x03018390 PR_Unlock + 300
+3   libnspr4.dylib                 	0x030185f4 PR_WaitCondVar + 136
+4   org.mozilla.thunderbird        	0x000af9a8 nsIOThreadPool::ThreadFunc(void*) + 116
+5   libnspr4.dylib                 	0x0301d470 PR_Select + 828
+6   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 9:
+0   libSystem.B.dylib              	0x90053f68 semaphore_timedwait_signal_trap + 8
+1   libSystem.B.dylib              	0x90053dc8 pthread_cond_timedwait + 672
+2   libnspr4.dylib                 	0x03018390 PR_Unlock + 300
+3   libnspr4.dylib                 	0x030185f4 PR_WaitCondVar + 136
+4   org.mozilla.thunderbird        	0x000af9a8 nsIOThreadPool::ThreadFunc(void*) + 116
+5   libnspr4.dylib                 	0x0301d470 PR_Select + 828
+6   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 0 crashed with PPC Thread State 64:
+  srr0: 0x000000000074d6f0 srr1: 0x000000000200f930                        vrsave: 0x0000000000000000
+    cr: 0x44424222          xer: 0x0000000000000000   lr: 0x000000000074d6dc  ctr: 0x0000000007004820
+    r0: 0x000000000074d6dc   r1: 0x00000000bfff6980   r2: 0x000000000a15dad0   r3: 0x000000000a15dad0
+    r4: 0x000000000a15dad0   r5: 0x0000000000000000   r6: 0x0000000000000000   r7: 0x00000000bfff6970
+    r8: 0x0000000000000000   r9: 0x0000000005d620b0  r10: 0x000000000705a1e8  r11: 0x0000000044424228
+   r12: 0x0000000007004820  r13: 0x0000000000000003  r14: 0x00000000bfff7730  r15: 0x0000000000000001
+   r16: 0x000000000708a388  r17: 0x00000000bfff76a8  r18: 0x00000000bfff7670  r19: 0x00000000bfff7690
+   r20: 0x0000000008e34830  r21: 0x0000000000000002  r22: 0x000000000265ab70  r23: 0x000000000fa11598
+   r24: 0x00000000bfff7310  r25: 0x00000000bfff72f0  r26: 0x00000000bfff7110  r27: 0x0000000008a5e490
+   r28: 0x0000000000000000  r29: 0x0000000000000000  r30: 0x0000000000000000  r31: 0x000000000a15dad0
+
+Binary Images Description:
+    0x1000 -   0xac1fff org.mozilla.thunderbird 1.0.7	/Applications/thunderbird.app/Contents/MacOS/thunderbird-bin
+ 0x188c000 -  0x1895fff libqfaservices.dylib 	/Applications/thunderbird.app/Contents/MacOS/components/libqfaservices.dylib
+ 0x1899000 -  0x18c0fff talkback.dylib 	/Applications/thunderbird.app/Contents/MacOS/components/talkback/talkback.dylib
+ 0x1ac3000 -  0x1ac5fff com.apple.textencoding.unicode 2.0	/System/Library/TextEncodings/Unicode Encodings.bundle/Contents/MacOS/Unicode Encodings
+ 0x2f49000 -  0x2f54fff libspellchecker.dylib 	/Applications/thunderbird.app/Contents/MacOS/components/libspellchecker.dylib
+ 0x2f59000 -  0x2f66fff libmyspell.dylib 	/Applications/thunderbird.app/Contents/MacOS/components/libmyspell.dylib
+ 0x3000000 -  0x3032fff libnspr4.dylib 	/Applications/thunderbird.app/Contents/MacOS/libnspr4.dylib
+ 0x3805000 -  0x382dfff libnssckbi.dylib 	/Applications/thunderbird.app/Contents/MacOS/libnssckbi.dylib
+ 0x4000000 -  0x400dfff libplds4.dylib 	/Applications/thunderbird.app/Contents/MacOS/libplds4.dylib
+ 0x5000000 -  0x500efff libplc4.dylib 	/Applications/thunderbird.app/Contents/MacOS/libplc4.dylib
+ 0x6000000 -  0x6068fff libmozjs.dylib 	/Applications/thunderbird.app/Contents/MacOS/libmozjs.dylib
+ 0x7000000 -  0x7083fff libxpcom.dylib 	/Applications/thunderbird.app/Contents/MacOS/libxpcom.dylib
+ 0x8000000 -  0x801afff libssl3.dylib 	/Applications/thunderbird.app/Contents/MacOS/libssl3.dylib
+ 0x9000000 -  0x905dfff libnss3.dylib 	/Applications/thunderbird.app/Contents/MacOS/libnss3.dylib
+ 0xa000000 -  0xa01dfff libsmime3.dylib 	/Applications/thunderbird.app/Contents/MacOS/libsmime3.dylib
+ 0xb000000 -  0xb079fff libsoftokn3.dylib 	/Applications/thunderbird.app/Contents/MacOS/libsoftokn3.dylib
+ 0xc000000 -  0xc019fff libxpcom_compat.dylib 	/Applications/thunderbird.app/Contents/MacOS/libxpcom_compat.dylib
+ 0xe000000 -  0xe00dfff libprldap50.dylib 	/Applications/thunderbird.app/Contents/MacOS/libprldap50.dylib
+ 0xf000000 -  0xf02efff libldap50.dylib 	/Applications/thunderbird.app/Contents/MacOS/libldap50.dylib
+0x8fe00000 - 0x8fe54fff dyld 44.2	/usr/lib/dyld
+0x90000000 - 0x901b3fff libSystem.B.dylib 	/usr/lib/libSystem.B.dylib
+0x9020b000 - 0x9020ffff libmathCommon.A.dylib 	/usr/lib/system/libmathCommon.A.dylib
+0x90211000 - 0x90264fff com.apple.CoreText 1.0.1 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreText.framework/Versions/A/CoreText
+0x90291000 - 0x90342fff ATS 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+0x90371000 - 0x906aefff com.apple.CoreGraphics 1.256.27 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
+0x9073a000 - 0x90813fff com.apple.CoreFoundation 6.4.4 (368.25)	/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+0x9085c000 - 0x9085cfff com.apple.CoreServices 10.4 (???)	/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+0x9085e000 - 0x90960fff libicucore.A.dylib 	/usr/lib/libicucore.A.dylib
+0x909ba000 - 0x90a3efff libobjc.A.dylib 	/usr/lib/libobjc.A.dylib
+0x90a68000 - 0x90ad6fff com.apple.framework.IOKit 1.4 (???)	/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+0x90aed000 - 0x90afffff libauto.dylib 	/usr/lib/libauto.dylib
+0x90b06000 - 0x90dddfff com.apple.CoreServices.CarbonCore 671.2	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+0x90e43000 - 0x90ec3fff com.apple.CoreServices.OSServices 4.1	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+0x90f0d000 - 0x90f4efff com.apple.CFNetwork 4.0 (129.2)	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+0x90f63000 - 0x90f7bfff com.apple.WebServices 1.1.2 (1.1.0)	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebServicesCore.framework/Versions/A/WebServicesCore
+0x90f8b000 - 0x9100cfff com.apple.SearchKit 1.0.4	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+0x91052000 - 0x9107bfff com.apple.Metadata 10.4.3 (121.20.2)	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+0x9108c000 - 0x9109afff libz.1.dylib 	/usr/lib/libz.1.dylib
+0x9109d000 - 0x9125ffff com.apple.security 4.2 (24844)	/System/Library/Frameworks/Security.framework/Versions/A/Security
+0x91362000 - 0x9136bfff com.apple.DiskArbitration 2.1	/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration
+0x91372000 - 0x91399fff com.apple.SystemConfiguration 1.8.1	/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+0x913ac000 - 0x913b4fff libgcc_s.1.dylib 	/usr/lib/libgcc_s.1.dylib
+0x913b9000 - 0x913d9fff libmx.A.dylib 	/usr/lib/libmx.A.dylib
+0x913df000 - 0x913e7fff libbsm.dylib 	/usr/lib/libbsm.dylib
+0x913eb000 - 0x91469fff com.apple.audio.CoreAudio 3.0.1	/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
+0x914a7000 - 0x914a7fff com.apple.ApplicationServices 10.4 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+0x914a9000 - 0x914e1fff com.apple.AE 1.5 (297)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+0x914fc000 - 0x915c9fff com.apple.ColorSync 4.4.3	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+0x9161e000 - 0x916b1fff com.apple.print.framework.PrintCore 4.3 (172.3)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+0x916f8000 - 0x917b5fff com.apple.QD 3.8.18 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+0x917f3000 - 0x91851fff com.apple.HIServices 1.5.1 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+0x9187f000 - 0x918a3fff com.apple.LangAnalysis 1.6.1	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+0x918b7000 - 0x918dcfff com.apple.FindByContent 1.5	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/FindByContent.framework/Versions/A/FindByContent
+0x918ef000 - 0x91931fff com.apple.LaunchServices 10.4.5 (168)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+0x9194d000 - 0x91961fff com.apple.speech.synthesis.framework 3.3	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+0x9196f000 - 0x919a8fff com.apple.ImageIO.framework 1.4.3	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/ImageIO
+0x919bd000 - 0x91a85fff libcrypto.0.9.7.dylib 	/usr/lib/libcrypto.0.9.7.dylib
+0x91ad3000 - 0x91ae8fff libcups.2.dylib 	/usr/lib/libcups.2.dylib
+0x91aed000 - 0x91b09fff libJPEG.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib
+0x91b0e000 - 0x91b7dfff libJP2.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libJP2.dylib
+0x91b94000 - 0x91b98fff libGIF.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib
+0x91b9a000 - 0x91bcbfff libRaw.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libRaw.dylib
+0x91bcf000 - 0x91c12fff libTIFF.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libTIFF.dylib
+0x91c19000 - 0x91c32fff libPng.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libPng.dylib
+0x91c37000 - 0x91c3afff libRadiance.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib
+0x91c3c000 - 0x91c3cfff com.apple.Accelerate 1.1.1 (Accelerate 1.1.1)	/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
+0x91c3e000 - 0x91d28fff com.apple.vImage 2.0	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
+0x91d30000 - 0x91d4ffff com.apple.Accelerate.vecLib 3.1.1 (vecLib 3.1.1)	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
+0x91dbb000 - 0x91e20fff libvMisc.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
+0x91e2a000 - 0x91ebcfff libvDSP.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
+0x91ed6000 - 0x92466fff libBLAS.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+0x924ae000 - 0x927befff libLAPACK.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+0x927eb000 - 0x92877fff com.apple.DesktopServices 1.3.1	/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
+0x928b9000 - 0x92ae3fff com.apple.Foundation 6.4.2 (567.21)	/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+0x92c01000 - 0x92cdffff libxml2.2.dylib 	/usr/lib/libxml2.2.dylib
+0x92cff000 - 0x92dedfff libiconv.2.dylib 	/usr/lib/libiconv.2.dylib
+0x92dff000 - 0x92e1dfff libGL.dylib 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+0x92e28000 - 0x92e82fff libGLU.dylib 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+0x92ea0000 - 0x92ea0fff com.apple.Carbon 10.4 (???)	/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
+0x92ea2000 - 0x92eb6fff com.apple.ImageCapture 3.0	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture
+0x92ece000 - 0x92edefff com.apple.speech.recognition.framework 3.4	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition
+0x92eea000 - 0x92efffff com.apple.securityhi 2.0 (203)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI
+0x92f11000 - 0x92f98fff com.apple.ink.framework 101.2 (69)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink
+0x92fac000 - 0x92fb7fff com.apple.help 1.0.3 (32)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help
+0x92fc1000 - 0x92feefff com.apple.openscripting 1.2.3 (???)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting
+0x93008000 - 0x93018fff com.apple.print.framework.Print 5.0 (190.1)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print
+0x93024000 - 0x9308afff com.apple.htmlrendering 1.1.2	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering
+0x930bb000 - 0x9310dfff com.apple.NavigationServices 3.4.2	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices
+0x93139000 - 0x93156fff com.apple.audio.SoundManager 3.9	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound
+0x93168000 - 0x93175fff com.apple.CommonPanels 1.2.2 (73)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels
+0x9317e000 - 0x93490fff com.apple.HIToolbox 1.4.4 (???)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+0x935dc000 - 0x935e8fff com.apple.opengl 1.4.6	/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL
+0x93679000 - 0x93679fff com.apple.Cocoa 6.4 (???)	/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa
+0x9367b000 - 0x93caefff com.apple.AppKit 6.4.3 (824.23)	/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+0x9403a000 - 0x940a9fff com.apple.CoreData 50 (77)	/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
+0x940e2000 - 0x941acfff com.apple.audio.toolbox.AudioToolbox 1.4.1	/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
+0x94200000 - 0x94200fff com.apple.audio.units.AudioUnit 1.4	/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit
+0x94202000 - 0x9437afff com.apple.QuartzCore 1.4.3	/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore
+0x943c4000 - 0x94401fff libsqlite3.0.dylib 	/usr/lib/libsqlite3.0.dylib
+0x94409000 - 0x94459fff libGLImage.dylib 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib
+0x945fb000 - 0x9460afff libCGATS.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGATS.A.dylib
+0x94612000 - 0x9461efff libCSync.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib
+0x94663000 - 0x9467bfff libRIP.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib
+0x94682000 - 0x948ecfff com.apple.QuickTime 7.0.3	/System/Library/Frameworks/QuickTime.framework/Versions/A/QuickTime
+
+Model: PowerBook3,5, BootROM 4.5.3f2, 1 processors, PowerPC G4  (3.2), 867 MHz, 384 MB
+Graphics: ATY,RV250M9, ATY,RV250M9, AGP, 32 MB
+Memory Module: SODIMM0/J16TOP, 128 MB, SDRAM, PC133U-322
+Memory Module: SODIMM1/J16BOTTOM, 256 MB, SDRAM, PC133U-333
+Modem: MicroDash, UCJ, V.92, 1.0F, APPLE VERSION 2.6.6
+Network Service: Built-in Ethernet, Ethernet, en0
+PCI Card: TXN,PCI1410-02, cardbus, PC Card
+Parallel ATA Device: TOSHIBA MK4021GAS, 37.26 GB
+Parallel ATA Device: MATSHITACD-RW  CW-8121, 

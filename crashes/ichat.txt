@@ -1,0 +1,36 @@
+Date/Time:      2005-12-18 15:02:58.972 -0600
+OS Version:     10.4.3 (Build 8F46)
+Report Version: 3
+
+Command: iChat
+Path:    /Applications/iChat.app/Contents/MacOS/iChat
+Parent:  WindowServer [110]
+
+Version:        3.1 (417)
+Build Version:  1
+Project Name:   iChat
+Source Version: 4170000
+
+PID:    8639
+Thread: 0
+
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000021
+
+Thread 0 Crashed:
+0   <<00000000>>	0xfffeff18 objc_msgSend_rtp + 24
+1   com.apple.AppKit				    0x937cb66c -[NSPopUpButtonCell validateMenuItem:] + 200
+2   com.apple.AppKit				    0x93a28aa8 -[NSPopUpButtonCell _doPopupSearchString] + 124
+3   com.apple.Foundation			    0x928e149c __NSFireTimer + 116
+4   com.apple.CoreFoundation			    0x90770aec __CFRunLoopDoTimer + 184
+5   com.apple.CoreFoundation			    0x9075d464 __CFRunLoopRun + 1680
+6   com.apple.CoreFoundation			    0x9075ca18 CFRunLoopRunSpecific + 268
+7   com.apple.HIToolbox				    0x931861e0 RunCurrentEventLoopInMode + 264
+8   com.apple.HIToolbox				    0x931857ec ReceiveNextEventCommon + 244
+9   com.apple.HIToolbox				    0x931856e0 BlockUntilNextEventMatchingListInMode + 96
+10  com.apple.AppKit				    0x93684904 _DPSNextEvent + 384
+11  com.apple.AppKit				    0x936845c8 -[NSApplication nextEventMatchingMask:untilDate:inMode:dequeue:] + 116
+12  com.apple.AppKit				    0x93680b0c -[NSApplication run] + 472
+13  com.apple.AppKit				    0x93771618 NSApplicationMain + 452
+14  com.apple.iChat				    0x00002cf8 0x1000 + 7416
+15  com.apple.iChat				    0x00076a4c 0x1000 + 481868

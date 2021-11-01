@@ -1,0 +1,20 @@
+* = crash
++ = hang
+
+Safari
+*+Mail
+TextEdit
+*OmniWeb
+*+Camino
+Calculator (lots of clean exits)
+*Acrobat Reader
+*Finder
+*Keynote
+*Pages
+*Firefox
+*Thunderbird
++iCal (Didn't crash, did hang)
+*Internet Explorer
+*Aquamacs Emacs
+
+Note: Terminal also crashed when I was using it to send fuzz to Opera.

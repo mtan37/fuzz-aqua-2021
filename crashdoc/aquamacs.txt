@@ -1,0 +1,188 @@
+**********
+
+Host Name:      lamarck
+Date/Time:      2005-12-18 14:42:00.581 -0600
+OS Version:     10.4.3 (Build 8F46)
+Report Version: 3
+
+Command: Aquamacs Emacs
+Path:    /Applications/Aquamacs Emacs.app/Contents/MacOS/Aquamacs Emacs
+Parent:  WindowServer [62]
+
+Version: Aquamacs , GNU Emacs 22 (1.2a)
+
+PID:    278
+Thread: 0
+
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x0000000c
+
+Thread 0 Crashed:
+0   org.gnu.AquamacsEmacs 	0x00145a4c mac_handle_mouse_event + 132 (macterm.c:9070)
+1   com.apple.HIToolbox   	0x93184ff4 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 692
+2   com.apple.HIToolbox   	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+3   com.apple.HIToolbox   	0x9318b4ec SendEventToEventTarget + 40
+4   com.apple.HIToolbox   	0x93217970 HandleMouseEventForWindow(OpaqueWindowPtr*, OpaqueEventRef*, unsigned short) + 236
+5   com.apple.HIToolbox   	0x9337a730 HandleMouseEvent(OpaqueEventRef*) + 368
+6   com.apple.HIToolbox   	0x9318b858 ToolboxEventDispatcherHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 496
+7   com.apple.HIToolbox   	0x93185244 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 1284
+8   com.apple.HIToolbox   	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+9   com.apple.HIToolbox   	0x9318b4ec SendEventToEventTarget + 40
+10  org.gnu.AquamacsEmacs 	0x0014670c XTread_socket + 324 (macterm.c:9856)
+11  org.gnu.AquamacsEmacs 	0x000861ec read_avail_input + 140 (keyboard.c:6710)
+12  org.gnu.AquamacsEmacs 	0x0014129c x_make_frame_visible + 516 (macterm.c:5938)
+13  org.gnu.AquamacsEmacs 	0x00016328 Fmake_frame_visible + 232 (frame.c:1601)
+14  org.gnu.AquamacsEmacs 	0x000ea014 Feval + 1044 (eval.c:2220)
+15  org.gnu.AquamacsEmacs 	0x000e6e64 Fprogn + 60 (eval.c:432)
+16  org.gnu.AquamacsEmacs 	0x000e7db0 FletX + 396 (eval.c:995)
+17  org.gnu.AquamacsEmacs 	0x000ea014 Feval + 1044 (eval.c:2220)
+18  org.gnu.AquamacsEmacs 	0x000e6e64 Fprogn + 60 (eval.c:432)
+19  org.gnu.AquamacsEmacs 	0x000eb41c funcall_lambda + 740 (eval.c:3059)
+20  org.gnu.AquamacsEmacs 	0x000eaf1c Ffuncall + 1196 (eval.c:2934)
+21  org.gnu.AquamacsEmacs 	0x00118e58 Fbyte_code + 2448 (bytecode.c:691)
+22  org.gnu.AquamacsEmacs 	0x000eb448 funcall_lambda + 784 (eval.c:3071)
+23  org.gnu.AquamacsEmacs 	0x000eb0cc apply_lambda + 252 (eval.c:2991)
+24  org.gnu.AquamacsEmacs 	0x000ea1cc Feval + 1484 (eval.c:2277)
+25  org.gnu.AquamacsEmacs 	0x000e7004 Fsetq + 68 (eval.c:534)
+26  org.gnu.AquamacsEmacs 	0x000ea014 Feval + 1044 (eval.c:2220)
+27  org.gnu.AquamacsEmacs 	0x000e6e64 Fprogn + 60 (eval.c:432)
+28  org.gnu.AquamacsEmacs 	0x000de174 Fsave_excursion + 88 (editfns.c:964)
+29  org.gnu.AquamacsEmacs 	0x000ea014 Feval + 1044 (eval.c:2220)
+30  org.gnu.AquamacsEmacs 	0x000e6e64 Fprogn + 60 (eval.c:432)
+31  org.gnu.AquamacsEmacs 	0x000e8000 Flet + 556 (eval.c:1053)
+32  org.gnu.AquamacsEmacs 	0x000ea014 Feval + 1044 (eval.c:2220)
+33  org.gnu.AquamacsEmacs 	0x000e6c7c For + 68 (eval.c:329)
+34  org.gnu.AquamacsEmacs 	0x000ea014 Feval + 1044 (eval.c:2220)
+35  org.gnu.AquamacsEmacs 	0x000e6e64 Fprogn + 60 (eval.c:432)
+36  org.gnu.AquamacsEmacs 	0x000e8000 Flet + 556 (eval.c:1053)
+37  org.gnu.AquamacsEmacs 	0x000ea014 Feval + 1044 (eval.c:2220)
+38  org.gnu.AquamacsEmacs 	0x000e6e64 Fprogn + 60 (eval.c:432)
+39  org.gnu.AquamacsEmacs 	0x000e6d80 Fif + 92 (eval.c:382)
+40  org.gnu.AquamacsEmacs 	0x000ea014 Feval + 1044 (eval.c:2220)
+41  org.gnu.AquamacsEmacs 	0x000e6e64 Fprogn + 60 (eval.c:432)
+42  org.gnu.AquamacsEmacs 	0x000eb41c funcall_lambda + 740 (eval.c:3059)
+43  org.gnu.AquamacsEmacs 	0x000eaf1c Ffuncall + 1196 (eval.c:2934)
+44  org.gnu.AquamacsEmacs 	0x000ea90c call1 + 40 (eval.c:2664)
+45  org.gnu.AquamacsEmacs 	0x000eade8 Ffuncall + 888 (eval.c:2887)
+46  org.gnu.AquamacsEmacs 	0x000ea478 Fapply + 540 (eval.c:2372)
+47  org.gnu.AquamacsEmacs 	0x000ea02c Feval + 1068 (eval.c:2223)
+48  org.gnu.AquamacsEmacs 	0x000e6e64 Fprogn + 60 (eval.c:432)
+49  org.gnu.AquamacsEmacs 	0x000e8000 Flet + 556 (eval.c:1053)
+50  org.gnu.AquamacsEmacs 	0x000ea014 Feval + 1044 (eval.c:2220)
+51  org.gnu.AquamacsEmacs 	0x000e6d6c Fif + 72 (eval.c:380)
+52  org.gnu.AquamacsEmacs 	0x000ea014 Feval + 1044 (eval.c:2220)
+53  org.gnu.AquamacsEmacs 	0x000e6e64 Fprogn + 60 (eval.c:432)
+54  org.gnu.AquamacsEmacs 	0x000e8000 Flet + 556 (eval.c:1053)
+55  org.gnu.AquamacsEmacs 	0x000ea014 Feval + 1044 (eval.c:2220)
+56  org.gnu.AquamacsEmacs 	0x000e6e64 Fprogn + 60 (eval.c:432)
+57  org.gnu.AquamacsEmacs 	0x000eb41c funcall_lambda + 740 (eval.c:3059)
+58  org.gnu.AquamacsEmacs 	0x000eaf1c Ffuncall + 1196 (eval.c:2934)
+59  org.gnu.AquamacsEmacs 	0x000ea948 call2 + 44 (eval.c:2686)
+60  org.gnu.AquamacsEmacs 	0x000eade8 Ffuncall + 888 (eval.c:2887)
+61  org.gnu.AquamacsEmacs 	0x00118e58 Fbyte_code + 2448 (bytecode.c:691)
+62  org.gnu.AquamacsEmacs 	0x000eb448 funcall_lambda + 784 (eval.c:3071)
+63  org.gnu.AquamacsEmacs 	0x000eaf1c Ffuncall + 1196 (eval.c:2934)
+64  org.gnu.AquamacsEmacs 	0x000e64c0 Fcall_interactively + 5232 (callint.c:884)
+65  org.gnu.AquamacsEmacs 	0x0008ac7c Fcommand_execute + 632 (keyboard.c:9748)
+66  org.gnu.AquamacsEmacs 	0x0007f108 command_loop_1 + 4396 (keyboard.c:1798)
+67  org.gnu.AquamacsEmacs 	0x000e8ad0 internal_condition_case + 336 (eval.c:1466)
+68  org.gnu.AquamacsEmacs 	0x0007dd78 command_loop_2 + 64 (keyboard.c:1318)
+69  org.gnu.AquamacsEmacs 	0x000e8474 internal_catch + 264 (eval.c:1211)
+70  org.gnu.AquamacsEmacs 	0x0007dcd0 command_loop + 148 (keyboard.c:1301)
+71  org.gnu.AquamacsEmacs 	0x0007d6a4 recursive_edit_1 + 172 (keyboard.c:991)
+72  org.gnu.AquamacsEmacs 	0x0007d84c Frecursive_edit + 224 (keyboard.c:1052)
+73  org.gnu.AquamacsEmacs 	0x0007c30c main + 3232 (emacs.c:1789)
+74  org.gnu.AquamacsEmacs 	0x0000a060 _start + 392 (crt.c:267)
+75  dyld                  	0x8fe01048 _dyld_start + 60
+
+Thread 0 crashed with PPC Thread State 64:
+  srr0: 0x0000000000145a4c srr1: 0x000000000200f930                        vrsave: 0x0000000000000000
+    cr: 0x24022242          xer: 0x0000000000000004   lr: 0x0000000000145a4c  ctr: 0x000000009074ef54
+    r0: 0x0000000000145a4c   r1: 0x00000000bfffb280   r2: 0x00000000ffffffff   r3: 0x0000000000000000
+    r4: 0x0000000080000000   r5: 0x00000000bfffb170   r6: 0x0000000000000000   r7: 0x0000000004b00e00
+    r8: 0x000000005e4e3e2c   r9: 0x0000000000000000  r10: 0x0000000000000074  r11: 0x00000000a1b1c1d3
+   r12: 0x000000009074ef54  r13: 0x0000000000000002  r14: 0x0000000000000000  r15: 0x00000000a3184d58
+   r16: 0x0000000002140680  r17: 0x00000000bfffb330  r18: 0x000000006d6f7573  r19: 0x000000000000000a
+   r20: 0x0000000000a48650  r21: 0x00000000ffffd96e  r22: 0x0000000000000000  r23: 0x00000000bfffb4a0
+   r24: 0x0000000000000000  r25: 0x00000000bfffb330  r26: 0x0000000002140680  r27: 0x0000000000000000
+   r28: 0x00000000004c59d0  r29: 0x0000000002140680  r30: 0x00000000004c118c  r31: 0x00000000001459d0
+
+Binary Images Description:
+    0x1000 -   0x17afff org.gnu.AquamacsEmacs Aquamacs , GNU Emacs 22 (1.2a)	/Applications/Aquamacs Emacs.app/Contents/MacOS/Aquamacs Emacs
+  0x7ab000 -   0x7d6fff libncurses.5.dylib 	/usr/lib/libncurses.5.dylib
+0x8fe00000 - 0x8fe54fff dyld 44.2	/usr/lib/dyld
+0x90000000 - 0x901b3fff libSystem.B.dylib 	/usr/lib/libSystem.B.dylib
+0x9020b000 - 0x9020ffff libmathCommon.A.dylib 	/usr/lib/system/libmathCommon.A.dylib
+0x90211000 - 0x90264fff com.apple.CoreText 1.0.1 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreText.framework/Versions/A/CoreText
+0x90291000 - 0x90342fff ATS 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+0x90371000 - 0x906aefff com.apple.CoreGraphics 1.256.27 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
+0x9073a000 - 0x90813fff com.apple.CoreFoundation 6.4.4 (368.25)	/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+0x9085c000 - 0x9085cfff com.apple.CoreServices 10.4 (???)	/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+0x9085e000 - 0x90960fff libicucore.A.dylib 	/usr/lib/libicucore.A.dylib
+0x909ba000 - 0x90a3efff libobjc.A.dylib 	/usr/lib/libobjc.A.dylib
+0x90a68000 - 0x90ad6fff com.apple.framework.IOKit 1.4 (???)	/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+0x90aed000 - 0x90afffff libauto.dylib 	/usr/lib/libauto.dylib
+0x90b06000 - 0x90dddfff com.apple.CoreServices.CarbonCore 671.2	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+0x90e43000 - 0x90ec3fff com.apple.CoreServices.OSServices 4.1	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+0x90f0d000 - 0x90f4efff com.apple.CFNetwork 10.4.3 (129.2)	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+0x90f63000 - 0x90f7bfff com.apple.WebServices 1.1.2 (1.1.0)	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebServicesCore.framework/Versions/A/WebServicesCore
+0x90f8b000 - 0x9100cfff com.apple.SearchKit 1.0.4	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+0x91052000 - 0x9107bfff com.apple.Metadata 10.4.3 (121.20.2)	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+0x9108c000 - 0x9109afff libz.1.dylib 	/usr/lib/libz.1.dylib
+0x9109d000 - 0x9125ffff com.apple.security 4.2 (24844)	/System/Library/Frameworks/Security.framework/Versions/A/Security
+0x91362000 - 0x9136bfff com.apple.DiskArbitration 2.1	/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration
+0x91372000 - 0x91399fff com.apple.SystemConfiguration 1.8.1	/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+0x913ac000 - 0x913b4fff libgcc_s.1.dylib 	/usr/lib/libgcc_s.1.dylib
+0x913b9000 - 0x913d9fff libmx.A.dylib 	/usr/lib/libmx.A.dylib
+0x913df000 - 0x913e7fff libbsm.dylib 	/usr/lib/libbsm.dylib
+0x913eb000 - 0x91469fff com.apple.audio.CoreAudio 3.0.1	/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
+0x914a7000 - 0x914a7fff com.apple.ApplicationServices 10.4 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+0x914a9000 - 0x914e1fff com.apple.AE 1.5 (297)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+0x914fc000 - 0x915c9fff com.apple.ColorSync 4.4.3	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+0x9161e000 - 0x916b1fff com.apple.print.framework.PrintCore 4.3 (172.3)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+0x916f8000 - 0x917b5fff com.apple.QD 3.8.18 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+0x917f3000 - 0x91851fff com.apple.HIServices 1.5.1 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+0x9187f000 - 0x918a3fff com.apple.LangAnalysis 1.6.1	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+0x918b7000 - 0x918dcfff com.apple.FindByContent 1.5	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/FindByContent.framework/Versions/A/FindByContent
+0x918ef000 - 0x91931fff com.apple.LaunchServices 10.4.5 (168)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+0x9194d000 - 0x91961fff com.apple.speech.synthesis.framework 3.3	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+0x9196f000 - 0x919a8fff com.apple.ImageIO.framework 1.4.3	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/ImageIO
+0x919bd000 - 0x91a85fff libcrypto.0.9.7.dylib 	/usr/lib/libcrypto.0.9.7.dylib
+0x91ad3000 - 0x91ae8fff libcups.2.dylib 	/usr/lib/libcups.2.dylib
+0x91aed000 - 0x91b09fff libJPEG.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib
+0x91b0e000 - 0x91b7dfff libJP2.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libJP2.dylib
+0x91b94000 - 0x91b98fff libGIF.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib
+0x91b9a000 - 0x91bcbfff libRaw.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libRaw.dylib
+0x91bcf000 - 0x91c12fff libTIFF.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libTIFF.dylib
+0x91c19000 - 0x91c32fff libPng.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libPng.dylib
+0x91c37000 - 0x91c3afff libRadiance.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib
+0x91c3c000 - 0x91c3cfff com.apple.Accelerate 1.1.1 (Accelerate 1.1.1)	/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
+0x91c3e000 - 0x91d28fff com.apple.vImage 2.0	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
+0x91d30000 - 0x91d4ffff com.apple.Accelerate.vecLib 3.1.1 (vecLib 3.1.1)	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
+0x91dbb000 - 0x91e20fff libvMisc.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
+0x91e2a000 - 0x91ebcfff libvDSP.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
+0x91ed6000 - 0x92466fff libBLAS.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+0x924ae000 - 0x927befff libLAPACK.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+0x927eb000 - 0x92877fff com.apple.DesktopServices 1.3.1	/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
+0x928b9000 - 0x92ae3fff com.apple.Foundation 6.4.2 (567.21)	/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+0x92c01000 - 0x92cdffff libxml2.2.dylib 	/usr/lib/libxml2.2.dylib
+0x92cff000 - 0x92dedfff libiconv.2.dylib 	/usr/lib/libiconv.2.dylib
+0x92ea0000 - 0x92ea0fff com.apple.Carbon 10.4 (???)	/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
+0x92ea2000 - 0x92eb6fff com.apple.ImageCapture 3.0	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture
+0x92ece000 - 0x92edefff com.apple.speech.recognition.framework 3.4	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition
+0x92eea000 - 0x92efffff com.apple.securityhi 2.0 (203)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI
+0x92f11000 - 0x92f98fff com.apple.ink.framework 101.2 (69)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink
+0x92fac000 - 0x92fb7fff com.apple.help 1.0.3 (32)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help
+0x92fc1000 - 0x92feefff com.apple.openscripting 1.2.3 (???)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting
+0x93008000 - 0x93018fff com.apple.print.framework.Print 5.0 (190.1)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print
+0x93024000 - 0x9308afff com.apple.htmlrendering 1.1.2	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering
+0x930bb000 - 0x9310dfff com.apple.NavigationServices 3.4.2	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices
+0x93139000 - 0x93156fff com.apple.audio.SoundManager 3.9	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound
+0x93168000 - 0x93175fff com.apple.CommonPanels 1.2.2 (73)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels
+0x9317e000 - 0x93490fff com.apple.HIToolbox 1.4.4 (???)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+0x940e3000 - 0x941adfff com.apple.audio.toolbox.AudioToolbox 1.4.1	/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
+0x94201000 - 0x94201fff com.apple.audio.units.AudioUnit 1.4	/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit
+0x945fc000 - 0x9460bfff libCGATS.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGATS.A.dylib
+0x94613000 - 0x9461ffff libCSync.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib
+0x94664000 - 0x9467cfff libRIP.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib
+0x94683000 - 0x948edfff com.apple.QuickTime 7.0.3	/System/Library/Frameworks/QuickTime.framework/Versions/A/QuickTime

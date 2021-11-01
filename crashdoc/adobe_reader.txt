@@ -1,0 +1,433 @@
+Host Name:      lamarck
+Date/Time:      2005-12-07 20:53:32.132 -0600
+OS Version:     10.4.3 (Build 8F46)
+Report Version: 3
+
+Command: Adobe Reader
+Path:    /Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/MacOS/Adobe Reader
+Parent:  WindowServer [91]
+
+Version: 7.0.5 (7.0.5)
+
+PID:    733
+Thread: 0
+
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_INVALID_ADDRESS (0x0001) at 0x0b629c7e
+
+Thread 0 Crashed:
+0   libSystem.B.dylib              	0x90009280 szone_calloc + 936
+1   libSystem.B.dylib              	0x90015d34 malloc_zone_calloc + 632
+2   libRIP.A.dylib                 	0x9466659c ripc_Initialize + 60
+3   libRIP.A.dylib                 	0x94671ad0 __CGBitmapContextDelegateCreate + 1080
+4   com.apple.CoreGraphics         	0x9043408c createBitmapContext + 376
+5   com.apple.CoreGraphics         	0x90433a8c CGBitmapContextCreateWithDictionary + 100
+6   com.apple.CoreGraphics         	0x90469a8c CGBitmapContextCreate + 180
+7   com.apple.QD                   	0x9172ac70 BeginCGSContextForPixMapInternal + 300
+8   com.apple.QD                   	0x91725924 BeginCGSContextForPortInternal + 136
+9   com.apple.QD                   	0x917257c0 InternalCreateOrResetCGContextForPort + 268
+10  Acrobat                        	0x25145f8c 0x25000000 + 1335180
+11  Acrobat                        	0x25145cac 0x25000000 + 1334444
+12  Acrobat                        	0x25146f18 0x25000000 + 1339160
+13  Acrobat                        	0x2501d1ec 0x25000000 + 119276
+14  Acrobat                        	0x256eb8f0 CopiesPagesPDE_GetSummaryText + 12844
+15  Acrobat                        	0x25019534 0x25000000 + 103732
+16  Acrobat                        	0x25143a54 0x25000000 + 1325652
+17  Acrobat                        	0x2520618c 0x25000000 + 2122124
+18  Acrobat                        	0x25247618 0x25000000 + 2389528
+19  Acrobat                        	0x252bb594 CopiesPagesPDE_Terminate + 171972
+20  Acrobat                        	0x252bc720 CopiesPagesPDE_Terminate + 176464
+21  Acrobat                        	0x25166360 0x25000000 + 1467232
+22  Acrobat                        	0x25166410 0x25000000 + 1467408
+23  Acrobat                        	0x252bc618 CopiesPagesPDE_Terminate + 176200
+24  Acrobat                        	0x25246afc 0x25000000 + 2386684
+25  Acrobat                        	0x25245fac 0x25000000 + 2383788
+26  Acrobat                        	0x250cbe08 0x25000000 + 835080
+27  Acrobat                        	0x250cc0b8 0x25000000 + 835768
+28  Acrobat                        	0x250cc2c8 0x25000000 + 836296
+29  Acrobat                        	0x250cb3b4 0x25000000 + 832436
+30  Acrobat                        	0x250cb358 0x25000000 + 832344
+31  Acrobat                        	0x25150458 0x25000000 + 1377368
+32  Acrobat                        	0x25151680 0x25000000 + 1382016
+33  Acrobat                        	0x251519f4 0x25000000 + 1382900
+34  com.apple.HIToolbox            	0x93184ff4 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 692
+35  com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+36  com.apple.HIToolbox            	0x931845c8 SendEventToEventTargetWithOptions + 40
+37  com.apple.HIToolbox            	0x931afe24 HIView::SendDraw(short, OpaqueGrafPtr*, __HIShape const*, CGContext*) + 396
+38  com.apple.HIToolbox            	0x9325eb88 HIView::RecursiveDrawNonComposited(short, OpaqueGrafPtr*, OpaqueRgnHandle*, unsigned char, unsigned char, unsigned char) + 468
+39  com.apple.HIToolbox            	0x9325ec10 HIView::RecursiveDrawNonComposited(short, OpaqueGrafPtr*, OpaqueRgnHandle*, unsigned char, unsigned char, unsigned char) + 604
+40  com.apple.HIToolbox            	0x9325ec10 HIView::RecursiveDrawNonComposited(short, OpaqueGrafPtr*, OpaqueRgnHandle*, unsigned char, unsigned char, unsigned char) + 604
+41  com.apple.HIToolbox            	0x9325ec10 HIView::RecursiveDrawNonComposited(short, OpaqueGrafPtr*, OpaqueRgnHandle*, unsigned char, unsigned char, unsigned char) + 604
+42  com.apple.HIToolbox            	0x9325e2a8 HIView::DrawNonComposited(short, OpaqueGrafPtr*, OpaqueRgnHandle*, unsigned long) + 312
+43  com.apple.HIToolbox            	0x9326f68c UpdateControls + 172
+44  com.apple.HIToolbox            	0x931b81ec HandleWindowEvent + 1060
+45  com.apple.HIToolbox            	0x931c7c98 StandardWindowEventHandler + 160
+46  com.apple.HIToolbox            	0x93184ff4 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 692
+47  com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+48  com.apple.HIToolbox            	0x931845c8 SendEventToEventTargetWithOptions + 40
+49  com.apple.HIToolbox            	0x931c984c SendWindowEvent + 200
+50  com.apple.HIToolbox            	0x931b8228 HandleWindowEvent + 1120
+51  com.apple.HIToolbox            	0x931c7c98 StandardWindowEventHandler + 160
+52  com.apple.HIToolbox            	0x93184ff4 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 692
+53  com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+54  com.apple.HIToolbox            	0x931c45fc CallNextEventHandler + 60
+55  Acrobat                        	0x25002678 0x25000000 + 9848
+56  Acrobat                        	0x25004ea0 0x25000000 + 20128
+57  Acrobat                        	0x25002284 0x25000000 + 8836
+58  com.apple.HIToolbox            	0x93184ff4 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 692
+59  com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+60  com.apple.HIToolbox            	0x931845c8 SendEventToEventTargetWithOptions + 40
+61  com.apple.HIToolbox            	0x93258160 HandleWindowEvent(OpaqueEventRef*, unsigned long) + 84
+62  com.apple.HIToolbox            	0x9318b890 ToolboxEventDispatcherHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 552
+63  com.apple.HIToolbox            	0x93185244 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 1284
+64  com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+65  com.apple.HIToolbox            	0x9318b4ec SendEventToEventTarget + 40
+66  com.apple.HIToolbox            	0x931cc564 ToolboxEventDispatcher + 92
+67  com.apple.HIToolbox            	0x9326b5b8 TryEventDispatcher + 112
+68  com.apple.HIToolbox            	0x9326b20c GetOrPeekEvent + 304
+69  com.apple.HIToolbox            	0x9326af48 GetNextEventMatchingMask + 156
+70  com.apple.HIToolbox            	0x9326adf0 WNEInternal + 140
+71  com.apple.HIToolbox            	0x9326ad50 WaitNextEvent + 76
+72  com.apple.NavigationServices   	0x930daf40 TBrowseDialog::EventLoop() + 76
+73  com.apple.NavigationServices   	0x930d1e4c TBrowseDialog::StartDialog() + 388
+74  com.apple.NavigationServices   	0x930d90f0 NavGetFileDialog::StartDialog() + 516
+75  com.apple.NavigationServices   	0x930bfd88 _NavDialog::Run() + 132
+76  com.apple.NavigationServices   	0x930bfcbc NavDialogRun + 64
+77  Acrobat                        	0x25275764 0x25000000 + 2578276
+78  Acrobat                        	0x25275be8 0x25000000 + 2579432
+79  Acrobat                        	0x25265500 0x25000000 + 2512128
+80  Acrobat                        	0x250100b0 0x25000000 + 65712
+81  Acrobat                        	0x25097aec 0x25000000 + 621292
+82  Acrobat                        	0x25097d00 0x25000000 + 621824
+83  Acrobat                        	0x252b65b4 CopiesPagesPDE_Terminate + 151524
+84  Acrobat                        	0x252b56c4 CopiesPagesPDE_Terminate + 147700
+85  Acrobat                        	0x25174c18 0x25000000 + 1526808
+86  Acrobat                        	0x25246c9c 0x25000000 + 2387100
+87  Acrobat                        	0x250c33c8 0x25000000 + 799688
+88  Acrobat                        	0x250c3484 0x25000000 + 799876
+89  Acrobat                        	0x250c34fc 0x25000000 + 799996
+90  Acrobat                        	0x250c3220 0x25000000 + 799264
+91  Acrobat                        	0x251512e0 0x25000000 + 1381088
+92  Acrobat                        	0x25151904 0x25000000 + 1382660
+93  Acrobat                        	0x251519f4 0x25000000 + 1382900
+94  com.apple.HIToolbox            	0x93184ff4 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 692
+95  com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+96  com.apple.HIToolbox            	0x9318b4ec SendEventToEventTarget + 40
+97  com.apple.HIToolbox            	0x93299d78 HandleTextInputEvent(OpaqueEventRef*) + 56
+98  com.apple.HIToolbox            	0x9318b874 ToolboxEventDispatcherHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 524
+99  com.apple.HIToolbox            	0x93185244 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 1284
+100 com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+101 com.apple.HIToolbox            	0x9318b4ec SendEventToEventTarget + 40
+102 com.apple.HIToolbox            	0x93299c74 SendTSMEvent + 228
+103 com.apple.HIToolbox            	0x932993c4 SendUnicodeTextAEToUnicodeDoc + 928
+104 com.apple.HIToolbox            	0x93298df0 utDeliverTSMEvent + 1024
+105 com.apple.HIToolbox            	0x932989d4 TSMKeyEvent + 88
+106 com.apple.HIToolbox            	0x9324f7a4 TSMProcessRawKeyEvent + 920
+107 com.apple.HIToolbox            	0x9324f26c HandleCompatibilityKeyEvent(OpaqueEventRef*) + 308
+108 com.apple.HIToolbox            	0x93181d60 HIApplication::EventHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 788
+109 com.apple.HIToolbox            	0x93184ff4 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 692
+110 com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+111 com.apple.HIToolbox            	0x931845c8 SendEventToEventTargetWithOptions + 40
+112 com.apple.HIToolbox            	0x9324ef14 HandleKeyboardEvent(OpaqueEventRef*, unsigned long) + 352
+113 com.apple.HIToolbox            	0x9318b868 ToolboxEventDispatcherHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 512
+114 com.apple.HIToolbox            	0x93185244 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 1284
+115 com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+116 com.apple.HIToolbox            	0x9318b4ec SendEventToEventTarget + 40
+117 com.apple.HIToolbox            	0x931cc564 ToolboxEventDispatcher + 92
+118 com.apple.HIToolbox            	0x931cc4f0 HLTBEventDispatcher + 16
+119 com.apple.HIToolbox            	0x931caaa4 RunApplicationEventLoop + 148
+120 Acrobat                        	0x2531d4a0 AcroBundleThreadQuitProc + 14280
+121 Acrobat                        	0x25319b08 RunAcrobat + 244
+122 com.adobe.Reader               	0x00001f04 0x1000 + 3844
+123 com.adobe.Reader               	0x00001e44 0x1000 + 3652
+124 com.adobe.Reader               	0x00001cb8 0x1000 + 3256
+
+Thread 1:
+0   libSystem.B.dylib              	0x9000606c syscall + 12
+1   com.apple.OpenTransport        	0x9ae0c5a0 BSD_waitevent + 44
+2   com.apple.OpenTransport        	0x9ae11360 CarbonSelectThreadFunc + 176
+3   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 2:
+0   libSystem.B.dylib              	0x9002b8a8 semaphore_wait_signal_trap + 8
+1   libSystem.B.dylib              	0x9003001c pthread_cond_wait + 488
+2   com.apple.OpenTransport        	0x9ae0ce94 CarbonOperationThreadFunc + 80
+3   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 3:
+0   libSystem.B.dylib              	0x9000b208 mach_msg_trap + 8
+1   libSystem.B.dylib              	0x9000b15c mach_msg + 60
+2   ...ple.CoreServices.CarbonCore 	0x90b6e034 SwitchContexts + 96
+3   ...ple.CoreServices.CarbonCore 	0x90b63cc4 YieldToThread + 372
+4   ...ple.CoreServices.CarbonCore 	0x90b6df7c SetThreadState + 192
+5   ...ple.CoreServices.CarbonCore 	0x90b6de98 SetThreadStateEndCritical + 144
+6   com.adobe.AcrobatPlugin.eBook  	0x2bac4aac main + 5764
+7   com.adobe.AcrobatPlugin.eBook  	0x2bac49ec main + 5572
+8   com.adobe.AcrobatPlugin.eBook  	0x2bac4954 main + 5420
+9   com.adobe.AcrobatPlugin.eBook  	0x2bac48e8 main + 5312
+10  com.adobe.AcrobatPlugin.eBook  	0x2bac486c main + 5188
+11  ...ple.CoreServices.CarbonCore 	0x90b6e0d8 InvokeThreadEntryUPP + 24
+12  ...ple.CoreServices.CarbonCore 	0x90b6dcf8 CooperativeThread + 220
+13  libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 4:
+0   libSystem.B.dylib              	0x9000b208 mach_msg_trap + 8
+1   libSystem.B.dylib              	0x9000b15c mach_msg + 60
+2   com.apple.CoreFoundation       	0x9075d114 __CFRunLoopRun + 832
+3   com.apple.CoreFoundation       	0x9075ca18 CFRunLoopRunSpecific + 268
+4   com.apple.CoreFoundation       	0x9076be78 CFRunLoopRun + 52
+5   ...dobe.AcrobatPlugin.Comments 	0x2b52bd4c main + 1417544
+6   ...dobe.AcrobatPlugin.Comments 	0x2b52c670 main + 1419884
+7   ...ple.CoreServices.CarbonCore 	0x90b41a44 PrivateMPEntryPoint + 76
+8   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 5:
+0   libSystem.B.dylib              	0x9000b208 mach_msg_trap + 8
+1   libSystem.B.dylib              	0x9000b15c mach_msg + 60
+2   com.apple.CoreFoundation       	0x9075d114 __CFRunLoopRun + 832
+3   com.apple.CoreFoundation       	0x9075ca18 CFRunLoopRunSpecific + 268
+4   com.apple.CoreFoundation       	0x9076be78 CFRunLoopRun + 52
+5   com.adobe.AcrobatPlugin.SOAP   	0x2ebd18e0 main + 524344
+6   com.adobe.AcrobatPlugin.SOAP   	0x2ebd201c main + 526196
+7   ...ple.CoreServices.CarbonCore 	0x90b41a44 PrivateMPEntryPoint + 76
+8   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 6:
+0   libSystem.B.dylib              	0x9002e44c kevent + 12
+1   com.apple.DesktopServices      	0x927ee5d4 TFSNotificationTask::FSNotificationTaskProc(void*) + 56
+2   ...ple.CoreServices.CarbonCore 	0x90b41a44 PrivateMPEntryPoint + 76
+3   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 7:
+0   libSystem.B.dylib              	0x9002b8a8 semaphore_wait_signal_trap + 8
+1   libSystem.B.dylib              	0x9003001c pthread_cond_wait + 488
+2   ...ple.CoreServices.CarbonCore 	0x90b41c34 MPWaitOnQueue + 224
+3   com.apple.DesktopServices      	0x927eee20 TNodeSyncTask::SyncTaskProc(void*) + 112
+4   ...ple.CoreServices.CarbonCore 	0x90b41a44 PrivateMPEntryPoint + 76
+5   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 8:
+0   libSystem.B.dylib              	0x9000b208 mach_msg_trap + 8
+1   libSystem.B.dylib              	0x9000b15c mach_msg + 60
+2   com.apple.CoreFoundation       	0x9075d114 __CFRunLoopRun + 832
+3   com.apple.CoreFoundation       	0x9075ca18 CFRunLoopRunSpecific + 268
+4   com.apple.Foundation           	0x92905b9c +[NSURLConnection(NSURLConnectionInternal) _resourceLoadLoop:] + 264
+5   com.apple.Foundation           	0x928de6d4 forkThreadForFunction + 108
+6   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 9:
+0   libSystem.B.dylib              	0x9000b208 mach_msg_trap + 8
+1   libSystem.B.dylib              	0x9000b15c mach_msg + 60
+2   com.apple.CoreFoundation       	0x9075d114 __CFRunLoopRun + 832
+3   com.apple.CoreFoundation       	0x9075ca18 CFRunLoopRunSpecific + 268
+4   com.apple.Foundation           	0x92906cdc +[NSURLCache _diskCacheSyncLoop:] + 152
+5   com.apple.Foundation           	0x928de6d4 forkThreadForFunction + 108
+6   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 10:
+0   libSystem.B.dylib              	0x9000b208 mach_msg_trap + 8
+1   libSystem.B.dylib              	0x9000b15c mach_msg + 60
+2   com.apple.CoreFoundation       	0x9075d114 __CFRunLoopRun + 832
+3   com.apple.CoreFoundation       	0x9075ca18 CFRunLoopRunSpecific + 268
+4   com.apple.Foundation           	0x928ed664 -[NSRunLoop runMode:beforeDate:] + 172
+5   com.apple.Foundation           	0x928ed59c -[NSRunLoop run] + 76
+6   com.apple.WebKit               	0x95994690 +[WebFileDatabase _syncLoop:] + 176
+7   com.apple.Foundation           	0x928de6d4 forkThreadForFunction + 108
+8   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 11:
+0   libSystem.B.dylib              	0x9002b8a8 semaphore_wait_signal_trap + 8
+1   libSystem.B.dylib              	0x9003001c pthread_cond_wait + 488
+2   ...ple.CoreServices.CarbonCore 	0x90b41c34 MPWaitOnQueue + 224
+3   ...thesis.MacinTalkSynthesizer 	0x0870f4bc MTBEWorker::WorkLoop(MTBEWorker*) + 168
+4   ...thesis.MacinTalkSynthesizer 	0x0870e6f4 MTBEWorkerStartMPTask + 16
+5   ...ple.CoreServices.CarbonCore 	0x90b41a44 PrivateMPEntryPoint + 76
+6   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 12:
+0   libSystem.B.dylib              	0x9002b8a8 semaphore_wait_signal_trap + 8
+1   libSystem.B.dylib              	0x9003001c pthread_cond_wait + 488
+2   ...ple.CoreServices.CarbonCore 	0x90b41c34 MPWaitOnQueue + 224
+3   ...thesis.MacinTalkSynthesizer 	0x0870f4bc MTBEWorker::WorkLoop(MTBEWorker*) + 168
+4   ...thesis.MacinTalkSynthesizer 	0x0870e6f4 MTBEWorkerStartMPTask + 16
+5   ...ple.CoreServices.CarbonCore 	0x90b41a44 PrivateMPEntryPoint + 76
+6   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 13:
+0   libSystem.B.dylib              	0x90040258 mach_wait_until + 8
+1   libSystem.B.dylib              	0x90040020 nanosleep + 384
+2   libSystem.B.dylib              	0x900437fc usleep + 60
+3   ....speech.synthesis.framework 	0x9194ff20 PollChannelStatus + 36
+4   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 0 crashed with PPC Thread State 64:
+  srr0: 0x0000000090009280 srr1: 0x000000000200f030                        vrsave: 0x0000000000000000
+    cr: 0x84028224          xer: 0x0000000020000004   lr: 0x0000000090008f94  ctr: 0x0000000090008ed8
+    r0: 0x0000000000000000   r1: 0x00000000bfff9eb0   r2: 0x000000000b629c80   r3: 0x0000000001800038
+    r4: 0x0000000000000000   r5: 0x00000000000000d4   r6: 0x00000000ffffffff   r7: 0x0000000000000001
+    r8: 0x000000000000fff2   r9: 0x0000000000000000  r10: 0x000000000000053a  r11: 0x000000000b602004
+   r12: 0x0000000090008ed8  r13: 0x0000000000000002  r14: 0x0000000000000000  r15: 0x0000000025914dc8
+   r16: 0x0000000000000000  r17: 0x0000000000000000  r18: 0x0000000000000000  r19: 0x0000000000000010
+   r20: 0x00000000bfffa910  r21: 0x00000000017fdf14  r22: 0x0000000025143844  r23: 0x0000000008d9e518
+   r24: 0x000000000000000e  r25: 0x00000000000000e0  r26: 0x000000000000001f  r27: 0x0000000001800000
+   r28: 0x000000000b529c80  r29: 0x000000000b529d60  r30: 0x000000000b52f8c0  r31: 0x0000000090008ee4
+
+Binary Images Description:
+    0x1000 -     0x1fff com.adobe.Reader 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/MacOS/Adobe Reader
+ 0x11a0000 -  0x11a2fff com.apple.textencoding.unicode 2.0	/System/Library/TextEncodings/Unicode Encodings.bundle/Contents/MacOS/Unicode Encodings
+ 0x1271000 -  0x1272fff com.adobe.Acrobat.print.pde.CopiesPages 7.0.0	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/MacOS/CopiesPages.plugin/Contents/MacOS/CopiesPages
+ 0x1279000 -  0x1279fff com.apple.SpotLightCM 1.0 (121.20.2)	/System/Library/Contextual Menu Items/SpotlightCM.plugin/Contents/MacOS/SpotlightCM
+ 0x5858000 -  0x5891fff com.adobe.selfhealer AdobeSelfHealing version 2.0.4 (2.0.4)	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Frameworks/AdobeSelfHealing.framework/AdobeSelfHealing
+ 0x5e5d000 -  0x5ee5fff Onix 	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Frameworks/Onix.Framework/Onix
+ 0x5f7a000 -  0x5f93fff com.apple.print.PrintingTiogaPDEs 4.3 (157.7)	/System/Library/Frameworks/Carbon.framework/Frameworks/Print.framework/Versions/A/Plugins/PrintingTiogaPDEs.bundle/Contents/MacOS/PrintingTiogaPDEs
+ 0x5fd2000 -  0x5ffdfff com.apple.print.framework.Print.Private 4.3 (157.7)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/Current/Plugins/PrintCocoaUI.bundle/Contents/MacOS/PrintCocoaUI
+ 0x6011000 -  0x6030fff com.apple.print.PrintingCocoaPDEs 4.3 (157.7)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Plugins/PrintingCocoaPDEs.bundle/Contents/MacOS/PrintingCocoaPDEs
+ 0x65fe000 -  0x6610fff libagldata.dylib.28.0 	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Frameworks/AGLConverter.framework/Versions/2.8/libagldata.dylib.28.0
+ 0x6a83000 -  0x6a85fff com.apple.AutomatorCMM 1.0 (48)	/System/Library/Contextual Menu Items/AutomatorCMM.plugin/Contents/MacOS/AutomatorCMM
+ 0x6ad9000 -  0x6addfff com.apple.FolderActionsMenu 1.3	/System/Library/Contextual Menu Items/FolderActionsMenu.plugin/Contents/MacOS/FolderActionsMenu
+ 0x78ac000 -  0x78f8fff AGLConverter 	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Frameworks/AGLConverter.framework/AGLConverter
+ 0x8087000 -  0x81c4fff com.adobe.coretech.adm 3.10x30 (3.1)	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/MacOS/SPPlugins/AdobeADM.bundle/Contents/MacOS/AdobeADM
+ 0x8705000 -  0x8757fff com.apple.speech.synthesis.MacinTalkSynthesizer 3.3	/System/Library/Speech/Synthesizers/MacinTalk.SpeechSynthesizer/Contents/MacOS/MacinTalk
+0x18017000 - 0x1803bfff com.adobe.AcrobatPlugin.ImageViewer 7.0.0	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/ImageViewer.acroplugin/ImageViewer
+0x182cb000 - 0x1835efff AdobeJP2K 	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Frameworks/AdobeJP2K.framework/Versions/A/AdobeJP2K
+0x185d6000 - 0x185fafff AdobeAXE8SharedExpat 	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Frameworks/AdobeAXE8SharedExpat.framework/Versions/A/AdobeAXE8SharedExpat
+0x18631000 - 0x18656fff AdobeAXE16SharedExpat 	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Frameworks/AdobeAXE16SharedExpat.framework/Versions/A/AdobeAXE16SharedExpat
+0x18745000 - 0x187f2fff AdobeAXSLE 	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Frameworks/AdobeAXSLE.framework/Versions/A/AdobeAXSLE
+0x188eb000 - 0x18928fff MSL 	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Frameworks/MSL.framework/Versions/A/MSL
+0x25000000 - 0x25825fff Acrobat 	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Frameworks/Acrobat.framework/Versions/A/Acrobat
+0x271bd000 - 0x27265fff AdobeACE 	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Frameworks/AdobeACE.framework/Versions/A/AdobeACE
+0x27318000 - 0x275b2fff AdobeAGM 	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Frameworks/AdobeAGM.framework/Versions/A/AdobeAGM
+0x27bf0000 - 0x27c17fff AdobeBIB 	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Frameworks/AdobeBIB.framework/Versions/A/AdobeBIB
+0x27cc6000 - 0x27eebfff AdobeCoolType 	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Frameworks/AdobeCoolType.framework/Versions/A/AdobeCoolType
+0x2a11a000 - 0x2a157fff com.adobe.AcrobatPlugin.Accessibility 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/Accessibility.acroplugin/Accessibility
+0x2a1a3000 - 0x2a7f2fff com.adobe.AcrobatPlugin.AcroForm 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/AcroForm.acroplugin/AcroForm
+0x2b252000 - 0x2b2bffff com.adobe.AcrobatPlugin.Checkers 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/Checkers.acroplugin/Checkers
+0x2b3d0000 - 0x2b592fff com.adobe.AcrobatPlugin.Comments 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/Comments.acroplugin/Comments
+0x2b816000 - 0x2b934fff com.adobe.AcrobatPlugin.DigSig 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/DigSig.acroplugin/DigSig
+0x2bac1000 - 0x2bbb4fff com.adobe.AcrobatPlugin.eBook 7.0.0	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/eBook.acroplugin/eBook
+0x2bd8f000 - 0x2bdacfff com.adobe.AcrobatPlugin.EFS 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/EFS.acroplugin/EFS
+0x2bdde000 - 0x2bef8fff com.adobe.AcrobatPlugin.EScript 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/EScript.acroplugin/EScript
+0x2c041000 - 0x2c064fff com.adobe.AcrobatPlugin.EWH 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/EWH.acroplugin/EWH
+0x2c07f000 - 0x2c085fff com.adobe.AcrobatPlugin.HLS 7.0.0	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/HLS.acroplugin/HLS
+0x2d07d000 - 0x2d080fff com.adobe.AcrobatPlugin.LegalPDF 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/LegalPDF.acroplugin/LegalPDF
+0x2d088000 - 0x2d2b0fff com.adobe.AcrobatPlugin.MakeAccessible 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/MakeAccessible.acroplugin/MakeAccessible
+0x2d711000 - 0x2d85efff com.adobe.AcrobatPlugin.Multimedia 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/Multimedia.acroplugin/Multimedia
+0x2dc75000 - 0x2dce9fff com.adobe.AcrobatPlugin.PDDom 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/PDDom.acroplugin/PDDom
+0x2dd9a000 - 0x2de09fff com.adobe.AcrobatPlugin.Template 7.0.0	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/PictureTasks.acroplugin/PictureTasks
+0x2debe000 - 0x2e25ffff com.adobe.AcrobatPlugin.PPKLite 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/PPKLite.acroplugin/PPKLite
+0x2e841000 - 0x2e880fff com.adobe.AcrobatPlugin.Reflow 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/Reflow.acroplugin/Reflow
+0x2e8fc000 - 0x2e93bfff com.adobe.AcrobatPlugin.SaveAsRTF 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/SaveAsRTF.acroplugin/SaveAsRTF
+0x2ea95000 - 0x2eacffff com.adobe.AcrobatPlugin.Search 7.0.0	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/Search.acroplugin/Search
+0x2eb1e000 - 0x2eb2ffff com.adobe.AcrobatPlugin.SendMail 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/SendMail.acroplugin/SendMail
+0x2eb50000 - 0x2ec09fff com.adobe.AcrobatPlugin.SOAP 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/SOAP.acroplugin/SOAP
+0x2ed14000 - 0x2ed60fff com.adobe.AcrobatPlugin.Spelling 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/Spelling.acroplugin/Spelling
+0x2f368000 - 0x2f3b0fff com.adobe.AcrobatPlugin.Updater 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/Updater.acroplugin/Updater
+0x2f4c0000 - 0x2f4e0fff com.adobe.AcrobatPlugin.WebLink 7.0.5	/Applications/Adobe Reader 7.0.5/Adobe Reader 7.0.5.app/Contents/Plug-ins/WebLink.acroplugin/WebLink
+0x8fe00000 - 0x8fe54fff dyld 44.2	/usr/lib/dyld
+0x90000000 - 0x901b3fff libSystem.B.dylib 	/usr/lib/libSystem.B.dylib
+0x9020b000 - 0x9020ffff libmathCommon.A.dylib 	/usr/lib/system/libmathCommon.A.dylib
+0x90211000 - 0x90264fff com.apple.CoreText 1.0.1 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreText.framework/Versions/A/CoreText
+0x90291000 - 0x90342fff ATS 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+0x90371000 - 0x906aefff com.apple.CoreGraphics 1.256.27 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
+0x9073a000 - 0x90813fff com.apple.CoreFoundation 6.4.4 (368.25)	/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+0x9085c000 - 0x9085cfff com.apple.CoreServices 10.4 (???)	/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+0x9085e000 - 0x90960fff libicucore.A.dylib 	/usr/lib/libicucore.A.dylib
+0x909ba000 - 0x90a3efff libobjc.A.dylib 	/usr/lib/libobjc.A.dylib
+0x90a68000 - 0x90ad6fff com.apple.framework.IOKit 1.4 (???)	/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+0x90aed000 - 0x90afffff libauto.dylib 	/usr/lib/libauto.dylib
+0x90b06000 - 0x90dddfff com.apple.CoreServices.CarbonCore 671.2	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+0x90e43000 - 0x90ec3fff com.apple.CoreServices.OSServices 4.1	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+0x90f0d000 - 0x90f4efff com.apple.CFNetwork 10.4.3 (129.2)	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+0x90f63000 - 0x90f7bfff com.apple.WebServices 1.1.2 (1.1.0)	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebServicesCore.framework/Versions/A/WebServicesCore
+0x90f8b000 - 0x9100cfff com.apple.SearchKit 1.0.4	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+0x91052000 - 0x9107bfff com.apple.Metadata 10.4.3 (121.20.2)	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+0x9108c000 - 0x9109afff libz.1.dylib 	/usr/lib/libz.1.dylib
+0x9109d000 - 0x9125ffff com.apple.security 4.2 (24844)	/System/Library/Frameworks/Security.framework/Versions/A/Security
+0x91362000 - 0x9136bfff com.apple.DiskArbitration 2.1	/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration
+0x91372000 - 0x91399fff com.apple.SystemConfiguration 1.8.1	/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+0x913ac000 - 0x913b4fff libgcc_s.1.dylib 	/usr/lib/libgcc_s.1.dylib
+0x913b9000 - 0x913d9fff libmx.A.dylib 	/usr/lib/libmx.A.dylib
+0x913df000 - 0x913e7fff libbsm.dylib 	/usr/lib/libbsm.dylib
+0x913eb000 - 0x91469fff com.apple.audio.CoreAudio 3.0.1	/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
+0x914a7000 - 0x914a7fff com.apple.ApplicationServices 10.4 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+0x914a9000 - 0x914e1fff com.apple.AE 1.5 (297)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+0x914fc000 - 0x915c9fff com.apple.ColorSync 4.4.3	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+0x9161e000 - 0x916b1fff com.apple.print.framework.PrintCore 4.3 (172.3)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+0x916f8000 - 0x917b5fff com.apple.QD 3.8.18 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+0x917f3000 - 0x91851fff com.apple.HIServices 1.5.1 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+0x9187f000 - 0x918a3fff com.apple.LangAnalysis 1.6.1	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+0x918b7000 - 0x918dcfff com.apple.FindByContent 1.5	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/FindByContent.framework/Versions/A/FindByContent
+0x918ef000 - 0x91931fff com.apple.LaunchServices 10.4.5 (168)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+0x9194d000 - 0x91961fff com.apple.speech.synthesis.framework 3.3	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+0x9196f000 - 0x919a8fff com.apple.ImageIO.framework 1.4.3	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/ImageIO
+0x919bd000 - 0x91a85fff libcrypto.0.9.7.dylib 	/usr/lib/libcrypto.0.9.7.dylib
+0x91ad3000 - 0x91ae8fff libcups.2.dylib 	/usr/lib/libcups.2.dylib
+0x91aed000 - 0x91b09fff libJPEG.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib
+0x91b0e000 - 0x91b7dfff libJP2.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libJP2.dylib
+0x91b94000 - 0x91b98fff libGIF.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib
+0x91b9a000 - 0x91bcbfff libRaw.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libRaw.dylib
+0x91bcf000 - 0x91c12fff libTIFF.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libTIFF.dylib
+0x91c19000 - 0x91c32fff libPng.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libPng.dylib
+0x91c37000 - 0x91c3afff libRadiance.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib
+0x91c3c000 - 0x91c3cfff com.apple.Accelerate 1.1.1 (Accelerate 1.1.1)	/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
+0x91c3e000 - 0x91d28fff com.apple.vImage 2.0	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
+0x91d30000 - 0x91d4ffff com.apple.Accelerate.vecLib 3.1.1 (vecLib 3.1.1)	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
+0x91dbb000 - 0x91e20fff libvMisc.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
+0x91e2a000 - 0x91ebcfff libvDSP.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
+0x91ed6000 - 0x92466fff libBLAS.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+0x924ae000 - 0x927befff libLAPACK.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+0x927eb000 - 0x92877fff com.apple.DesktopServices 1.3.1	/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
+0x928b9000 - 0x92ae3fff com.apple.Foundation 6.4.2 (567.21)	/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+0x92c01000 - 0x92cdffff libxml2.2.dylib 	/usr/lib/libxml2.2.dylib
+0x92cff000 - 0x92dedfff libiconv.2.dylib 	/usr/lib/libiconv.2.dylib
+0x92dff000 - 0x92e1dfff libGL.dylib 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+0x92e28000 - 0x92e82fff libGLU.dylib 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+0x92ea0000 - 0x92ea0fff com.apple.Carbon 10.4 (???)	/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
+0x92ea2000 - 0x92eb6fff com.apple.ImageCapture 3.0	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture
+0x92ece000 - 0x92edefff com.apple.speech.recognition.framework 3.4	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition
+0x92eea000 - 0x92efffff com.apple.securityhi 2.0 (203)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI
+0x92f11000 - 0x92f98fff com.apple.ink.framework 101.2 (69)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink
+0x92fac000 - 0x92fb7fff com.apple.help 1.0.3 (32)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help
+0x92fc1000 - 0x92feefff com.apple.openscripting 1.2.3 (???)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting
+0x93008000 - 0x93018fff com.apple.print.framework.Print 5.0 (190.1)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print
+0x93024000 - 0x9308afff com.apple.htmlrendering 1.1.2	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering
+0x930bb000 - 0x9310dfff com.apple.NavigationServices 3.4.2	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices
+0x93139000 - 0x93156fff com.apple.audio.SoundManager 3.9	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound
+0x93168000 - 0x93175fff com.apple.CommonPanels 1.2.2 (73)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels
+0x9317e000 - 0x93490fff com.apple.HIToolbox 1.4.4 (???)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+0x935dc000 - 0x935e8fff com.apple.opengl 1.4.6	/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL
+0x935ed000 - 0x9360efff com.apple.DirectoryService.Framework 3.0	/System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService
+0x9367a000 - 0x9367afff com.apple.Cocoa 6.4 (???)	/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa
+0x9367c000 - 0x93caffff com.apple.AppKit 6.4.3 (824.23)	/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+0x9403b000 - 0x940aafff com.apple.CoreData 50 (77)	/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
+0x940e3000 - 0x941adfff com.apple.audio.toolbox.AudioToolbox 1.4.1	/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
+0x94201000 - 0x94201fff com.apple.audio.units.AudioUnit 1.4	/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit
+0x94203000 - 0x9437bfff com.apple.QuartzCore 1.4.3	/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore
+0x943c5000 - 0x94402fff libsqlite3.0.dylib 	/usr/lib/libsqlite3.0.dylib
+0x9440a000 - 0x9445afff libGLImage.dylib 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib
+0x945fc000 - 0x9460bfff libCGATS.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGATS.A.dylib
+0x94613000 - 0x9461ffff libCSync.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib
+0x94664000 - 0x9467cfff libRIP.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib
+0x94683000 - 0x948edfff com.apple.QuickTime 7.0.3	/System/Library/Frameworks/QuickTime.framework/Versions/A/QuickTime
+0x94ac4000 - 0x94bf2fff com.apple.AddressBook.framework 4.0.3 (483)	/System/Library/Frameworks/AddressBook.framework/Versions/A/AddressBook
+0x94c84000 - 0x94c93fff com.apple.DSObjCWrappers.Framework 1.1	/System/Library/PrivateFrameworks/DSObjCWrappers.framework/Versions/A/DSObjCWrappers
+0x94c9b000 - 0x94cc8fff com.apple.LDAPFramework 1.4.1 (69.0.1)	/System/Library/Frameworks/LDAP.framework/Versions/A/LDAP
+0x94ccf000 - 0x94cdffff libsasl2.2.dylib 	/usr/lib/libsasl2.2.dylib
+0x94ce3000 - 0x94d12fff libssl.0.9.7.dylib 	/usr/lib/libssl.0.9.7.dylib
+0x94d22000 - 0x94d3ffff libresolv.9.dylib 	/usr/lib/libresolv.9.dylib
+0x95992000 - 0x95a1efff com.apple.WebKit 416.12	/System/Library/Frameworks/WebKit.framework/WebKit
+0x95a79000 - 0x95b6dfff com.apple.JavaScriptCore 416.14	/System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/JavaScriptCore.framework/Versions/A/JavaScriptCore
+0x95bbe000 - 0x95ec2fff com.apple.WebCore 416.14	/System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/WebCore.framework/Versions/A/WebCore
+0x96047000 - 0x96070fff libxslt.1.dylib 	/usr/lib/libxslt.1.dylib
+0x968e7000 - 0x968e8fff libCyrillicConverter.dylib 	/System/Library/CoreServices/Encodings/libCyrillicConverter.dylib
+0x968ea000 - 0x968ebfff libGreekConverter.dylib 	/System/Library/CoreServices/Encodings/libGreekConverter.dylib
+0x968f0000 - 0x96906fff libJapaneseConverter.dylib 	/System/Library/CoreServices/Encodings/libJapaneseConverter.dylib
+0x96908000 - 0x96928fff libKoreanConverter.dylib 	/System/Library/CoreServices/Encodings/libKoreanConverter.dylib
+0x96936000 - 0x96944fff libSimplifiedChineseConverter.dylib 	/System/Library/CoreServices/Encodings/libSimplifiedChineseConverter.dylib
+0x96949000 - 0x9694afff libThaiConverter.dylib 	/System/Library/CoreServices/Encodings/libThaiConverter.dylib
+0x9694c000 - 0x9695ffff libTraditionalChineseConverter.dylib 	/System/Library/CoreServices/Encodings/libTraditionalChineseConverter.dylib
+0x96f2e000 - 0x96f46fff com.apple.speech.SpeechDictionary 3.3	/System/Library/PrivateFrameworks/SpeechDictionary.framework/Versions/A/SpeechDictionary
+0x97395000 - 0x973b4fff com.apple.vecLib 3.1.1 (vecLib 3.1.1)	/System/Library/Frameworks/vecLib.framework/Versions/A/vecLib
+0x9ae0a000 - 0x9ae28fff com.apple.OpenTransport 2.0	/System/Library/PrivateFrameworks/OpenTransport.framework/OpenTransport
+0x9b713000 - 0x9b72afff libCFilter.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCFilter.A.dylib
+

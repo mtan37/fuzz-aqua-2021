@@ -1,0 +1,374 @@
+**********
+
+Host Name:      lamarck
+Date/Time:      2005-11-18 21:51:31.363 -0600
+OS Version:     10.4.3 (Build 8F46)
+Report Version: 3
+
+Command: Camino
+Path:    /Applications/Camino.app/Contents/MacOS/Camino
+Parent:  bash [583]
+
+Version: 0.8.4 (0.8.4)
+
+PID:    913
+Thread: 0
+
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_INVALID_ADDRESS (0x0001) at 0xa1b1c1d3
+
+Thread 0 Crashed:
+0   com.apple.QD              	0x9170ab20 SetGWorld + 64
+1   com.apple.AppKit          	0x93a34634 -[NSQuickDrawView dealloc] + 36
+2   org.mozilla.navigator     	0x005b0b10 -[ChildView dealloc] + 44
+3   com.apple.AppKit          	0x93692284 -[NSView release] + 200
+4   com.apple.Foundation      	0x928b7ea8 NSPopAutoreleasePool + 536
+5   com.apple.AppKit          	0x9367db54 -[NSApplication run] + 544
+6   com.apple.AppKit          	0x9376e618 NSApplicationMain + 452
+7   org.mozilla.navigator     	0x0000a308 _start + 380
+8   org.mozilla.navigator     	0x0000a188 start + 48
+
+Thread 1:
+0   libSystem.B.dylib         	0x9001f20c select + 12
+1   libnspr4.dylib            	0x00cc57d8 poll + 392
+2   libnspr4.dylib            	0x00cc2024 _pr_poll_with_poll + 812
+3   org.mozilla.navigator     	0x000ad854 nsSocketTransportService::Run() + 408
+4   libxpcom.dylib            	0x05043ae0 nsThread::Main(void*) + 56
+5   libnspr4.dylib            	0x00cc346c _pt_root + 172
+6   libSystem.B.dylib         	0x9002b200 _pthread_body + 96
+
+Thread 2:
+0   libSystem.B.dylib         	0x9000b208 mach_msg_trap + 8
+1   libSystem.B.dylib         	0x9000b15c mach_msg + 60
+2   libjvm.dylib              	0x94defe48 JNI_CreateJavaVM_Impl + 5936
+3   libjvm.dylib              	0x94defddc JNI_CreateJavaVM_Impl + 5828
+4   libjvm.dylib              	0x94db0fe0 JVM_GetClassMethodsCount + 520
+5   libSystem.B.dylib         	0x9002b200 _pthread_body + 96
+
+Thread 3:
+0   libSystem.B.dylib         	0x9000b208 mach_msg_trap + 8
+1   libSystem.B.dylib         	0x9000b15c mach_msg + 60
+2   libjvm.dylib              	0x94d4dcb4 JVM_NewInstance + 8136
+3   libjvm.dylib              	0x94d6d304 JVM_FillInStackTrace + 692
+4   libjvm.dylib              	0x94d72d10 JVM_Send + 17088
+5   libjvm.dylib              	0x94e04d38 JNI_CreateJavaVM_Impl + 91680
+6   libjvm.dylib              	0x94db0fe0 JVM_GetClassMethodsCount + 520
+7   libSystem.B.dylib         	0x9002b200 _pthread_body + 96
+
+Thread 4:
+0   libSystem.B.dylib         	0x9000b208 mach_msg_trap + 8
+1   libSystem.B.dylib         	0x9000b15c mach_msg + 60
+2   libjvm.dylib              	0x94d4dc20 JVM_NewInstance + 7988
+3   libjvm.dylib              	0x94d55df0 JVM_ArrayCopy + 1240
+4   libjvm.dylib              	0x94d6bf28 JVM_MonitorNotify + 1908
+5   libjvm.dylib              	0x94d6cb9c JVM_MonitorWait + 216
+6   <<00000000>> 	0x0e10a668 0 + 235972200
+7   <<00000000>> 	0x0e10868c 0 + 235964044
+8   <<00000000>> 	0x0e10868c 0 + 235964044
+9   <<00000000>> 	0xa4d56f30 typeinfo name for std::bad_exception + 28296
+10  libjvm.dylib              	0x94d4b4ac JVM_CurrentTimeMillis + 4968
+11  libjvm.dylib              	0x94d80970 JVM_GetCPClassNameUTF + 6044
+12  libjvm.dylib              	0x94d861e4 JVM_FindClassFromClass + 2668
+13  libjvm.dylib              	0x94d9f508 JVM_IsSameClassPackage + 4016
+14  libjvm.dylib              	0x94d99adc JVM_GetMethodIxExceptionTableEntry + 8240
+15  libjvm.dylib              	0x94e87f08 JVM_FindSignal + 208316
+16  libjvm.dylib              	0x94db0fe0 JVM_GetClassMethodsCount + 520
+17  libSystem.B.dylib         	0x9002b200 _pthread_body + 96
+
+Thread 5:
+0   libSystem.B.dylib         	0x9000b208 mach_msg_trap + 8
+1   libSystem.B.dylib         	0x9000b15c mach_msg + 60
+2   libjvm.dylib              	0x94d4dc20 JVM_NewInstance + 7988
+3   libjvm.dylib              	0x94d55df0 JVM_ArrayCopy + 1240
+4   libjvm.dylib              	0x94d6bf28 JVM_MonitorNotify + 1908
+5   libjvm.dylib              	0x94d6cb9c JVM_MonitorWait + 216
+6   <<00000000>> 	0x0e10a668 0 + 235972200
+7   <<00000000>> 	0x0e10868c 0 + 235964044
+8   <<00000000>> 	0x0e1085cc 0 + 235963852
+9   <<00000000>> 	0x0e1085cc 0 + 235963852
+10  <<00000000>> 	0xa4d56f30 typeinfo name for std::bad_exception + 28296
+11  libjvm.dylib              	0x94d4b4ac JVM_CurrentTimeMillis + 4968
+12  libjvm.dylib              	0x94d80970 JVM_GetCPClassNameUTF + 6044
+13  libjvm.dylib              	0x94d861e4 JVM_FindClassFromClass + 2668
+14  libjvm.dylib              	0x94d9f508 JVM_IsSameClassPackage + 4016
+15  libjvm.dylib              	0x94d99adc JVM_GetMethodIxExceptionTableEntry + 8240
+16  libjvm.dylib              	0x94e87f08 JVM_FindSignal + 208316
+17  libjvm.dylib              	0x94db0fe0 JVM_GetClassMethodsCount + 520
+18  libSystem.B.dylib         	0x9002b200 _pthread_body + 96
+
+Thread 6:
+0   libSystem.B.dylib         	0x9000b208 mach_msg_trap + 8
+1   libSystem.B.dylib         	0x9000b15c mach_msg + 60
+2   libjvm.dylib              	0x94d4dcb4 JVM_NewInstance + 8136
+3   libjvm.dylib              	0x94d54dcc JVM_GetClassLoader + 6148
+4   libjvm.dylib              	0x94d54b74 JVM_GetClassLoader + 5548
+5   libjvm.dylib              	0x94db0fe0 JVM_GetClassMethodsCount + 520
+6   libSystem.B.dylib         	0x9002b200 _pthread_body + 96
+
+Thread 7:
+0   libSystem.B.dylib         	0x9000b208 mach_msg_trap + 8
+1   libSystem.B.dylib         	0x9000b15c mach_msg + 60
+2   libjvm.dylib              	0x94d4dc20 JVM_NewInstance + 7988
+3   libjvm.dylib              	0x94d6d35c JVM_FillInStackTrace + 780
+4   libjvm.dylib              	0x94e070a4 JVM_InitProperties + 6836
+5   libjvm.dylib              	0x94e06ea0 JVM_InitProperties + 6320
+6   libjvm.dylib              	0x94e87f08 JVM_FindSignal + 208316
+7   libjvm.dylib              	0x94db0fe0 JVM_GetClassMethodsCount + 520
+8   libSystem.B.dylib         	0x9002b200 _pthread_body + 96
+
+Thread 8:
+0   libSystem.B.dylib         	0x9000b208 mach_msg_trap + 8
+1   libSystem.B.dylib         	0x9000b15c mach_msg + 60
+2   libjvm.dylib              	0x94d4dc20 JVM_NewInstance + 7988
+3   libjvm.dylib              	0x94d6d35c JVM_FillInStackTrace + 780
+4   libjvm.dylib              	0x94d95710 JVM_StartThread + 1388
+5   libjvm.dylib              	0x94d84280 JVM_FindLoadedClass + 2632
+6   libjvm.dylib              	0x94e87f08 JVM_FindSignal + 208316
+7   libjvm.dylib              	0x94db0fe0 JVM_GetClassMethodsCount + 520
+8   libSystem.B.dylib         	0x9002b200 _pthread_body + 96
+
+Thread 9:
+0   libSystem.B.dylib         	0x90053f68 semaphore_timedwait_signal_trap + 8
+1   libSystem.B.dylib         	0x90053dc8 pthread_cond_timedwait + 672
+2   libnspr4.dylib            	0x00cbe38c pt_TimedWait + 168
+3   libnspr4.dylib            	0x00cbe5f0 PR_WaitCondVar + 136
+4   libxpcom.dylib            	0x050465f4 TimerThread::Run() + 428
+5   libxpcom.dylib            	0x05043ae0 nsThread::Main(void*) + 56
+6   libnspr4.dylib            	0x00cc346c _pt_root + 172
+7   libSystem.B.dylib         	0x9002b200 _pthread_body + 96
+
+Thread 10:
+0   libSystem.B.dylib         	0x9001f20c select + 12
+1   com.apple.CoreFoundation  	0x9076f99c __CFSocketManager + 472
+2   libSystem.B.dylib         	0x9002b200 _pthread_body + 96
+
+Thread 11:
+0   libSystem.B.dylib         	0x9002b8a8 semaphore_wait_signal_trap + 8
+1   libSystem.B.dylib         	0x9003001c pthread_cond_wait + 488
+2   com.apple.Foundation      	0x928e2840 -[NSConditionLock lockWhenCondition:] + 68
+3   com.apple.AppKit          	0x9371e4dc -[NSUIHeartBeat _heartBeatThread:] + 324
+4   com.apple.Foundation      	0x928db6d4 forkThreadForFunction + 108
+5   libSystem.B.dylib         	0x9002b200 _pthread_body + 96
+
+Thread 12:
+0   libSystem.B.dylib         	0x9000b208 mach_msg_trap + 8
+1   libSystem.B.dylib         	0x9000b15c mach_msg + 60
+2   com.apple.CoreFoundation  	0x9075d108 __CFRunLoopRun + 832
+3   com.apple.CoreFoundation  	0x9075ca0c CFRunLoopRunSpecific + 268
+4   com.apple.CoreFoundation  	0x9076be6c CFRunLoopRun + 52
+5   com.apple.QuickTime       	0x946d9028 QTSNetworkThread_RunThread + 144
+6   libSystem.B.dylib         	0x9002b200 _pthread_body + 96
+
+Thread 13:
+0   libSystem.B.dylib         	0x9000b208 mach_msg_trap + 8
+1   libSystem.B.dylib         	0x9000b15c mach_msg + 60
+2   com.apple.CoreFoundation  	0x9075d108 __CFRunLoopRun + 832
+3   com.apple.CoreFoundation  	0x9075ca0c CFRunLoopRunSpecific + 268
+4   com.apple.Foundation      	0x92902b9c +[NSURLConnection(NSURLConnectionInternal) _resourceLoadLoop:] + 264
+5   com.apple.Foundation      	0x928db6d4 forkThreadForFunction + 108
+6   libSystem.B.dylib         	0x9002b200 _pthread_body + 96
+
+Thread 14:
+0   libSystem.B.dylib         	0x9000b208 mach_msg_trap + 8
+1   libSystem.B.dylib         	0x9000b15c mach_msg + 60
+2   com.apple.CoreFoundation  	0x9075d108 __CFRunLoopRun + 832
+3   com.apple.CoreFoundation  	0x9075ca0c CFRunLoopRunSpecific + 268
+4   com.apple.audio.CoreAudio 	0x914001dc HALRunLoop::OwnThread(void*) + 264
+5   com.apple.audio.CoreAudio 	0x913fff7c CAPThread::Entry(CAPThread*) + 96
+6   libSystem.B.dylib         	0x9002b200 _pthread_body + 96
+
+Thread 0 crashed with PPC Thread State 64:
+  srr0: 0x000000009170ab20 srr1: 0x000000000200f030                        vrsave: 0x0000000000000000
+    cr: 0x44004442          xer: 0x0000000000000000   lr: 0x0000000093a34634  ctr: 0x000000009170aae0
+    r0: 0x000000000000c001   r1: 0x00000000bffff030   r2: 0x00000000a1b1c1d3   r3: 0x00000000048684a0
+    r4: 0x0000000000cffc74   r5: 0x00000000a367908c   r6: 0x00000000ffffffff   r7: 0x0000000000000001
+    r8: 0x00000000042fb912   r9: 0x0000000000000000  r10: 0x0000000000000001  r11: 0x00000000a367da2c
+   r12: 0x000000009170aae0  r13: 0x0000000000000000  r14: 0x0000000000000000  r15: 0x0000000000000000
+   r16: 0x0000000000000000  r17: 0x0000000000000000  r18: 0x0000000000000000  r19: 0x0000000000000000
+   r20: 0x0000000000000000  r21: 0x0000000000000000  r22: 0x0000000000000000  r23: 0x0000000000000000
+   r24: 0x0000000000000000  r25: 0x0000000000000000  r26: 0x0000000000000000  r27: 0x00000000a36bd85c
+   r28: 0x0000000000000001  r29: 0x00000000a36821bc  r30: 0x00000000048684a0  r31: 0x0000000093a34610
+
+Binary Images Description:
+    0x1000 -   0x860fff org.mozilla.navigator 0.8.4	/Applications/Camino.app/Contents/MacOS/Camino
+  0xca6000 -   0xcd8fff libnspr4.dylib 	/Applications/Camino.app/Contents/MacOS/libnspr4.dylib
+  0xedb000 -   0xedb3c2 Java Applet Plugin Enabler 	PEF binary: Java Applet Plugin Enabler
+ 0x1834000 -  0x183528f NP-PPC-Dir-Shockwave 	PEF binary: NP-PPC-Dir-Shockwave
+ 0x19c24c0 -  0x19c2572 CFMPriv_CoreFoundation 	PEF binary: CFMPriv_CoreFoundation
+ 0x19c2700 -  0x19c27b5 CFMPriv_DVComponentGlue 	PEF binary: CFMPriv_DVComponentGlue
+ 0x19c29d0 -  0x19c2a73 CFMPriv_QuickTime 	PEF binary: CFMPriv_QuickTime
+ 0x19c2ae0 -  0x19c2b57 CFMPriv_System 	PEF binary: CFMPriv_System
+ 0x19c3a60 -  0x19c3b30 CFMPriv_CarbonSound 	PEF binary: CFMPriv_CarbonSound
+ 0x19c3ba0 -  0x19c3c73 CFMPriv_CommonPanels 	PEF binary: CFMPriv_CommonPanels
+ 0x19c3d40 -  0x19c3dfb CFMPriv_Help 	PEF binary: CFMPriv_Help
+ 0x19c3e00 -  0x19c3eca CFMPriv_HIToolbox 	PEF binary: CFMPriv_HIToolbox
+ 0x19c3f40 -  0x19c4016 CFMPriv_HTMLRendering 	PEF binary: CFMPriv_HTMLRendering
+ 0x19c4080 -  0x19c4153 CFMPriv_ImageCapture 	PEF binary: CFMPriv_ImageCapture
+ 0x19c41d0 -  0x19c42b5 CFMPriv_NavigationServices 	PEF binary: CFMPriv_NavigationServices
+ 0x19c4320 -  0x19c43f6 CFMPriv_OpenScriptingMacBLib 	PEF binary: CFMPriv_OpenScriptingMacBLib
+ 0x19c44c0 -  0x19c457e CFMPriv_Print 	PEF binary: CFMPriv_Print
+ 0x19c4590 -  0x19c465d CFMPriv_SecurityHI 	PEF binary: CFMPriv_SecurityHI
+ 0x19c46d0 -  0x19c47b2 CFMPriv_SpeechRecognition 	PEF binary: CFMPriv_SpeechRecognition
+ 0x19c4820 -  0x19c48f3 CFMPriv_CarbonCore 	PEF binary: CFMPriv_CarbonCore
+ 0x19c4960 -  0x19c4a33 CFMPriv_OSServices 	PEF binary: CFMPriv_OSServices
+ 0x19c4b00 -  0x19c4bc2 CFMPriv_AE 	PEF binary: CFMPriv_AE
+ 0x19c4bd0 -  0x19c4c95 CFMPriv_ATS 	PEF binary: CFMPriv_ATS
+ 0x19c4d00 -  0x19c4dd7 CFMPriv_ColorSync 	PEF binary: CFMPriv_ColorSync
+ 0x19c4e50 -  0x19c4f33 CFMPriv_FindByContent 	PEF binary: CFMPriv_FindByContent
+ 0x19c4fa0 -  0x19c507a CFMPriv_HIServices 	PEF binary: CFMPriv_HIServices
+ 0x19c50e0 -  0x19c51c0 CFMPriv_LangAnalysis 	PEF binary: CFMPriv_LangAnalysis
+ 0x19c5240 -  0x19c5326 CFMPriv_LaunchServices 	PEF binary: CFMPriv_LaunchServices
+ 0x19c53f0 -  0x19c54c7 CFMPriv_PrintCore 	PEF binary: CFMPriv_PrintCore
+ 0x19c54d0 -  0x19c5592 CFMPriv_QD 	PEF binary: CFMPriv_QD
+ 0x19c5680 -  0x19c5769 CFMPriv_SpeechSynthesis 	PEF binary: CFMPriv_SpeechSynthesis
+ 0x2000000 -  0x200dfff libplds4.dylib 	/Applications/Camino.app/Contents/MacOS/libplds4.dylib
+ 0x29c9000 -  0x29d5fff com.apple.JavaAppletPlugin 10.0.0	/Library/Internet Plug-Ins/Java Applet.plugin/Contents/MacOS/Java Applet
+ 0x2e71000 -  0x2ec03c7 CarbonLibpwpc 	PEF binary: CarbonLibpwpc
+ 0x2ec03d0 -  0x2ed86bd Apple;Carbon;Multimedia 	PEF binary: Apple;Carbon;Multimedia
+ 0x2ed9c00 -  0x2edb98b Apple;Carbon;Networking 	PEF binary: Apple;Carbon;Networking
+ 0x3000000 -  0x300efff libplc4.dylib 	/Applications/Camino.app/Contents/MacOS/libplc4.dylib
+ 0x3015000 -  0x314de45 Flash Player 	PEF binary: Flash Player
+ 0x4000000 -  0x4068fff libmozjs.dylib 	/Applications/Camino.app/Contents/MacOS/libmozjs.dylib
+ 0x41f9000 -  0x41fafff org.mozilla.camino.AddressBookManager ??? (0.0.1d1)	/Applications/Camino.app/Contents/Resources/AddressBookManager.bundle/Contents/MacOS/AddressBookManager
+ 0x4494000 -  0x4496fff com.apple.textencoding.unicode 2.0	/System/Library/TextEncodings/Unicode Encodings.bundle/Contents/MacOS/Unicode Encodings
+ 0x4ca3000 -  0x4ccefff com.apple.print.framework.Print.Private 4.3 (157.7)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/Current/Plugins/PrintCocoaUI.bundle/Contents/MacOS/PrintCocoaUI
+ 0x4e79000 -  0x4e7bfff org.mozilla.pde.MOZZ 1.0	/Applications/Camino.app/Contents/PlugIns/PrintPDE.plugin/Contents/MacOS/PrintPDE
+ 0x4e7e000 -  0x4e9dfff com.apple.print.PrintingCocoaPDEs 4.3 (157.7)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Plugins/PrintingCocoaPDEs.bundle/Contents/MacOS/PrintingCocoaPDEs
+ 0x4eb5000 -  0x4ecefff com.apple.print.PrintingTiogaPDEs 4.3 (157.7)	/System/Library/Frameworks/Carbon.framework/Frameworks/Print.framework/Versions/A/Plugins/PrintingTiogaPDEs.bundle/Contents/MacOS/PrintingTiogaPDEs
+ 0x4ef1000 -  0x4ef9fff com.apple.print.converter.plugin 4.0 (157)	/System/Library/Printers/CVs/Converter.plugin/Contents/MacOS/Converter
+ 0x5000000 -  0x5082fff libxpcom.dylib 	/Applications/Camino.app/Contents/MacOS/libxpcom.dylib
+ 0x5db6000 -  0x5ddefff libnssckbi.dylib 	/Applications/Camino.app/Contents/MacOS/libnssckbi.dylib
+ 0x6000000 -  0x601afff libssl3.dylib 	/Applications/Camino.app/Contents/MacOS/libssl3.dylib
+ 0x7000000 -  0x705dfff libnss3.dylib 	/Applications/Camino.app/Contents/MacOS/libnss3.dylib
+ 0x7405000 -  0x7447fff com.apple.QuickTimeFireWireDV.component 7.0.3	/System/Library/QuickTime/QuickTimeFireWireDV.component/Contents/MacOS/QuickTimeFireWireDV
+ 0x7458000 -  0x74d1fff com.apple.applepixletvideo 1.2.5 (1.2d5)	/System/Library/QuickTime/ApplePixletVideo.component/Contents/MacOS/ApplePixletVideo
+ 0x7532000 -  0x7533fff com.apple.aoa.halplugin 2.5.6 (2.5.6b5)	/System/Library/Extensions/IOAudioFamily.kext/Contents/PlugIns/AOAHALPlugin.bundle/Contents/MacOS/AOAHALPlugin
+ 0x759c000 -  0x767bfff com.apple.audio.codecs.Components 1.4.3	/System/Library/Components/AudioCodecs.component/Contents/MacOS/AudioCodecs
+ 0x7e20000 -  0x7e21fff org.mozilla.chimera.preference.security ??? (0.0.1d1)	/Applications/Camino.app/Contents/PreferencePanes/Security.prefPane/Contents/MacOS/Security
+ 0x8000000 -  0x801dfff libsmime3.dylib 	/Applications/Camino.app/Contents/MacOS/libsmime3.dylib
+ 0x833d000 -  0x8341fff org.mozilla.chimera.preference.appearance ??? (0.0.1d1)	/Applications/Camino.app/Contents/PreferencePanes/Appearance.prefPane/Contents/MacOS/Appearance
+ 0x8347000 -  0x834afff org.mozilla.chimera.preference.navigation ??? (0.0.1d1)	/Applications/Camino.app/Contents/PreferencePanes/Navigation.prefPane/Contents/MacOS/Navigation
+ 0x834f000 -  0x835bfff org.mozilla.chimera.preference.privacy ??? (0.0.1d1)	/Applications/Camino.app/Contents/PreferencePanes/Privacy.prefPane/Contents/MacOS/Privacy
+ 0x8364000 -  0x8366fff org.mozilla.chimera.preference.webfeatures ??? (0.0.1d1)	/Applications/Camino.app/Contents/PreferencePanes/WebFeatures.prefPane/Contents/MacOS/WebFeatures
+ 0x9000000 -  0x9079fff libsoftokn3.dylib 	/Applications/Camino.app/Contents/MacOS/libsoftokn3.dylib
+ 0xa000000 -  0xa019fff libxpcom_compat.dylib 	/Applications/Camino.app/Contents/MacOS/libxpcom_compat.dylib
+0x30000000 - 0x30004fff SharedMenusCocoa SharedMenusCocoa version 0.3 (0.0.3)	/Applications/Camino.app/Contents/Frameworks/SharedMenusCocoa.framework/Versions/A/SharedMenusCocoa
+0x78e00000 - 0x78e07fff libLW8Utils.dylib 	/System/Library/Printers/Libraries/libLW8Utils.dylib
+0x79200000 - 0x7923efff libLW8Converter.dylib 	/System/Library/Printers/Libraries/libLW8Converter.dylib
+0x8fe00000 - 0x8fe54fff dyld 44.2	/usr/lib/dyld
+0x90000000 - 0x901b3fff libSystem.B.dylib 	/usr/lib/libSystem.B.dylib
+0x9020b000 - 0x9020ffff libmathCommon.A.dylib 	/usr/lib/system/libmathCommon.A.dylib
+0x90211000 - 0x90264fff com.apple.CoreText 1.0.1 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreText.framework/Versions/A/CoreText
+0x90291000 - 0x90342fff ATS 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+0x90371000 - 0x906aefff com.apple.CoreGraphics 1.256.27 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
+0x9073a000 - 0x90813fff com.apple.CoreFoundation 6.4.4 (368.18)	/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+0x9085c000 - 0x9085cfff com.apple.CoreServices 10.4 (???)	/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+0x9085e000 - 0x90960fff libicucore.A.dylib 	/usr/lib/libicucore.A.dylib
+0x909ba000 - 0x90a3efff libobjc.A.dylib 	/usr/lib/libobjc.A.dylib
+0x90a68000 - 0x90ad6fff com.apple.framework.IOKit 1.4 (???)	/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+0x90aed000 - 0x90afffff libauto.dylib 	/usr/lib/libauto.dylib
+0x90b06000 - 0x90dddfff com.apple.CoreServices.CarbonCore 671.2	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+0x90e43000 - 0x90ec3fff com.apple.CoreServices.OSServices 4.1	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+0x90f0d000 - 0x90f4efff com.apple.CFNetwork 10.4.3 (129.2)	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+0x90f63000 - 0x90f7bfff com.apple.WebServices 1.1.2 (1.1.0)	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebServicesCore.framework/Versions/A/WebServicesCore
+0x90f8b000 - 0x9100cfff com.apple.SearchKit 1.0.4	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+0x91052000 - 0x9107bfff com.apple.Metadata 10.4.3 (121.20.2)	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+0x9108c000 - 0x9109afff libz.1.1.3.dylib 	/usr/lib/libz.1.1.3.dylib
+0x9109d000 - 0x9125ffff com.apple.security 4.2 (24844)	/System/Library/Frameworks/Security.framework/Versions/A/Security
+0x91362000 - 0x9136bfff com.apple.DiskArbitration 2.1	/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration
+0x91372000 - 0x91399fff com.apple.SystemConfiguration 1.8.1	/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+0x913ac000 - 0x913b4fff libgcc_s.1.dylib 	/usr/lib/libgcc_s.1.dylib
+0x913b9000 - 0x913d9fff libmx.A.dylib 	/usr/lib/libmx.A.dylib
+0x913df000 - 0x913e7fff libbsm.dylib 	/usr/lib/libbsm.dylib
+0x913eb000 - 0x91469fff com.apple.audio.CoreAudio 3.0.1	/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
+0x914a7000 - 0x914a7fff com.apple.ApplicationServices 10.4 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+0x914a9000 - 0x914e1fff com.apple.AE 1.5 (297)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+0x914fc000 - 0x915c9fff com.apple.ColorSync 4.4.3	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+0x9161e000 - 0x916b1fff com.apple.print.framework.PrintCore 4.3 (172.3)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+0x916f8000 - 0x917b5fff com.apple.QD 3.8.18 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+0x917f3000 - 0x91851fff com.apple.HIServices 1.5.1 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+0x9187f000 - 0x918a3fff com.apple.LangAnalysis 1.6.1	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+0x918b7000 - 0x918dcfff com.apple.FindByContent 1.5	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/FindByContent.framework/Versions/A/FindByContent
+0x918ef000 - 0x91931fff com.apple.LaunchServices 10.4.5 (168)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+0x9194d000 - 0x91961fff com.apple.speech.synthesis.framework 3.3	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+0x9196f000 - 0x919a8fff com.apple.ImageIO.framework 1.4.3	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/ImageIO
+0x919bd000 - 0x91a83fff libcrypto.0.9.7.dylib 	/usr/lib/libcrypto.0.9.7.dylib
+0x91ad0000 - 0x91ae5fff libcups.2.dylib 	/usr/lib/libcups.2.dylib
+0x91aea000 - 0x91b06fff libJPEG.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib
+0x91b0b000 - 0x91b7afff libJP2.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libJP2.dylib
+0x91b91000 - 0x91b95fff libGIF.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib
+0x91b97000 - 0x91bc8fff libRaw.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libRaw.dylib
+0x91bcc000 - 0x91c0ffff libTIFF.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libTIFF.dylib
+0x91c16000 - 0x91c2ffff libPng.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libPng.dylib
+0x91c34000 - 0x91c37fff libRadiance.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib
+0x91c39000 - 0x91c39fff com.apple.Accelerate 1.1.1 (Accelerate 1.1.1)	/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
+0x91c3b000 - 0x91d25fff com.apple.vImage 2.0	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
+0x91d2d000 - 0x91d4cfff com.apple.Accelerate.vecLib 3.1.1 (vecLib 3.1.1)	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
+0x91db8000 - 0x91e1dfff libvMisc.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
+0x91e27000 - 0x91eb9fff libvDSP.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
+0x91ed3000 - 0x92463fff libBLAS.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+0x924ab000 - 0x927bbfff libLAPACK.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+0x927e8000 - 0x92874fff com.apple.DesktopServices 1.3.1	/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
+0x928b6000 - 0x92ae0fff com.apple.Foundation 6.4.2 (567.21)	/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+0x92bfe000 - 0x92cdcfff libxml2.2.dylib 	/usr/lib/libxml2.2.dylib
+0x92cfc000 - 0x92deafff libiconv.2.dylib 	/usr/lib/libiconv.2.dylib
+0x92dfc000 - 0x92e1afff libGL.dylib 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+0x92e25000 - 0x92e7ffff libGLU.dylib 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+0x92e9d000 - 0x92e9dfff com.apple.Carbon 10.4 (???)	/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
+0x92e9f000 - 0x92eb3fff com.apple.ImageCapture 3.0	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture
+0x92ecb000 - 0x92edbfff com.apple.speech.recognition.framework 3.4	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition
+0x92ee7000 - 0x92efcfff com.apple.securityhi 2.0 (203)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI
+0x92f0e000 - 0x92f95fff com.apple.ink.framework 101.2 (69)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink
+0x92fa9000 - 0x92fb4fff com.apple.help 1.0.3 (32)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help
+0x92fbe000 - 0x92febfff com.apple.openscripting 1.2.3 (???)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting
+0x93005000 - 0x93015fff com.apple.print.framework.Print 5.0 (190.1)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print
+0x93021000 - 0x93087fff com.apple.htmlrendering 1.1.2	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering
+0x930b8000 - 0x9310afff com.apple.NavigationServices 3.4.2	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices
+0x93136000 - 0x93153fff com.apple.audio.SoundManager 3.9	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound
+0x93165000 - 0x93172fff com.apple.CommonPanels 1.2.2 (73)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels
+0x9317b000 - 0x9348dfff com.apple.HIToolbox 1.4.4 (???)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+0x935d9000 - 0x935e5fff com.apple.opengl 1.4.6	/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL
+0x935ea000 - 0x9360bfff com.apple.DirectoryService.Framework 3.0	/System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService
+0x93618000 - 0x9361cfff com.apple.JavaVM 10.0.0	/System/Library/Frameworks/JavaVM.framework/Versions/A/JavaVM
+0x93677000 - 0x93677fff com.apple.Cocoa 6.4 (???)	/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa
+0x93679000 - 0x93cacfff com.apple.AppKit 6.4.3 (824.23)	/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+0x94038000 - 0x940a7fff com.apple.CoreData 50 (77)	/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
+0x940e0000 - 0x941aafff com.apple.audio.toolbox.AudioToolbox 1.4.1	/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
+0x941fe000 - 0x941fefff com.apple.audio.units.AudioUnit 1.4	/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit
+0x94200000 - 0x94378fff com.apple.QuartzCore 1.4.3	/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore
+0x943c2000 - 0x943fffff libsqlite3.0.dylib 	/usr/lib/libsqlite3.0.dylib
+0x94407000 - 0x94457fff libGLImage.dylib 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib
+0x94542000 - 0x94554fff com.apple.frameworks.preferencepanes 11.0.1	/System/Library/Frameworks/PreferencePanes.framework/Versions/A/PreferencePanes
+0x94561000 - 0x9457dfff com.apple.securityfoundation 2.1 (24988)	/System/Library/Frameworks/SecurityFoundation.framework/Versions/A/SecurityFoundation
+0x94591000 - 0x945d5fff com.apple.securityinterface 2.1 (24981)	/System/Library/Frameworks/SecurityInterface.framework/Versions/A/SecurityInterface
+0x945f9000 - 0x94608fff libCGATS.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGATS.A.dylib
+0x94610000 - 0x9461cfff libCSync.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib
+0x94622000 - 0x94640fff libPDFRIP.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPDFRIP.A.dylib
+0x94661000 - 0x94679fff libRIP.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib
+0x94680000 - 0x948eafff com.apple.QuickTime 7.0.3	/System/Library/Frameworks/QuickTime.framework/Versions/A/QuickTime
+0x94ac1000 - 0x94beffff com.apple.AddressBook.framework 4.0.3 (483)	/System/Library/Frameworks/AddressBook.framework/Versions/A/AddressBook
+0x94c81000 - 0x94c90fff com.apple.DSObjCWrappers.Framework 1.1	/System/Library/PrivateFrameworks/DSObjCWrappers.framework/Versions/A/DSObjCWrappers
+0x94c98000 - 0x94cc5fff com.apple.LDAPFramework 1.4.1 (69.0.1)	/System/Library/Frameworks/LDAP.framework/Versions/A/LDAP
+0x94ccc000 - 0x94cdcfff libsasl2.2.dylib 	/usr/lib/libsasl2.2.dylib
+0x94ce0000 - 0x94d0efff libssl.0.9.7.dylib 	/usr/lib/libssl.0.9.7.dylib
+0x94d1e000 - 0x94d3bfff libresolv.9.dylib 	/usr/lib/libresolv.9.dylib
+0x94d43000 - 0x94ed9fff libjvm.dylib 	/System/Library/Frameworks/JavaVM.framework/Versions/1.3/Libraries/libjvm.dylib
+0x94f1a000 - 0x94f1bfff com.apple.JavaCarbonSupport 10.0.0	/System/Library/PrivateFrameworks/JavaCarbonSupport.framework/Versions/A/JavaCarbonSupport
+0x94f1d000 - 0x94f27fff libverify.dylib 	/System/Library/Frameworks/JavaVM.framework/Versions/1.3.1/Libraries/libverify.dylib
+0x94f5c000 - 0x94f75fff libjava.jnilib 	/System/Library/Frameworks/JavaVM.framework/Versions/1.3.1/Libraries/libjava.jnilib
+0x9506e000 - 0x95079fff libzip.jnilib 	/System/Library/Frameworks/JavaVM.framework/Versions/1.3.1/Libraries/libzip.jnilib
+0x954a7000 - 0x9552afff libstdc++.6.dylib 	/usr/lib/libstdc++.6.dylib
+0x9738f000 - 0x973aefff com.apple.vecLib 3.1.1 (vecLib 3.1.1)	/System/Library/Frameworks/vecLib.framework/Versions/A/vecLib
+0x97bb4000 - 0x97bc1fff com.apple.agl 2.5.6 (AGL-2.5.6)	/System/Library/Frameworks/AGL.framework/Versions/A/AGL
+0x988e8000 - 0x988f6fff com.apple.JavaEmbedding 10.0.0	/System/Library/Frameworks/JavaEmbedding.framework/Versions/A/JavaEmbedding
+0x996c3000 - 0x99f76fff com.apple.QuickTimeComponents.component 7.0.3	/System/Library/QuickTime/QuickTimeComponents.component/Contents/MacOS/QuickTimeComponents
+0x9a1e9000 - 0x9a1ecfff com.apple.QuickTimeH264.component 7.0.3	/System/Library/QuickTime/QuickTimeH264.component/Contents/MacOS/QuickTimeH264
+0x9a1ee000 - 0x9a2b2fff QuickTimeH264.altivec 	/System/Library/QuickTime/QuickTimeH264.component/Contents/Resources/QuickTimeH264.altivec
+0x9a3db000 - 0x9a47ffff com.apple.QuickTimeMPEG4.component 7.0.3	/System/Library/QuickTime/QuickTimeMPEG4.component/Contents/MacOS/QuickTimeMPEG4
+0x9a49e000 - 0x9a5ebfff com.apple.QuickTimeStreaming.component 7.0.3	/System/Library/QuickTime/QuickTimeStreaming.component/Contents/MacOS/QuickTimeStreaming
+0x9a648000 - 0x9a6cefff com.apple.QuickTimeVR.component 7.0.3	/System/Library/QuickTime/QuickTimeVR.component/Contents/MacOS/QuickTimeVR
+0x9abe1000 - 0x9ac0cfff com.apple.QuickTime Plugin.plugin 7.0.3	/Library/Internet Plug-Ins/QuickTime Plugin.plugin/Contents/MacOS/QuickTime Plugin
+0x9ae9d000 - 0x9ae9efff com.apple.iokit.dvcomponentglue 1.7.5	/System/Library/Frameworks/DVComponentGlue.framework/Versions/A/DVComponentGlue
+0x9b4a7000 - 0x9b5a9fff com.apple.audio.units.Components 1.4.1	/System/Library/Components/CoreAudio.component/Contents/MacOS/CoreAudio
+0x9b70d000 - 0x9b724fff libCFilter.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCFilter.A.dylib
+0xeab00000 - 0xeab25fff libConverter.dylib 	/System/Library/Printers/Libraries/libConverter.dylib

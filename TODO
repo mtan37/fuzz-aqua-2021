@@ -1,0 +1,4 @@
+Figure out some way to save fuzz runs so that we can repeat our tests.
+
+Refactor into separate objects?
+

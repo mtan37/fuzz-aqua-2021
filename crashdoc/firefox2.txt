@@ -1,0 +1,1024 @@
+**********
+
+Host Name:      lamarck
+Date/Time:      2005-12-06 11:35:30.906 -0600
+OS Version:     10.4.3 (Build 8F46)
+Report Version: 3
+
+Command: firefox-bin
+Path:    /Applications/Firefox.app/Contents/MacOS/firefox-bin
+Parent:  sh [3409]
+
+Version: 1.5 (1.5)
+
+PID:    3415
+Thread: 0
+
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000000
+
+Thread 0 Crashed:
+0   <<00000000>> 	0x00000000 0 + 0
+1   com.apple.AE                   	0x914ab960 aeDispatchAppleEvent(AEDesc const*, AEDesc*, unsigned long, unsigned char*) + 208
+2   com.apple.AE                   	0x914b6fc0 sendToSelf(AEDesc const*, AEDesc*, long, long) + 372
+3   com.apple.AE                   	0x914af8f8 AESendMessage + 648
+4   com.apple.AE                   	0x914af3d4 aeSend + 224
+5   com.apple.HIToolbox            	0x9323159c AESend + 108
+6   com.apple.HIToolbox            	0x93296e68 HandleTextInputEvent(OpaqueEventRef*) + 296
+7   com.apple.HIToolbox            	0x93188874 ToolboxEventDispatcherHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 524
+8   com.apple.HIToolbox            	0x93182244 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 1284
+9   com.apple.HIToolbox            	0x9318174c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+10  com.apple.HIToolbox            	0x931884ec SendEventToEventTarget + 40
+11  com.apple.HIToolbox            	0x93296c74 SendTSMEvent + 228
+12  com.apple.HIToolbox            	0x932963c4 SendUnicodeTextAEToUnicodeDoc + 928
+13  com.apple.HIToolbox            	0x93295df0 utDeliverTSMEvent + 1024
+14  com.apple.HIToolbox            	0x932959d4 TSMKeyEvent + 88
+15  com.apple.HIToolbox            	0x9324c7a4 TSMProcessRawKeyEvent + 920
+16  com.apple.HIToolbox            	0x9324c26c HandleCompatibilityKeyEvent(OpaqueEventRef*) + 308
+17  com.apple.HIToolbox            	0x9317ed60 HIApplication::EventHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 788
+18  com.apple.HIToolbox            	0x93181ff4 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 692
+19  com.apple.HIToolbox            	0x9318174c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+20  com.apple.HIToolbox            	0x931815c8 SendEventToEventTargetWithOptions + 40
+21  com.apple.HIToolbox            	0x9324bf14 HandleKeyboardEvent(OpaqueEventRef*, unsigned long) + 352
+22  com.apple.HIToolbox            	0x93188868 ToolboxEventDispatcherHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 512
+23  com.apple.HIToolbox            	0x93182244 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 1284
+24  com.apple.HIToolbox            	0x9318174c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+25  com.apple.HIToolbox            	0x931884ec SendEventToEventTarget + 40
+26  com.apple.HIToolbox            	0x931c9564 ToolboxEventDispatcher + 92
+27  com.apple.HIToolbox            	0x932685b8 TryEventDispatcher + 112
+28  com.apple.HIToolbox            	0x9326820c GetOrPeekEvent + 304
+29  com.apple.HIToolbox            	0x93267f48 GetNextEventMatchingMask + 156
+30  com.apple.HIToolbox            	0x93267df0 WNEInternal + 140
+31  com.apple.HIToolbox            	0x93267d50 WaitNextEvent + 76
+32  org.mozilla.firefox            	0x00693f18 nsMacMessagePump::GetEvent(EventRecord&) + 116
+33  org.mozilla.firefox            	0x00300210 nsAppShell::GetNativeEvent(int&, void*&) + 60
+34  org.mozilla.firefox            	0x007184e4 nsXULWindow::ShowModal() + 456
+35  org.mozilla.firefox            	0x002b9e88 nsWindowWatcher::OpenWindowJS(nsIDOMWindow*, char const*, char const*, char const*, int, unsigned, long*, nsIDOMWindow**) + 3444
+36  org.mozilla.firefox            	0x002b90e0 nsWindowWatcher::OpenWindow(nsIDOMWindow*, char const*, char const*, char const*, nsISupports*, nsIDOMWindow**) + 140
+37  org.mozilla.firefox            	0x002b84a8 nsPromptService::DoDialog(nsIDOMWindow*, nsIDialogParamBlock*, char const*) + 240
+38  org.mozilla.firefox            	0x002b6b60 nsPromptService::Confirm(nsIDOMWindow*, unsigned short const*, unsigned short const*, int*) + 492
+39  org.mozilla.firefox            	0x002b4f00 nsPrompt::Confirm(unsigned short const*, unsigned short const*, int*) + 112
+40  org.mozilla.firefox            	0x00232c34 nsGlobalWindow::Confirm(nsAString_internal const&, int*) + 380
+41  libxpcom_core.dylib            	0x1005cf28 _XPTC_InvokeByIndex + 216
+42  org.mozilla.firefox            	0x00454a60 XPCWrappedNative::CallMethod(XPCCallContext&, XPCWrappedNative::CallMode) + 2508
+43  org.mozilla.firefox            	0x004483dc XPC_WN_CallMethod(JSContext*, JSObject*, unsigned, long*, long*) + 220
+44  libmozjs.dylib                 	0x0602cdec js_Invoke + 1808
+45  libmozjs.dylib                 	0x06034cd8 js_Interpret + 28400
+46  libmozjs.dylib                 	0x0602d46c js_Execute + 576
+47  libmozjs.dylib                 	0x06007b30 JS_EvaluateUCScriptForPrincipals + 88
+48  org.mozilla.firefox            	0x00241844 nsJSContext::EvaluateString(nsAString_internal const&, void*, nsIPrincipal*, char const*, unsigned, char const*, nsAString_internal*, int*) + 744
+49  org.mozilla.firefox            	0x00521cec nsScriptLoader::EvaluateScript(nsScriptLoadRequest*, nsString const&) + 548
+50  org.mozilla.firefox            	0x005218e8 nsScriptLoader::ProcessRequest(nsScriptLoadRequest*) + 180
+51  org.mozilla.firefox            	0x0052165c nsScriptLoader::ProcessScriptElement(nsIScriptElement*, nsIScriptLoaderObserver*) + 3024
+52  org.mozilla.firefox            	0x0076cf24 nsHTMLScriptElement::MaybeProcessScript() + 172
+53  org.mozilla.firefox            	0x0076c6dc nsHTMLScriptElement::BindToTree(nsIDocument*, nsIContent*, nsIContent*, int) + 56
+54  org.mozilla.firefox            	0x0024972c nsGenericElement::AppendChildTo(nsIContent*, int) + 224
+55  org.mozilla.firefox            	0x0052a378 HTMLContentSink::ProcessSCRIPTTag(nsIParserNode const&) + 1024
+56  org.mozilla.firefox            	0x00527f8c HTMLContentSink::AddLeaf(nsIParserNode const&) + 284
+57  org.mozilla.firefox            	0x002a1c14 CNavDTD::AddLeaf(nsIParserNode const*) + 100
+58  org.mozilla.firefox            	0x0029fb14 CNavDTD::HandleScriptToken(nsIParserNode const*) + 24
+59  org.mozilla.firefox            	0x002a13c0 CNavDTD::OpenContainer(nsCParserNode const*, nsHTMLTag, int, nsEntryStack*) + 648
+60  org.mozilla.firefox            	0x0029df70 CNavDTD::HandleDefaultStartToken(CToken*, nsHTMLTag, nsCParserNode*) + 716
+61  org.mozilla.firefox            	0x0029eb34 CNavDTD::HandleStartToken(CToken*) + 656
+62  org.mozilla.firefox            	0x0029d620 CNavDTD::HandleToken(CToken*, nsIParser*) + 1340
+63  org.mozilla.firefox            	0x0029c9e8 CNavDTD::BuildModel(nsIParser*, nsITokenizer*, nsITokenObserver*, nsIContentSink*) + 632
+64  org.mozilla.firefox            	0x002a4ca8 nsParser::BuildModel() + 184
+65  org.mozilla.firefox            	0x002a49ac nsParser::ResumeParse(int, int, int) + 292
+66  org.mozilla.firefox            	0x002a3ae8 nsParser::ContinueInterruptedParsing() + 108
+67  org.mozilla.firefox            	0x0056de48 nsContentSink::ScriptEvaluated(unsigned, nsIScriptElement*, int, int) + 184
+68  org.mozilla.firefox            	0x0056d6c0 nsScriptLoaderObserverProxy::ScriptEvaluated(unsigned, nsIScriptElement*, int, int) + 136
+69  org.mozilla.firefox            	0x00521a94 nsScriptLoader::FireScriptEvaluated(unsigned, nsScriptLoadRequest*) + 152
+70  org.mozilla.firefox            	0x005218fc nsScriptLoader::ProcessRequest(nsScriptLoadRequest*) + 200
+71  org.mozilla.firefox            	0x005226a0 nsScriptLoader::OnStreamComplete(nsIStreamLoader*, nsISupports*, unsigned, unsigned, unsigned char const*) + 888
+72  org.mozilla.firefox            	0x004088e8 nsStreamLoader::OnStopRequest(nsIRequest*, nsISupports*, unsigned) + 100
+73  org.mozilla.firefox            	0x00700210 nsHttpChannel::OnStopRequest(nsIRequest*, nsISupports*, unsigned) + 680
+74  org.mozilla.firefox            	0x00417b40 nsInputStreamPump::OnStateStop() + 160
+75  org.mozilla.firefox            	0x004176c8 nsInputStreamPump::OnInputStreamReady(nsIAsyncInputStream*) + 128
+76  libxpcom_core.dylib            	0x10080ec4 nsAStreamCopier::PostContinuationEvent_Locked() + 1240
+77  libxpcom_core.dylib            	0x10045ce4 PL_HandleEvent + 36
+78  libxpcom_core.dylib            	0x10045c08 PL_ProcessPendingEvents + 128
+79  com.apple.CoreFoundation       	0x9075db14 __CFRunLoopDoSources0 + 568
+80  com.apple.CoreFoundation       	0x9075cf8c __CFRunLoopRun + 452
+81  com.apple.CoreFoundation       	0x9075ca0c CFRunLoopRunSpecific + 268
+82  com.apple.HIToolbox            	0x931831e0 RunCurrentEventLoopInMode + 264
+83  com.apple.HIToolbox            	0x93267f20 GetNextEventMatchingMask + 116
+84  com.apple.HIToolbox            	0x93267df0 WNEInternal + 140
+85  com.apple.HIToolbox            	0x93267d50 WaitNextEvent + 76
+86  org.mozilla.firefox            	0x00693f18 nsMacMessagePump::GetEvent(EventRecord&) + 116
+87  org.mozilla.firefox            	0x00300210 nsAppShell::GetNativeEvent(int&, void*&) + 60
+88  org.mozilla.firefox            	0x007184e4 nsXULWindow::ShowModal() + 456
+89  org.mozilla.firefox            	0x002b9e88 nsWindowWatcher::OpenWindowJS(nsIDOMWindow*, char const*, char const*, char const*, int, unsigned, long*, nsIDOMWindow**) + 3444
+90  org.mozilla.firefox            	0x002b90e0 nsWindowWatcher::OpenWindow(nsIDOMWindow*, char const*, char const*, char const*, nsISupports*, nsIDOMWindow**) + 140
+91  org.mozilla.firefox            	0x002b84a8 nsPromptService::DoDialog(nsIDOMWindow*, nsIDialogParamBlock*, char const*) + 240
+92  org.mozilla.firefox            	0x002b73ec nsPromptService::ConfirmEx(nsIDOMWindow*, unsigned short const*, unsigned short const*, unsigned, unsigned short const*, unsigned short const*, unsigned short const*, unsigned short const*, int*, int*) + 1244
+93  libxpcom_core.dylib            	0x1005cf28 _XPTC_InvokeByIndex + 216
+94  org.mozilla.firefox            	0x00454a60 XPCWrappedNative::CallMethod(XPCCallContext&, XPCWrappedNative::CallMode) + 2508
+95  org.mozilla.firefox            	0x004483dc XPC_WN_CallMethod(JSContext*, JSObject*, unsigned, long*, long*) + 220
+96  libmozjs.dylib                 	0x0602cdec js_Invoke + 1808
+97  libmozjs.dylib                 	0x06034cd8 js_Interpret + 28400
+98  libmozjs.dylib                 	0x0602ce30 js_Invoke + 1876
+99  libmozjs.dylib                 	0x0602d03c js_InternalInvoke + 184
+100 libmozjs.dylib                 	0x06007d1c JS_CallFunctionValue + 44
+101 org.mozilla.firefox            	0x002422a0 nsJSContext::CallEventHandler(JSObject*, JSObject*, unsigned, long*, long*) + 284
+102 org.mozilla.firefox            	0x0056a860 nsJSEventListener::HandleEvent(nsIDOMEvent*) + 948
+103 org.mozilla.firefox            	0x0064d2e8 nsXBLPrototypeHandler::ExecuteHandler(nsIDOMEventReceiver*, nsIDOMEvent*) + 3864
+104 org.mozilla.firefox            	0x00748a3c nsXBLKeyEventHandler::HandleEvent(nsIDOMEvent*) + 396
+105 org.mozilla.firefox            	0x001cc284 nsEventListenerManager::HandleEventSubType(nsListenerStruct*, nsIDOMEvent*, nsIDOMEventTarget*, unsigned, unsigned) + 576
+106 org.mozilla.firefox            	0x001cc5b8 nsEventListenerManager::HandleEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, nsIDOMEventTarget*, unsigned, nsEventStatus*) + 736
+107 org.mozilla.firefox            	0x00201748 nsXULElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 2336
+108 org.mozilla.firefox            	0x00203b10 nsXULElement::HandleChromeEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 124
+109 org.mozilla.firefox            	0x0022df54 nsGlobalWindow::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1084
+110 org.mozilla.firefox            	0x001b5484 nsDocument::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 344
+111 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+112 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+113 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+114 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+115 org.mozilla.firefox            	0x00755620 nsHTMLFormElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 188
+116 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+117 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+118 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+119 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+120 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+121 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+122 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+123 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+124 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+125 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+126 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+127 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+128 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+129 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+130 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+131 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+132 org.mozilla.firefox            	0x0024856c nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1816
+133 org.mozilla.firefox            	0x0075d5f4 nsHTMLInputElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 844
+134 org.mozilla.firefox            	0x0014fe28 PresShell::HandleEventInternal(nsEvent*, nsIView*, unsigned, nsEventStatus*) + 1172
+135 org.mozilla.firefox            	0x0014f880 PresShell::HandleEvent(nsIView*, nsGUIEvent*, nsEventStatus*, int, int&) + 1300
+136 org.mozilla.firefox            	0x0020bde8 nsViewManager::HandleEvent(nsView*, nsGUIEvent*, int) + 236
+137 org.mozilla.firefox            	0x0020b1d8 nsViewManager::DispatchEvent(nsGUIEvent*, nsEventStatus*) + 3356
+138 org.mozilla.firefox            	0x0050d14c ViewWrapper::GetInterface(nsID const&, void**) + 468
+139 org.mozilla.firefox            	0x0069e324 nsWindow::DispatchEvent(nsGUIEvent*, nsEventStatus&) + 172
+140 org.mozilla.firefox            	0x0069e3b0 nsWindow::DispatchWindowEvent(nsGUIEvent&) + 32
+141 org.mozilla.firefox            	0x00699c50 nsMacEventHandler::HandleUKeyEvent(unsigned short const*, long, EventRecord&) + 772
+142 org.mozilla.firefox            	0x007eb7ac nsMacTSMMessagePump::UnicodeNotFromInputMethodHandler(AEDesc const*, AEDesc*, long) + 216
+143 com.apple.AE                   	0x914ab960 aeDispatchAppleEvent(AEDesc const*, AEDesc*, unsigned long, unsigned char*) + 208
+144 com.apple.AE                   	0x914b6fc0 sendToSelf(AEDesc const*, AEDesc*, long, long) + 372
+145 com.apple.AE                   	0x914af8f8 AESendMessage + 648
+146 com.apple.AE                   	0x914af3d4 aeSend + 224
+147 com.apple.HIToolbox            	0x9323159c AESend + 108
+148 com.apple.HIToolbox            	0x93296e68 HandleTextInputEvent(OpaqueEventRef*) + 296
+149 com.apple.HIToolbox            	0x93188874 ToolboxEventDispatcherHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 524
+150 com.apple.HIToolbox            	0x93182244 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 1284
+151 com.apple.HIToolbox            	0x9318174c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+152 com.apple.HIToolbox            	0x931884ec SendEventToEventTarget + 40
+153 com.apple.HIToolbox            	0x93296c74 SendTSMEvent + 228
+154 com.apple.HIToolbox            	0x932963c4 SendUnicodeTextAEToUnicodeDoc + 928
+155 com.apple.HIToolbox            	0x93295df0 utDeliverTSMEvent + 1024
+156 com.apple.HIToolbox            	0x932959d4 TSMKeyEvent + 88
+157 com.apple.HIToolbox            	0x9324c7a4 TSMProcessRawKeyEvent + 920
+158 com.apple.HIToolbox            	0x9324c26c HandleCompatibilityKeyEvent(OpaqueEventRef*) + 308
+159 com.apple.HIToolbox            	0x9317ed60 HIApplication::EventHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 788
+160 com.apple.HIToolbox            	0x93181ff4 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 692
+161 com.apple.HIToolbox            	0x9318174c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+162 com.apple.HIToolbox            	0x931815c8 SendEventToEventTargetWithOptions + 40
+163 com.apple.HIToolbox            	0x9324bf14 HandleKeyboardEvent(OpaqueEventRef*, unsigned long) + 352
+164 com.apple.HIToolbox            	0x93188868 ToolboxEventDispatcherHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 512
+165 com.apple.HIToolbox            	0x93182244 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 1284
+166 com.apple.HIToolbox            	0x9318174c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+167 com.apple.HIToolbox            	0x931884ec SendEventToEventTarget + 40
+168 com.apple.HIToolbox            	0x931c9564 ToolboxEventDispatcher + 92
+169 com.apple.HIToolbox            	0x932685b8 TryEventDispatcher + 112
+170 com.apple.HIToolbox            	0x9326820c GetOrPeekEvent + 304
+171 com.apple.HIToolbox            	0x93267f48 GetNextEventMatchingMask + 156
+172 com.apple.HIToolbox            	0x93267df0 WNEInternal + 140
+173 com.apple.HIToolbox            	0x93267d50 WaitNextEvent + 76
+174 org.mozilla.firefox            	0x00693f18 nsMacMessagePump::GetEvent(EventRecord&) + 116
+175 org.mozilla.firefox            	0x00693e74 nsMacMessagePump::DoMessagePump() + 48
+176 org.mozilla.firefox            	0x00300014 nsAppShell::Run() + 56
+177 org.mozilla.firefox            	0x0039fe3c nsAppStartup::Run() + 60
+178 org.mozilla.firefox            	0x00014338 XRE_main + 3792
+179 org.mozilla.firefox            	0x0000f6a8 start + 432
+180 org.mozilla.firefox            	0x0000f528 start + 48
+
+Thread 1:
+0   libSystem.B.dylib              	0x9001f20c select + 12
+1   libnspr4.dylib                 	0x0301f140 poll + 392
+2   libnspr4.dylib                 	0x0301b8f4 PR_OpenDir + 944
+3   org.mozilla.firefox            	0x004239cc nsSocketTransportService::Poll(unsigned*) + 116
+4   org.mozilla.firefox            	0x00424118 nsSocketTransportService::Run() + 432
+5   libxpcom_core.dylib            	0x10048834 nsThread::Main(void*) + 56
+6   libnspr4.dylib                 	0x0301cd80 PR_Select + 852
+7   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 2:
+0   libSystem.B.dylib              	0x90053f68 semaphore_timedwait_signal_trap + 8
+1   libSystem.B.dylib              	0x90053dc8 pthread_cond_timedwait + 672
+2   libnspr4.dylib                 	0x03017c68 PR_Unlock + 300
+3   libnspr4.dylib                 	0x03017ecc PR_WaitCondVar + 136
+4   libxpcom_core.dylib            	0x1004b41c TimerThread::Run() + 412
+5   libxpcom_core.dylib            	0x10048834 nsThread::Main(void*) + 56
+6   libnspr4.dylib                 	0x0301cd80 PR_Select + 852
+7   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 3:
+0   libSystem.B.dylib              	0x90053f68 semaphore_timedwait_signal_trap + 8
+1   libSystem.B.dylib              	0x90053dc8 pthread_cond_timedwait + 672
+2   libnspr4.dylib                 	0x03017c68 PR_Unlock + 300
+3   libnspr4.dylib                 	0x03017ecc PR_WaitCondVar + 136
+4   org.mozilla.firefox            	0x006f4ca4 nsHostResolver::GetHostToLookup(nsHostRecord**) + 132
+5   org.mozilla.firefox            	0x006f4ff8 nsHostResolver::ThreadFunc(void*) + 184
+6   libnspr4.dylib                 	0x0301cd80 PR_Select + 852
+7   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 4:
+0   libSystem.B.dylib              	0x90053f68 semaphore_timedwait_signal_trap + 8
+1   libSystem.B.dylib              	0x90053dc8 pthread_cond_timedwait + 672
+2   libnspr4.dylib                 	0x03017c68 PR_Unlock + 300
+3   libnspr4.dylib                 	0x03017ecc PR_WaitCondVar + 136
+4   org.mozilla.firefox            	0x003e1904 nsIOThreadPool::ThreadFunc(void*) + 116
+5   libnspr4.dylib                 	0x0301cd80 PR_Select + 852
+6   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 5:
+0   libSystem.B.dylib              	0x9002e44c kevent + 12
+1   com.apple.DesktopServices      	0x927eb5d4 TFSNotificationTask::FSNotificationTaskProc(void*) + 56
+2   ...ple.CoreServices.CarbonCore 	0x90b41a44 PrivateMPEntryPoint + 76
+3   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 6:
+0   libSystem.B.dylib              	0x9002b8a8 semaphore_wait_signal_trap + 8
+1   libSystem.B.dylib              	0x9003001c pthread_cond_wait + 488
+2   ...ple.CoreServices.CarbonCore 	0x90b41c34 MPWaitOnQueue + 224
+3   com.apple.DesktopServices      	0x927ebe20 TNodeSyncTask::SyncTaskProc(void*) + 112
+4   ...ple.CoreServices.CarbonCore 	0x90b41a44 PrivateMPEntryPoint + 76
+5   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 7:
+0   libSystem.B.dylib              	0x90031aac wait4 + 12
+1   com.apple.Foundation           	0x928c9988 _waitForTermination + 40
+2   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 8:
+0   libSystem.B.dylib              	0x9001422c read + 12
+1   com.apple.Foundation           	0x928fc018 _backgroundActivity + 252
+2   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 9:
+0   libSystem.B.dylib              	0x9002b8a8 semaphore_wait_signal_trap + 8
+1   libSystem.B.dylib              	0x9003001c pthread_cond_wait + 488
+2   com.apple.Foundation           	0x928e2840 -[NSConditionLock lockWhenCondition:] + 68
+3   com.apple.AppKit               	0x9371e4dc -[NSUIHeartBeat _heartBeatThread:] + 324
+4   com.apple.Foundation           	0x928db6d4 forkThreadForFunction + 108
+5   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 0 crashed with PPC Thread State 64:
+  srr0: 0x0000000000000000 srr1: 0x000000004200f930                        vrsave: 0x0000000000000000
+    cr: 0x24422244          xer: 0x0000000000000003   lr: 0x00000000007eb7ac  ctr: 0x0000000000000000
+    r0: 0x00000000007eb784   r1: 0x00000000bfff5830   r2: 0x00000000a36c0884   r3: 0x00000000058a5340
+    r4: 0x00000000bfff5898   r5: 0x0000000000000001   r6: 0x00000000bfff5870   r7: 0x000000007a100000
+    r8: 0x000000000b3d3530   r9: 0x0000000000000000  r10: 0x0000000000e00001  r11: 0x00000000a14a9698
+   r12: 0x0000000000000000  r13: 0x0000000000000005  r14: 0x0000000000000000  r15: 0x00000000a3181d58
+   r16: 0x000000000b5e13b0  r17: 0x00000000bfff5e30  r18: 0x0000000000000000  r19: 0x0000000000000000
+   r20: 0x00000000bfff5ba0  r21: 0x00000000bfff5a20  r22: 0x00000000bfff5d20  r23: 0x0000000000000000
+   r24: 0x00000000bfff5d10  r25: 0x00000000058eff84  r26: 0x0000000074737663  r27: 0x0000000000000001
+   r28: 0x00000000756e696d  r29: 0x00000000fffff954  r30: 0x00000000bfff5880  r31: 0x0000000000000000
+
+Binary Images Description:
+    0x1000 -   0x9dbfff org.mozilla.firefox 1.5	/Applications/Firefox.app/Contents/MacOS/firefox-bin
+  0xe9f000 -   0xe9f3c2 Java Applet Plugin Enabler 	PEF binary: Java Applet Plugin Enabler
+  0xebd000 -   0xebe28f NP-PPC-Dir-Shockwave 	PEF binary: NP-PPC-Dir-Shockwave
+ 0x183f000 -  0x1848fff libqfaservices.dylib 	/Applications/Firefox.app/Contents/MacOS/extensions/talkback@mozilla.org/components/libqfaservices.dylib
+ 0x1898000 -  0x18bffff talkback.dylib 	/Applications/Firefox.app/Contents/MacOS/extensions/talkback@mozilla.org/components/talkback/talkback.dylib
+ 0x1af3000 -  0x1af5fff com.apple.textencoding.unicode 2.0	/System/Library/TextEncodings/Unicode Encodings.bundle/Contents/MacOS/Unicode Encodings
+ 0x1d31000 -  0x1d5cfff libnssckbi.dylib 	/Applications/Firefox.app/Contents/MacOS/libnssckbi.dylib
+ 0x3000000 -  0x3032fff libnspr4.dylib 	/Applications/Firefox.app/Contents/MacOS/libnspr4.dylib
+ 0x3ad1000 -  0x3adbfff com.netscape.DefaultPlugin ??? (1.0)	/Applications/Firefox.app/Contents/MacOS/plugins/Default Plugin.plugin/Contents/MacOS/Default Plugin
+ 0x3c05000 -  0x3c4bfff com.netscape.MRJPlugin MRJ Plugin version 1.0-JEP-0.9.5 (1.0-JEP-0.9.5)	/Applications/Firefox.app/Contents/MacOS/plugins/MRJPlugin.plugin/Contents/MacOS/MRJPlugin
+ 0x3c6d000 -  0x3ca9fff JavaEmbeddingPlugin Java Embedding Plugin version 0.9.5 (0.9.5)	/Applications/Firefox.app/Contents/MacOS/plugins/JavaEmbeddingPlugin.bundle/Contents/MacOS/JavaEmbeddingPlugin
+ 0x3cb5000 -  0x3cc1fff com.apple.JavaAppletPlugin 10.0.0	/Library/Internet Plug-Ins/Java Applet.plugin/Contents/MacOS/Java Applet
+ 0x3d09e30 -  0x3d09f15 CFMPriv_NavigationServices 	PEF binary: CFMPriv_NavigationServices
+ 0x3d09f20 -  0x3d09ff6 CFMPriv_OpenScripting 	PEF binary: CFMPriv_OpenScripting
+ 0x3d0a0c0 -  0x3d0a17e CFMPriv_Print 	PEF binary: CFMPriv_Print
+ 0x3d0a190 -  0x3d0a25d CFMPriv_SecurityHI 	PEF binary: CFMPriv_SecurityHI
+ 0x3d0a2d0 -  0x3d0a3b2 CFMPriv_SpeechRecognition 	PEF binary: CFMPriv_SpeechRecognition
+ 0x3d0a420 -  0x3d0a4f3 CFMPriv_CarbonCore 	PEF binary: CFMPriv_CarbonCore
+ 0x3d0a560 -  0x3d0a633 CFMPriv_OSServices 	PEF binary: CFMPriv_OSServices
+ 0x3d0a700 -  0x3d0a7c2 CFMPriv_AE 	PEF binary: CFMPriv_AE
+ 0x3d0a7d0 -  0x3d0a895 CFMPriv_ATS 	PEF binary: CFMPriv_ATS
+ 0x3d0a900 -  0x3d0a9d7 CFMPriv_ColorSync 	PEF binary: CFMPriv_ColorSync
+ 0x3d0aa50 -  0x3d0ab33 CFMPriv_FindByContent 	PEF binary: CFMPriv_FindByContent
+ 0x3d0aba0 -  0x3d0ac7a CFMPriv_HIServices 	PEF binary: CFMPriv_HIServices
+ 0x3d0ace0 -  0x3d0adc0 CFMPriv_LangAnalysis 	PEF binary: CFMPriv_LangAnalysis
+ 0x3d0ae40 -  0x3d0af26 CFMPriv_LaunchServices 	PEF binary: CFMPriv_LaunchServices
+ 0x3d0aff0 -  0x3d0b0c7 CFMPriv_PrintCore 	PEF binary: CFMPriv_PrintCore
+ 0x3d0b0d0 -  0x3d0b192 CFMPriv_QD 	PEF binary: CFMPriv_QD
+ 0x3d0b280 -  0x3d0b369 CFMPriv_SpeechSynthesis 	PEF binary: CFMPriv_SpeechSynthesis
+ 0x3d0c950 -  0x3d0ca23 CFMPriv_CommonPanels 	PEF binary: CFMPriv_CommonPanels
+ 0x3d0ca90 -  0x3d0cb4b CFMPriv_Help 	PEF binary: CFMPriv_Help
+ 0x3d0cb50 -  0x3d0cc1a CFMPriv_HIToolbox 	PEF binary: CFMPriv_HIToolbox
+ 0x3d0cc90 -  0x3d0cd66 CFMPriv_HTMLRendering 	PEF binary: CFMPriv_HTMLRendering
+ 0x3d0cdd0 -  0x3d0cea3 CFMPriv_ImageCapture 	PEF binary: CFMPriv_ImageCapture
+ 0x3d1f880 -  0x3d1f932 CFMPriv_CoreFoundation 	PEF binary: CFMPriv_CoreFoundation
+ 0x3d1fac0 -  0x3d1fb75 CFMPriv_DVComponentGlue 	PEF binary: CFMPriv_DVComponentGlue
+ 0x3d1fd90 -  0x3d1fe33 CFMPriv_QuickTime 	PEF binary: CFMPriv_QuickTime
+ 0x3d1fea0 -  0x3d1ff17 CFMPriv_System 	PEF binary: CFMPriv_System
+ 0x3d20190 -  0x3d20260 CFMPriv_CarbonSound 	PEF binary: CFMPriv_CarbonSound
+ 0x3e05000 -  0x3e543c7 CarbonLibpwpc 	PEF binary: CarbonLibpwpc
+ 0x3e543d0 -  0x3e6c6bd Apple;Carbon;Multimedia 	PEF binary: Apple;Carbon;Multimedia
+ 0x3e6dc00 -  0x3e6f98b Apple;Carbon;Networking 	PEF binary: Apple;Carbon;Networking
+ 0x3e70000 -  0x3fa8e45 Flash Player 	PEF binary: Flash Player
+ 0x4000000 -  0x400dfff libplds4.dylib 	/Applications/Firefox.app/Contents/MacOS/libplds4.dylib
+ 0x5000000 -  0x500efff libplc4.dylib 	/Applications/Firefox.app/Contents/MacOS/libplc4.dylib
+ 0x5b05000 -  0x5b30fff com.apple.print.framework.Print.Private 4.3 (157.7)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/Current/Plugins/PrintCocoaUI.bundle/Contents/MacOS/PrintCocoaUI
+ 0x5b6c000 -  0x5b6ffff org.mozilla.pde.MOZZ 1.0	/Applications/Firefox.app/Contents/Plug-ins/PrintPDE.plugin/Contents/MacOS/PrintPDE
+ 0x5b73000 -  0x5b92fff com.apple.print.PrintingCocoaPDEs 4.3 (157.7)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Plugins/PrintingCocoaPDEs.bundle/Contents/MacOS/PrintingCocoaPDEs
+ 0x5bb4000 -  0x5bcdfff com.apple.print.PrintingTiogaPDEs 4.3 (157.7)	/System/Library/Frameworks/Carbon.framework/Frameworks/Print.framework/Versions/A/Plugins/PrintingTiogaPDEs.bundle/Contents/MacOS/PrintingTiogaPDEs
+ 0x5bf0000 -  0x5bf8fff com.apple.print.converter.plugin 4.0 (157)	/System/Library/Printers/CVs/Converter.plugin/Contents/MacOS/Converter
+ 0x6000000 -  0x6083fff libmozjs.dylib 	/Applications/Firefox.app/Contents/MacOS/libmozjs.dylib
+ 0x7000000 -  0x7000fff libxpcom.dylib 	/Applications/Firefox.app/Contents/MacOS/libxpcom.dylib
+ 0x8000000 -  0x801bfff libssl3.dylib 	/Applications/Firefox.app/Contents/MacOS/libssl3.dylib
+ 0x9000000 -  0x9060fff libnss3.dylib 	/Applications/Firefox.app/Contents/MacOS/libnss3.dylib
+ 0xa000000 -  0xa01dfff libsmime3.dylib 	/Applications/Firefox.app/Contents/MacOS/libsmime3.dylib
+ 0xb000000 -  0xb07afff libsoftokn3.dylib 	/Applications/Firefox.app/Contents/MacOS/libsoftokn3.dylib
+ 0xc000000 -  0xc018fff libxpcom_compat.dylib 	/Applications/Firefox.app/Contents/MacOS/libxpcom_compat.dylib
+0x10000000 - 0x10084fff libxpcom_core.dylib 	/Applications/Firefox.app/Contents/MacOS/libxpcom_core.dylib
+0x78e00000 - 0x78e07fff libLW8Utils.dylib 	/System/Library/Printers/Libraries/libLW8Utils.dylib
+0x79200000 - 0x7923efff libLW8Converter.dylib 	/System/Library/Printers/Libraries/libLW8Converter.dylib
+0x8fe00000 - 0x8fe54fff dyld 44.2	/usr/lib/dyld
+0x90000000 - 0x901b3fff libSystem.B.dylib 	/usr/lib/libSystem.B.dylib
+0x9020b000 - 0x9020ffff libmathCommon.A.dylib 	/usr/lib/system/libmathCommon.A.dylib
+0x90211000 - 0x90264fff com.apple.CoreText 1.0.1 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreText.framework/Versions/A/CoreText
+0x90291000 - 0x90342fff ATS 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+0x90371000 - 0x906aefff com.apple.CoreGraphics 1.256.27 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
+0x9073a000 - 0x90813fff com.apple.CoreFoundation 6.4.4 (368.18)	/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+0x9085c000 - 0x9085cfff com.apple.CoreServices 10.4 (???)	/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+0x9085e000 - 0x90960fff libicucore.A.dylib 	/usr/lib/libicucore.A.dylib
+0x909ba000 - 0x90a3efff libobjc.A.dylib 	/usr/lib/libobjc.A.dylib
+0x90a68000 - 0x90ad6fff com.apple.framework.IOKit 1.4 (???)	/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+0x90aed000 - 0x90afffff libauto.dylib 	/usr/lib/libauto.dylib
+0x90b06000 - 0x90dddfff com.apple.CoreServices.CarbonCore 671.2	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+0x90e43000 - 0x90ec3fff com.apple.CoreServices.OSServices 4.1	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+0x90f0d000 - 0x90f4efff com.apple.CFNetwork 10.4.3 (129.2)	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+0x90f63000 - 0x90f7bfff com.apple.WebServices 1.1.2 (1.1.0)	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebServicesCore.framework/Versions/A/WebServicesCore
+0x90f8b000 - 0x9100cfff com.apple.SearchKit 1.0.4	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+0x91052000 - 0x9107bfff com.apple.Metadata 10.4.3 (121.20.2)	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+0x9108c000 - 0x9109afff libz.1.dylib 	/usr/lib/libz.1.dylib
+0x9109d000 - 0x9125ffff com.apple.security 4.2 (24844)	/System/Library/Frameworks/Security.framework/Versions/A/Security
+0x91362000 - 0x9136bfff com.apple.DiskArbitration 2.1	/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration
+0x91372000 - 0x91399fff com.apple.SystemConfiguration 1.8.1	/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+0x913ac000 - 0x913b4fff libgcc_s.1.dylib 	/usr/lib/libgcc_s.1.dylib
+0x913b9000 - 0x913d9fff libmx.A.dylib 	/usr/lib/libmx.A.dylib
+0x913df000 - 0x913e7fff libbsm.dylib 	/usr/lib/libbsm.dylib
+0x913eb000 - 0x91469fff com.apple.audio.CoreAudio 3.0.1	/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
+0x914a7000 - 0x914a7fff com.apple.ApplicationServices 10.4 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+0x914a9000 - 0x914e1fff com.apple.AE 1.5 (297)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+0x914fc000 - 0x915c9fff com.apple.ColorSync 4.4.3	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+0x9161e000 - 0x916b1fff com.apple.print.framework.PrintCore 4.3 (172.3)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+0x916f8000 - 0x917b5fff com.apple.QD 3.8.18 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+0x917f3000 - 0x91851fff com.apple.HIServices 1.5.1 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+0x9187f000 - 0x918a3fff com.apple.LangAnalysis 1.6.1	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+0x918b7000 - 0x918dcfff com.apple.FindByContent 1.5	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/FindByContent.framework/Versions/A/FindByContent
+0x918ef000 - 0x91931fff com.apple.LaunchServices 10.4.5 (168)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+0x9194d000 - 0x91961fff com.apple.speech.synthesis.framework 3.3	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+0x9196f000 - 0x919a8fff com.apple.ImageIO.framework 1.4.3	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/ImageIO
+0x919bd000 - 0x91a83fff libcrypto.0.9.7.dylib 	/usr/lib/libcrypto.0.9.7.dylib
+0x91ad0000 - 0x91ae5fff libcups.2.dylib 	/usr/lib/libcups.2.dylib
+0x91aea000 - 0x91b06fff libJPEG.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib
+0x91b0b000 - 0x91b7afff libJP2.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libJP2.dylib
+0x91b91000 - 0x91b95fff libGIF.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib
+0x91b97000 - 0x91bc8fff libRaw.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libRaw.dylib
+0x91bcc000 - 0x91c0ffff libTIFF.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libTIFF.dylib
+0x91c16000 - 0x91c2ffff libPng.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libPng.dylib
+0x91c34000 - 0x91c37fff libRadiance.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib
+0x91c39000 - 0x91c39fff com.apple.Accelerate 1.1.1 (Accelerate 1.1.1)	/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
+0x91c3b000 - 0x91d25fff com.apple.vImage 2.0	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
+0x91d2d000 - 0x91d4cfff com.apple.Accelerate.vecLib 3.1.1 (vecLib 3.1.1)	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
+0x91db8000 - 0x91e1dfff libvMisc.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
+0x91e27000 - 0x91eb9fff libvDSP.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
+0x91ed3000 - 0x92463fff libBLAS.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+0x924ab000 - 0x927bbfff libLAPACK.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+0x927e8000 - 0x92874fff com.apple.DesktopServices 1.3.1	/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
+0x928b6000 - 0x92ae0fff com.apple.Foundation 6.4.2 (567.21)	/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+0x92bfe000 - 0x92cdcfff libxml2.2.dylib 	/usr/lib/libxml2.2.dylib
+0x92cfc000 - 0x92deafff libiconv.2.dylib 	/usr/lib/libiconv.2.dylib
+0x92dfc000 - 0x92e1afff libGL.dylib 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+0x92e25000 - 0x92e7ffff libGLU.dylib 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+0x92e9d000 - 0x92e9dfff com.apple.Carbon 10.4 (???)	/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
+0x92e9f000 - 0x92eb3fff com.apple.ImageCapture 3.0	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture
+0x92ecb000 - 0x92edbfff com.apple.speech.recognition.framework 3.4	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition
+0x92ee7000 - 0x92efcfff com.apple.securityhi 2.0 (203)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI
+0x92f0e000 - 0x92f95fff com.apple.ink.framework 101.2 (69)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink
+0x92fa9000 - 0x92fb4fff com.apple.help 1.0.3 (32)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help
+0x92fbe000 - 0x92febfff com.apple.openscripting 1.2.3 (???)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting
+0x93005000 - 0x93015fff com.apple.print.framework.Print 5.0 (190.1)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print
+0x93021000 - 0x93087fff com.apple.htmlrendering 1.1.2	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering
+0x930b8000 - 0x9310afff com.apple.NavigationServices 3.4.2	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices
+0x93136000 - 0x93153fff com.apple.audio.SoundManager 3.9	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound
+0x93165000 - 0x93172fff com.apple.CommonPanels 1.2.2 (73)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels
+0x9317b000 - 0x9348dfff com.apple.HIToolbox 1.4.4 (???)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+0x935d9000 - 0x935e5fff com.apple.opengl 1.4.6	/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL
+0x935ea000 - 0x9360bfff com.apple.DirectoryService.Framework 3.0	/System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService
+0x93618000 - 0x9361cfff com.apple.JavaVM 10.0.0	/System/Library/Frameworks/JavaVM.framework/Versions/A/JavaVM
+0x93677000 - 0x93677fff com.apple.Cocoa 6.4 (???)	/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa
+0x93679000 - 0x93cacfff com.apple.AppKit 6.4.3 (824.23)	/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+0x94038000 - 0x940a7fff com.apple.CoreData 50 (77)	/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
+0x940e0000 - 0x941aafff com.apple.audio.toolbox.AudioToolbox 1.4.1	/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
+0x941fe000 - 0x941fefff com.apple.audio.units.AudioUnit 1.4	/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit
+0x94200000 - 0x94378fff com.apple.QuartzCore 1.4.3	/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore
+0x943c2000 - 0x943fffff libsqlite3.0.dylib 	/usr/lib/libsqlite3.0.dylib
+0x94407000 - 0x94457fff libGLImage.dylib 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib
+0x945f9000 - 0x94608fff libCGATS.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGATS.A.dylib
+0x94610000 - 0x9461cfff libCSync.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib
+0x94622000 - 0x94640fff libPDFRIP.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPDFRIP.A.dylib
+0x94661000 - 0x94679fff libRIP.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib
+0x94680000 - 0x948eafff com.apple.QuickTime 7.0.3	/System/Library/Frameworks/QuickTime.framework/Versions/A/QuickTime
+0x94ac1000 - 0x94beffff com.apple.AddressBook.framework 4.0.3 (483)	/System/Library/Frameworks/AddressBook.framework/Versions/A/AddressBook
+0x94c81000 - 0x94c90fff com.apple.DSObjCWrappers.Framework 1.1	/System/Library/PrivateFrameworks/DSObjCWrappers.framework/Versions/A/DSObjCWrappers
+0x94c98000 - 0x94cc5fff com.apple.LDAPFramework 1.4.1 (69.0.1)	/System/Library/Frameworks/LDAP.framework/Versions/A/LDAP
+0x94ccc000 - 0x94cdcfff libsasl2.2.dylib 	/usr/lib/libsasl2.2.dylib
+0x94ce0000 - 0x94d0efff libssl.0.9.7.dylib 	/usr/lib/libssl.0.9.7.dylib
+0x94d1e000 - 0x94d3bfff libresolv.9.dylib 	/usr/lib/libresolv.9.dylib
+0x94f1a000 - 0x94f1bfff com.apple.JavaCarbonSupport 10.0.0	/System/Library/PrivateFrameworks/JavaCarbonSupport.framework/Versions/A/JavaCarbonSupport
+0x9738f000 - 0x973aefff com.apple.vecLib 3.1.1 (vecLib 3.1.1)	/System/Library/Frameworks/vecLib.framework/Versions/A/vecLib
+0x97bb4000 - 0x97bc1fff com.apple.agl 2.5.6 (AGL-2.5.6)	/System/Library/Frameworks/AGL.framework/Versions/A/AGL
+0x988e8000 - 0x988f6fff com.apple.JavaEmbedding 10.0.0	/System/Library/Frameworks/JavaEmbedding.framework/JavaEmbedding
+0x996c3000 - 0x99f76fff com.apple.QuickTimeComponents.component 7.0.3	/System/Library/QuickTime/QuickTimeComponents.component/Contents/MacOS/QuickTimeComponents
+0x9abe1000 - 0x9ac0cfff com.apple.QuickTime Plugin.plugin 7.0.3	/Library/Internet Plug-Ins/QuickTime Plugin.plugin/Contents/MacOS/QuickTime Plugin
+0x9ae9d000 - 0x9ae9efff com.apple.iokit.dvcomponentglue 1.7.5	/System/Library/Frameworks/DVComponentGlue.framework/Versions/A/DVComponentGlue
+0x9b70d000 - 0x9b724fff libCFilter.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCFilter.A.dylib
+0xeab00000 - 0xeab25fff libConverter.dylib 	/System/Library/Printers/Libraries/libConverter.dylib
+
+**********
+
+Host Name:      lamarck
+Date/Time:      2005-12-09 16:07:24.154 -0600
+OS Version:     10.4.3 (Build 8F46)
+Report Version: 3
+
+Command: firefox-bin
+Path:    /Users/fuzz/DeerParkDebug.app/Contents/MacOS/firefox-bin
+Parent:  launchd [1]
+
+Version: 1.5 (1.5)
+
+PID:    8184
+Thread: 0
+
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x00000000
+
+Thread 0 Crashed:
+0   <<00000000>> 	0x00000000 0 + 0
+1   libgklayout.dylib              	0x0760ba6c nsContentList::ContentAppended(nsIDocument*, nsIContent*, int) + 120 (nsContentList.cpp:564)
+2   libgklayout.dylib              	0x0762efd8 nsDocument::ContentAppended(nsIContent*, int) + 196 (nsDocument.cpp:2356)
+3   libgklayout.dylib              	0x077a7040 nsXULDocument::ContentAppended(nsIContent*, int) + 240 (nsXULDocument.cpp:1174)
+4   libgklayout.dylib              	0x07659038 doInsertChildAt(nsIContent*, unsigned, int, nsIContent*, nsIDocument*, nsAttrAndChildArray&) + 888 (nsGenericElement.cpp:2770)
+5   libgklayout.dylib              	0x07658ca4 nsGenericElement::InsertChildAt(nsIContent*, unsigned, int) + 136 (nsGenericElement.cpp:2718)
+6   libgklayout.dylib              	0x079f9218 nsContentOrDocument::InsertChildAt(nsIContent*, unsigned, int, nsAttrAndChildArray&) + 108 (nsGenericElement.cpp:2883)
+7   libgklayout.dylib              	0x0765b4d8 nsGenericElement::doInsertBefore(nsIDOMNode*, nsIDOMNode*, nsIContent*, nsIDocument*, nsAttrAndChildArray&, nsIDOMNode**) + 3168 (nsGenericElement.cpp:3500)
+8   libgklayout.dylib              	0x07659a60 nsGenericElement::InsertBefore(nsIDOMNode*, nsIDOMNode*, nsIDOMNode**) + 84 (nsGenericElement.cpp:3018)
+9   libgklayout.dylib              	0x07a1ddfc nsHTMLDivElement::InsertBefore(nsIDOMNode*, nsIDOMNode*, nsIDOMNode**) + 56 (nsHTMLDivElement.cpp:59)
+10  libeditor.dylib                	0x055096c8 InsertElementTxn::DoTransaction() + 1100 (InsertElementTxn.cpp:115)
+11  libtxmgr.dylib                 	0x1bb7a200 nsTransactionItem::DoTransaction() + 80 (nsTransactionItem.cpp:180)
+12  libtxmgr.dylib                 	0x1bb7f3ac nsTransactionManager::BeginTransaction(nsITransaction*) + 300 (nsTransactionManager.cpp:1071)
+13  libtxmgr.dylib                 	0x1bb7c7f8 nsTransactionManager::DoTransaction(nsITransaction*) + 312 (nsTransactionManager.cpp:132)
+14  libeditor.dylib                	0x054e10f4 nsEditor::DoTransaction(nsITransaction*) + 1380 (nsEditor.cpp:682)
+15  libeditor.dylib                	0x054e3950 nsEditor::InsertNode(nsIDOMNode*, nsIDOMNode*, int) + 316 (nsEditor.cpp:1375)
+16  libeditor.dylib                	0x054e8c98 nsEditor::InsertTextImpl(nsAString_internal const&, nsCOMPtr<nsIDOMNode>*, int*, nsIDOMDocument*) + 1224 (nsEditor.cpp:2657)
+17  libeditor.dylib                	0x054d254c nsTextEditRules::WillInsertText(int, nsISelection*, int*, int*, nsAString_internal const*, nsAString_internal*, int) + 3252 (nsTextEditRules.cpp:730)
+18  libeditor.dylib                	0x054d0c30 nsTextEditRules::WillDoAction(nsISelection*, nsRulesInfo*, int*, int*) + 388 (nsTextEditRules.cpp:296)
+19  libeditor.dylib                	0x054ca9c4 nsPlaintextEditor::InsertText(nsAString_internal const&) + 580 (nsPlaintextEditor.cpp:789)
+20  libgklayout.dylib              	0x074aa278 nsTextControlFrame::SetValue(nsAString_internal const&) + 1476 (nsTextControlFrame.cpp:3173)
+21  libgklayout.dylib              	0x074a3a38 nsTextControlFrame::InitEditor() + 528 (nsTextControlFrame.cpp:1742)
+22  libgklayout.dylib              	0x074a37c4 nsTextControlFrame::PostCreateFrames() + 32 (nsTextControlFrame.cpp:1663)
+23  libgklayout.dylib              	0x07357670 nsCSSFrameConstructor::CreateAnonymousFrames(nsFrameConstructorState&, nsIContent*, nsIDocument*, nsIFrame*, int, int, nsFrameItems&, nsIFrame*, nsIContent*, int) + 1440 (nsCSSFrameConstructor.cpp:5809)
+24  libgklayout.dylib              	0x073570b0 nsCSSFrameConstructor::CreateAnonymousFrames(nsIAtom*, nsFrameConstructorState&, nsIContent*, nsIFrame*, int, nsFrameItems&, int) + 268 (nsCSSFrameConstructor.cpp:5680)
+25  libgklayout.dylib              	0x07356e14 nsCSSFrameConstructor::ConstructHTMLFrame(nsFrameConstructorState&, nsIContent*, nsIFrame*, nsIAtom*, int, nsStyleContext*, nsFrameItems&, int) + 3472 (nsCSSFrameConstructor.cpp:5617)
+26  libgklayout.dylib              	0x0735bf44 nsCSSFrameConstructor::ConstructFrameInternal(nsFrameConstructorState&, nsIContent*, nsIFrame*, nsIAtom*, int, nsStyleContext*, nsFrameItems&, int) + 1264 (nsCSSFrameConstructor.cpp:7728)
+27  libgklayout.dylib              	0x0735b9dc nsCSSFrameConstructor::ConstructFrame(nsFrameConstructorState&, nsIContent*, nsIFrame*, nsFrameItems&) + 520 (nsCSSFrameConstructor.cpp:7621)
+28  libgklayout.dylib              	0x07367890 nsCSSFrameConstructor::ProcessChildren(nsFrameConstructorState&, nsIContent*, nsIFrame*, int, nsFrameItems&, int, nsTableCreator*) + 492 (nsCSSFrameConstructor.cpp:11976)
+29  libgklayout.dylib              	0x07358ccc nsCSSFrameConstructor::ConstructXULFrame(nsFrameConstructorState&, nsIContent*, nsIFrame*, nsIAtom*, int, nsStyleContext*, nsFrameItems&, int, int, int*) + 5292 (nsCSSFrameConstructor.cpp:6308)
+30  libgklayout.dylib              	0x0735bfcc nsCSSFrameConstructor::ConstructFrameInternal(nsFrameConstructorState&, nsIContent*, nsIFrame*, nsIAtom*, int, nsStyleContext*, nsFrameItems&, int) + 1400 (nsCSSFrameConstructor.cpp:7737)
+31  libgklayout.dylib              	0x0735b9dc nsCSSFrameConstructor::ConstructFrame(nsFrameConstructorState&, nsIContent*, nsIFrame*, nsFrameItems&) + 520 (nsCSSFrameConstructor.cpp:7621)
+32  libgklayout.dylib              	0x07367890 nsCSSFrameConstructor::ProcessChildren(nsFrameConstructorState&, nsIContent*, nsIFrame*, int, nsFrameItems&, int, nsTableCreator*) + 492 (nsCSSFrameConstructor.cpp:11976)
+33  libgklayout.dylib              	0x07358ccc nsCSSFrameConstructor::ConstructXULFrame(nsFrameConstructorState&, nsIContent*, nsIFrame*, nsIAtom*, int, nsStyleContext*, nsFrameItems&, int, int, int*) + 5292 (nsCSSFrameConstructor.cpp:6308)
+34  libgklayout.dylib              	0x0735bfcc nsCSSFrameConstructor::ConstructFrameInternal(nsFrameConstructorState&, nsIContent*, nsIFrame*, nsIAtom*, int, nsStyleContext*, nsFrameItems&, int) + 1400 (nsCSSFrameConstructor.cpp:7737)
+35  libgklayout.dylib              	0x0735bd0c nsCSSFrameConstructor::ConstructFrameInternal(nsFrameConstructorState&, nsIContent*, nsIFrame*, nsIAtom*, int, nsStyleContext*, nsFrameItems&, int) + 696 (nsCSSFrameConstructor.cpp:7681)
+36  libgklayout.dylib              	0x0735b9dc nsCSSFrameConstructor::ConstructFrame(nsFrameConstructorState&, nsIContent*, nsIFrame*, nsFrameItems&) + 520 (nsCSSFrameConstructor.cpp:7621)
+37  libgklayout.dylib              	0x07367890 nsCSSFrameConstructor::ProcessChildren(nsFrameConstructorState&, nsIContent*, nsIFrame*, int, nsFrameItems&, int, nsTableCreator*) + 492 (nsCSSFrameConstructor.cpp:11976)
+38  libgklayout.dylib              	0x07358ccc nsCSSFrameConstructor::ConstructXULFrame(nsFrameConstructorState&, nsIContent*, nsIFrame*, nsIAtom*, int, nsStyleContext*, nsFrameItems&, int, int, int*) + 5292 (nsCSSFrameConstructor.cpp:6308)
+39  libgklayout.dylib              	0x0735bfcc nsCSSFrameConstructor::ConstructFrameInternal(nsFrameConstructorState&, nsIContent*, nsIFrame*, nsIAtom*, int, nsStyleContext*, nsFrameItems&, int) + 1400 (nsCSSFrameConstructor.cpp:7737)
+40  libgklayout.dylib              	0x0735b9dc nsCSSFrameConstructor::ConstructFrame(nsFrameConstructorState&, nsIContent*, nsIFrame*, nsFrameItems&) + 520 (nsCSSFrameConstructor.cpp:7621)
+41  libgklayout.dylib              	0x07367890 nsCSSFrameConstructor::ProcessChildren(nsFrameConstructorState&, nsIContent*, nsIFrame*, int, nsFrameItems&, int, nsTableCreator*) + 492 (nsCSSFrameConstructor.cpp:11976)
+42  libgklayout.dylib              	0x07358ccc nsCSSFrameConstructor::ConstructXULFrame(nsFrameConstructorState&, nsIContent*, nsIFrame*, nsIAtom*, int, nsStyleContext*, nsFrameItems&, int, int, int*) + 5292 (nsCSSFrameConstructor.cpp:6308)
+43  libgklayout.dylib              	0x0735bfcc nsCSSFrameConstructor::ConstructFrameInternal(nsFrameConstructorState&, nsIContent*, nsIFrame*, nsIAtom*, int, nsStyleContext*, nsFrameItems&, int) + 1400 (nsCSSFrameConstructor.cpp:7737)
+44  libgklayout.dylib              	0x0735b9dc nsCSSFrameConstructor::ConstructFrame(nsFrameConstructorState&, nsIContent*, nsIFrame*, nsFrameItems&) + 520 (nsCSSFrameConstructor.cpp:7621)
+45  libgklayout.dylib              	0x07360b20 nsCSSFrameConstructor::ContentInserted(nsIContent*, nsIFrame*, nsIContent*, int, nsILayoutHistoryState*, int) + 3184 (nsCSSFrameConstructor.cpp:9368)
+46  libgklayout.dylib              	0x073673e8 nsCSSFrameConstructor::RecreateFramesForContent(nsIContent*) + 896 (nsCSSFrameConstructor.cpp:11856)
+47  libgklayout.dylib              	0x07366f6c nsCSSFrameConstructor::MaybeRecreateFramesForContent(nsIContent*) + 248 (nsCSSFrameConstructor.cpp:11758)
+48  libgklayout.dylib              	0x073631f0 nsCSSFrameConstructor::RestyleElement(nsIContent*, nsIFrame*, nsChangeHint) + 316 (nsCSSFrameConstructor.cpp:10407)
+49  libgklayout.dylib              	0x0736b868 nsCSSFrameConstructor::ProcessOneRestyle(nsIContent*, nsReStyleHint, nsChangeHint) + 252 (nsCSSFrameConstructor.cpp:13811)
+50  libgklayout.dylib              	0x0736bb14 nsCSSFrameConstructor::ProcessPendingRestyles() + 524 (nsCSSFrameConstructor.cpp:13855)
+51  libgklayout.dylib              	0x073b0bfc PresShell::FlushPendingNotifications(mozFlushType) + 276 (nsPresShell.cpp:5329)
+52  libgklayout.dylib              	0x076362a4 nsDocument::FlushPendingNotifications(mozFlushType) + 824 (nsDocument.cpp:4251)
+53  libgklayout.dylib              	0x076c5f98 nsGenericHTMLElement::GetPrimaryFrameFor(nsIContent*, nsIDocument*, int) + 80 (nsGenericHTMLElement.cpp:2259)
+54  libgklayout.dylib              	0x076c6058 nsGenericHTMLElement::GetFormControlFrameFor(nsIContent*, nsIDocument*, int) + 56 (nsGenericHTMLElement.cpp:2276)
+55  libgklayout.dylib              	0x07a1091c nsGenericHTMLElement::GetFormControlFrame(int) + 84 (nsGenericHTMLElement.h:305)
+56  libgklayout.dylib              	0x076f4c6c nsHTMLInputElement::Select() + 1024 (nsHTMLInputElement.cpp:1183)
+57  libxpcom_core.dylib            	0x010bbbe0 _XPTC_InvokeByIndex + 216 (xptcstubsdef.inc:256)
+58  libxpcom_core.dylib            	0x010bb360 XPTC_InvokeByIndex + 56 (xptcinvoke_ppc_rhapsody.cpp:144)
+59  libxpconnect.dylib             	0x1dc86230 XPCWrappedNative::CallMethod(XPCCallContext&, XPCWrappedNative::CallMode) + 4388 (xpcwrappednative.cpp:2138)
+60  libxpconnect.dylib             	0x1dc8fdb8 XPC_WN_CallMethod(JSContext*, JSObject*, unsigned, long*, long*) + 436 (xpcwrappednativejsops.cpp:1444)
+61  libmozjs.dylib                 	0x0055fafc js_Invoke + 4556 (jsinterp.c:1177)
+62  libmozjs.dylib                 	0x00572b98 js_Interpret + 69588 (jsinterp.c:3522)
+63  libmozjs.dylib                 	0x0055fb88 js_Invoke + 4696 (jsinterp.c:1197)
+64  libxpconnect.dylib             	0x1dc7f3d0 nsXPCWrappedJSClass::CallMethod(nsXPCWrappedJS*, unsigned short, nsXPTMethodInfo const*, nsXPTCMiniVariant*) + 3932 (xpcwrappedjsclass.cpp:1369)
+65  libxpconnect.dylib             	0x1dc77778 nsXPCWrappedJS::CallMethod(unsigned short, nsXPTMethodInfo const*, nsXPTCMiniVariant*) + 148 (xpcwrappedjs.cpp:461)
+66  libxpcom_core.dylib            	0x010bb8b8 PrepareAndDispatch + 1340 (xptcstubs_ppc_rhapsody.cpp:184)
+67  libxpcom_core.dylib            	0x010bc420 SharedStub + 112 (xptcstubsdef.inc:256)
+68  libgklayout.dylib              	0x07698f18 nsEventListenerManager::HandleEventSubType(nsListenerStruct*, nsIDOMEvent*, nsIDOMEventTarget*, unsigned, unsigned) + 848 (nsEventListenerManager.cpp:1685)
+69  libgklayout.dylib              	0x07699468 nsEventListenerManager::HandleEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, nsIDOMEventTarget*, unsigned, nsEventStatus*) + 1248 (nsEventListenerManager.cpp:1766)
+70  libgklayout.dylib              	0x0778f9c0 nsXULElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 4200 (nsXULElement.cpp:2153)
+71  libgklayout.dylib              	0x0778fb2c nsXULElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 4564 (nsXULElement.cpp:2171)
+72  libgklayout.dylib              	0x0778fb2c nsXULElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 4564 (nsXULElement.cpp:2171)
+73  libgklayout.dylib              	0x0778fb2c nsXULElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 4564 (nsXULElement.cpp:2171)
+74  libgklayout.dylib              	0x0778fb2c nsXULElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 4564 (nsXULElement.cpp:2171)
+75  libgklayout.dylib              	0x07793864 nsXULElement::HandleChromeEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 120 (nsXULElement.cpp:2833)
+76  libgklayout.dylib              	0x077e4c24 nsGlobalWindow::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1908 (nsGlobalWindow.cpp:1574)
+77  libgklayout.dylib              	0x07635310 nsDocument::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 680 (nsDocument.cpp:4013)
+78  libgklayout.dylib              	0x07657774 nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 3320 (nsGenericElement.cpp:2204)
+79  libgklayout.dylib              	0x073b40d0 PresShell::HandleEventInternal(nsEvent*, nsIView*, unsigned, nsEventStatus*) + 1184 (nsPresShell.cpp:6366)
+80  libgklayout.dylib              	0x073b3878 PresShell::HandleEvent(nsIView*, nsGUIEvent*, nsEventStatus*, int, int&) + 2448 (nsPresShell.cpp:6202)
+81  libgklayout.dylib              	0x077caf34 nsViewManager::HandleEvent(nsView*, nsGUIEvent*, int) + 428 (nsViewManager.cpp:2514)
+82  libgklayout.dylib              	0x077ca448 nsViewManager::DispatchEvent(nsGUIEvent*, nsEventStatus*) + 4312 (nsViewManager.cpp:2246)
+83  libgklayout.dylib              	0x077bde60 HandleEvent(nsGUIEvent*) + 112 (nsView.cpp:174)
+84  libwidget_mac.dylib            	0x1cfed75c nsWindow::DispatchEvent(nsGUIEvent*, nsEventStatus&) + 236 (nsWindow.cpp:1809)
+85  libwidget_mac.dylib            	0x1cfed854 nsWindow::DispatchWindowEvent(nsGUIEvent&) + 68 (nsWindow.cpp:1825)
+86  libwidget_mac.dylib            	0x1cfc93b8 nsMacEventHandler::HandleUKeyEvent(unsigned short const*, long, EventRecord&) + 848 (nsMacEventHandler.cpp:1221)
+87  libwidget_mac.dylib            	0x1cfd037c nsMacTSMMessagePump::UnicodeNotFromInputMethodHandler(AEDesc const*, AEDesc*, long) + 380 (nsMacTSMMessagePump.cpp:531)
+88  com.apple.AE                   	0x914ab960 aeDispatchAppleEvent(AEDesc const*, AEDesc*, unsigned long, unsigned char*) + 208
+89  com.apple.AE                   	0x914b6fc0 sendToSelf(AEDesc const*, AEDesc*, long, long) + 372
+90  com.apple.AE                   	0x914af8f8 AESendMessage + 648
+91  com.apple.AE                   	0x914af3d4 aeSend + 224
+92  com.apple.HIToolbox            	0x9323459c AESend + 108
+93  com.apple.HIToolbox            	0x93299e68 HandleTextInputEvent(OpaqueEventRef*) + 296
+94  com.apple.HIToolbox            	0x9318b874 ToolboxEventDispatcherHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 524
+95  com.apple.HIToolbox            	0x93185244 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 1284
+96  com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+97  com.apple.HIToolbox            	0x9318b4ec SendEventToEventTarget + 40
+98  com.apple.HIToolbox            	0x93299c74 SendTSMEvent + 228
+99  com.apple.HIToolbox            	0x932993c4 SendUnicodeTextAEToUnicodeDoc + 928
+100 com.apple.HIToolbox            	0x93298df0 utDeliverTSMEvent + 1024
+101 com.apple.HIToolbox            	0x932989d4 TSMKeyEvent + 88
+102 com.apple.HIToolbox            	0x9324f7a4 TSMProcessRawKeyEvent + 920
+103 com.apple.HIToolbox            	0x9324f26c HandleCompatibilityKeyEvent(OpaqueEventRef*) + 308
+104 com.apple.HIToolbox            	0x93181d60 HIApplication::EventHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 788
+105 com.apple.HIToolbox            	0x93184ff4 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 692
+106 com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+107 com.apple.HIToolbox            	0x931845c8 SendEventToEventTargetWithOptions + 40
+108 com.apple.HIToolbox            	0x9324ef14 HandleKeyboardEvent(OpaqueEventRef*, unsigned long) + 352
+109 com.apple.HIToolbox            	0x9318b868 ToolboxEventDispatcherHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 512
+110 com.apple.HIToolbox            	0x93185244 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 1284
+111 com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+112 com.apple.HIToolbox            	0x9318b4ec SendEventToEventTarget + 40
+113 com.apple.HIToolbox            	0x931cc564 ToolboxEventDispatcher + 92
+114 com.apple.HIToolbox            	0x9326b5b8 TryEventDispatcher + 112
+115 com.apple.HIToolbox            	0x9326b20c GetOrPeekEvent + 304
+116 com.apple.HIToolbox            	0x9326af48 GetNextEventMatchingMask + 156
+117 com.apple.HIToolbox            	0x9326adf0 WNEInternal + 140
+118 com.apple.HIToolbox            	0x9326ad50 WaitNextEvent + 76
+119 libwidget_mac.dylib            	0x1cfcd038 nsMacMessagePump::GetEvent(EventRecord&) + 180 (nsMacMessagePump.cpp:384)
+120 libwidget_mac.dylib            	0x1cfbaba0 nsAppShell::GetNativeEvent(int&, void*&) + 128 (nsAppShell.cpp:210)
+121 libnsappshell.dylib            	0x184ba114 nsXULWindow::ShowModal() + 716 (nsXULWindow.cpp:400)
+122 libnsappshell.dylib            	0x184b60e8 nsContentTreeOwner::ShowAsModal() + 64 (nsContentTreeOwner.cpp:430)
+123 libembedcomponents.dylib       	0x068266e0 nsWindowWatcher::OpenWindowJS(nsIDOMWindow*, char const*, char const*, char const*, int, unsigned, long*, nsIDOMWindow**) + 6996 (nsWindowWatcher.cpp:823)
+124 libembedcomponents.dylib       	0x06824b50 nsWindowWatcher::OpenWindow(nsIDOMWindow*, char const*, char const*, char const*, nsISupports*, nsIDOMWindow**) + 212 (nsWindowWatcher.cpp:473)
+125 libxpcom_core.dylib            	0x010bbbe0 _XPTC_InvokeByIndex + 216 (xptcstubsdef.inc:256)
+126 libxpcom_core.dylib            	0x010bb360 XPTC_InvokeByIndex + 56 (xptcinvoke_ppc_rhapsody.cpp:144)
+127 libxpconnect.dylib             	0x1dc86230 XPCWrappedNative::CallMethod(XPCCallContext&, XPCWrappedNative::CallMode) + 4388 (xpcwrappednative.cpp:2138)
+128 libxpconnect.dylib             	0x1dc8fdb8 XPC_WN_CallMethod(JSContext*, JSObject*, unsigned, long*, long*) + 436 (xpcwrappednativejsops.cpp:1444)
+129 libmozjs.dylib                 	0x0055fafc js_Invoke + 4556 (jsinterp.c:1177)
+130 libmozjs.dylib                 	0x00572b98 js_Interpret + 69588 (jsinterp.c:3522)
+131 libmozjs.dylib                 	0x0055fb88 js_Invoke + 4696 (jsinterp.c:1197)
+132 libxpconnect.dylib             	0x1dc7f3d0 nsXPCWrappedJSClass::CallMethod(nsXPCWrappedJS*, unsigned short, nsXPTMethodInfo const*, nsXPTCMiniVariant*) + 3932 (xpcwrappedjsclass.cpp:1369)
+133 libxpconnect.dylib             	0x1dc77778 nsXPCWrappedJS::CallMethod(unsigned short, nsXPTMethodInfo const*, nsXPTCMiniVariant*) + 148 (xpcwrappedjs.cpp:461)
+134 libxpcom_core.dylib            	0x010bb8b8 PrepareAndDispatch + 1340 (xptcstubs_ppc_rhapsody.cpp:184)
+135 libxpcom_core.dylib            	0x010bc420 SharedStub + 112 (xptcstubsdef.inc:256)
+136 libxpcom_core.dylib            	0x010bbbe0 _XPTC_InvokeByIndex + 216 (xptcstubsdef.inc:256)
+137 libxpcom_core.dylib            	0x010bb360 XPTC_InvokeByIndex + 56 (xptcinvoke_ppc_rhapsody.cpp:144)
+138 libxpconnect.dylib             	0x1dc86230 XPCWrappedNative::CallMethod(XPCCallContext&, XPCWrappedNative::CallMode) + 4388 (xpcwrappednative.cpp:2138)
+139 libxpconnect.dylib             	0x1dc8fdb8 XPC_WN_CallMethod(JSContext*, JSObject*, unsigned, long*, long*) + 436 (xpcwrappednativejsops.cpp:1444)
+140 libmozjs.dylib                 	0x0055fafc js_Invoke + 4556 (jsinterp.c:1177)
+141 libmozjs.dylib                 	0x00572b98 js_Interpret + 69588 (jsinterp.c:3522)
+142 libmozjs.dylib                 	0x0055fb88 js_Invoke + 4696 (jsinterp.c:1197)
+143 libmozjs.dylib                 	0x0055fff0 js_InternalInvoke + 448 (jsinterp.c:1274)
+144 libmozjs.dylib                 	0x00516e94 JS_CallFunctionValue + 76 (jsapi.c:4158)
+145 libgklayout.dylib              	0x077d99d8 nsJSContext::CallEventHandler(JSObject*, JSObject*, unsigned, long*, long*) + 484 (nsJSEnvironment.cpp:1410)
+146 libgklayout.dylib              	0x07838aac nsJSEventListener::HandleEvent(nsIDOMEvent*) + 1972 (nsJSEventListener.cpp:185)
+147 libgklayout.dylib              	0x0777c740 nsXBLPrototypeHandler::ExecuteHandler(nsIDOMEventReceiver*, nsIDOMEvent*) + 7456 (nsXBLPrototypeHandler.cpp:505)
+148 libgklayout.dylib              	0x07778120 nsXBLWindowHandler::WalkHandlersInternal(nsIDOMEvent*, nsIAtom*, nsXBLPrototypeHandler*) + 1204 (nsXBLWindowHandler.cpp:305)
+149 libgklayout.dylib              	0x07779020 nsXBLWindowKeyHandler::WalkHandlers(nsIDOMEvent*, nsIAtom*) + 720 (nsXBLWindowKeyHandler.cpp:196)
+150 libgklayout.dylib              	0x077795d0 nsXBLWindowKeyHandler::KeyPress(nsIDOMEvent*) + 84 (nsXBLWindowKeyHandler.cpp:248)
+151 libgklayout.dylib              	0x07693fec DispatchToInterface(nsIDOMEvent*, nsIDOMEventListener*, unsigned (nsIDOMEventListener::*)(nsIDOMEvent*), nsID const&, int*) + 216 (nsEventListenerManager.cpp:141)
+152 libgklayout.dylib              	0x076993d0 nsEventListenerManager::HandleEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, nsIDOMEventTarget*, unsigned, nsEventStatus*) + 1096 (nsEventListenerManager.cpp:1782)
+153 libgklayout.dylib              	0x077a7344 nsXULDocument::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 464 (nsXULDocument.cpp:1243)
+154 libgklayout.dylib              	0x0778fbac nsXULElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 4692 (nsXULElement.cpp:2177)
+155 libgklayout.dylib              	0x0778fb2c nsXULElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 4564 (nsXULElement.cpp:2171)
+156 libgklayout.dylib              	0x0778fb2c nsXULElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 4564 (nsXULElement.cpp:2171)
+157 libgklayout.dylib              	0x0778fb2c nsXULElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 4564 (nsXULElement.cpp:2171)
+158 libgklayout.dylib              	0x0778fb2c nsXULElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 4564 (nsXULElement.cpp:2171)
+159 libgklayout.dylib              	0x0778fb2c nsXULElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 4564 (nsXULElement.cpp:2171)
+160 libgklayout.dylib              	0x0778fb2c nsXULElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 4564 (nsXULElement.cpp:2171)
+161 libgklayout.dylib              	0x0778fb2c nsXULElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 4564 (nsXULElement.cpp:2171)
+162 libgklayout.dylib              	0x07793864 nsXULElement::HandleChromeEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 120 (nsXULElement.cpp:2833)
+163 libgklayout.dylib              	0x077e4c24 nsGlobalWindow::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1908 (nsGlobalWindow.cpp:1574)
+164 libgklayout.dylib              	0x07635310 nsDocument::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 680 (nsDocument.cpp:4013)
+165 libgklayout.dylib              	0x07657774 nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 3320 (nsGenericElement.cpp:2204)
+166 libgklayout.dylib              	0x073b43fc PresShell::HandleEventInternal(nsEvent*, nsIView*, unsigned, nsEventStatus*) + 1996 (nsPresShell.cpp:6418)
+167 libgklayout.dylib              	0x073b3878 PresShell::HandleEvent(nsIView*, nsGUIEvent*, nsEventStatus*, int, int&) + 2448 (nsPresShell.cpp:6202)
+168 libgklayout.dylib              	0x077caf34 nsViewManager::HandleEvent(nsView*, nsGUIEvent*, int) + 428 (nsViewManager.cpp:2514)
+169 libgklayout.dylib              	0x077ca448 nsViewManager::DispatchEvent(nsGUIEvent*, nsEventStatus*) + 4312 (nsViewManager.cpp:2246)
+170 libgklayout.dylib              	0x077bde60 HandleEvent(nsGUIEvent*) + 112 (nsView.cpp:174)
+171 libwidget_mac.dylib            	0x1cfed75c nsWindow::DispatchEvent(nsGUIEvent*, nsEventStatus&) + 236 (nsWindow.cpp:1809)
+172 libwidget_mac.dylib            	0x1cfed854 nsWindow::DispatchWindowEvent(nsGUIEvent&) + 68 (nsWindow.cpp:1825)
+173 libwidget_mac.dylib            	0x1cfc9420 nsMacEventHandler::HandleUKeyEvent(unsigned short const*, long, EventRecord&) + 952 (nsMacEventHandler.cpp:1228)
+174 libwidget_mac.dylib            	0x1cfd037c nsMacTSMMessagePump::UnicodeNotFromInputMethodHandler(AEDesc const*, AEDesc*, long) + 380 (nsMacTSMMessagePump.cpp:531)
+175 com.apple.AE                   	0x914ab960 aeDispatchAppleEvent(AEDesc const*, AEDesc*, unsigned long, unsigned char*) + 208
+176 com.apple.AE                   	0x914b6fc0 sendToSelf(AEDesc const*, AEDesc*, long, long) + 372
+177 com.apple.AE                   	0x914af8f8 AESendMessage + 648
+178 com.apple.AE                   	0x914af3d4 aeSend + 224
+179 com.apple.HIToolbox            	0x9323459c AESend + 108
+180 com.apple.HIToolbox            	0x93299e68 HandleTextInputEvent(OpaqueEventRef*) + 296
+181 com.apple.HIToolbox            	0x9318b874 ToolboxEventDispatcherHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 524
+182 com.apple.HIToolbox            	0x93185244 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 1284
+183 com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+184 com.apple.HIToolbox            	0x9318b4ec SendEventToEventTarget + 40
+185 com.apple.HIToolbox            	0x93299c74 SendTSMEvent + 228
+186 com.apple.HIToolbox            	0x932993c4 SendUnicodeTextAEToUnicodeDoc + 928
+187 com.apple.HIToolbox            	0x93298df0 utDeliverTSMEvent + 1024
+188 com.apple.HIToolbox            	0x932989d4 TSMKeyEvent + 88
+189 com.apple.HIToolbox            	0x9324f7a4 TSMProcessRawKeyEvent + 920
+190 com.apple.HIToolbox            	0x9324f26c HandleCompatibilityKeyEvent(OpaqueEventRef*) + 308
+191 com.apple.HIToolbox            	0x93181d60 HIApplication::EventHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 788
+192 com.apple.HIToolbox            	0x93184ff4 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 692
+193 com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+194 com.apple.HIToolbox            	0x931845c8 SendEventToEventTargetWithOptions + 40
+195 com.apple.HIToolbox            	0x9324ef14 HandleKeyboardEvent(OpaqueEventRef*, unsigned long) + 352
+196 com.apple.HIToolbox            	0x9318b868 ToolboxEventDispatcherHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 512
+197 com.apple.HIToolbox            	0x93185244 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 1284
+198 com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+199 com.apple.HIToolbox            	0x9318b4ec SendEventToEventTarget + 40
+200 com.apple.HIToolbox            	0x931cc564 ToolboxEventDispatcher + 92
+201 com.apple.HIToolbox            	0x9326b5b8 TryEventDispatcher + 112
+202 com.apple.HIToolbox            	0x9326b20c GetOrPeekEvent + 304
+203 com.apple.HIToolbox            	0x9326af48 GetNextEventMatchingMask + 156
+204 com.apple.HIToolbox            	0x9326adf0 WNEInternal + 140
+205 com.apple.HIToolbox            	0x9326ad50 WaitNextEvent + 76
+206 libwidget_mac.dylib            	0x1cfcd038 nsMacMessagePump::GetEvent(EventRecord&) + 180 (nsMacMessagePump.cpp:384)
+207 libwidget_mac.dylib            	0x1cfbaba0 nsAppShell::GetNativeEvent(int&, void*&) + 128 (nsAppShell.cpp:210)
+208 libnsappshell.dylib            	0x184ba114 nsXULWindow::ShowModal() + 716 (nsXULWindow.cpp:400)
+209 libnsappshell.dylib            	0x184b60e8 nsContentTreeOwner::ShowAsModal() + 64 (nsContentTreeOwner.cpp:430)
+210 libembedcomponents.dylib       	0x068266e0 nsWindowWatcher::OpenWindowJS(nsIDOMWindow*, char const*, char const*, char const*, int, unsigned, long*, nsIDOMWindow**) + 6996 (nsWindowWatcher.cpp:823)
+211 libembedcomponents.dylib       	0x06824b50 nsWindowWatcher::OpenWindow(nsIDOMWindow*, char const*, char const*, char const*, nsISupports*, nsIDOMWindow**) + 212 (nsWindowWatcher.cpp:473)
+212 libembedcomponents.dylib       	0x0682fdd8 nsPromptService::DoDialog(nsIDOMWindow*, nsIDialogParamBlock*, char const*) + 544 (nsPromptService.cpp:630)
+213 libembedcomponents.dylib       	0x0682e360 nsPromptService::ConfirmEx(nsIDOMWindow*, unsigned short const*, unsigned short const*, unsigned, unsigned short const*, unsigned short const*, unsigned short const*, unsigned short const*, int*, int*) + 1884 (nsPromptService.cpp:346)
+214 libxpcom_core.dylib            	0x010bbbe0 _XPTC_InvokeByIndex + 216 (xptcstubsdef.inc:256)
+215 libxpcom_core.dylib            	0x010bb360 XPTC_InvokeByIndex + 56 (xptcinvoke_ppc_rhapsody.cpp:144)
+216 libxpconnect.dylib             	0x1dc86230 XPCWrappedNative::CallMethod(XPCCallContext&, XPCWrappedNative::CallMode) + 4388 (xpcwrappednative.cpp:2138)
+217 libxpconnect.dylib             	0x1dc8fdb8 XPC_WN_CallMethod(JSContext*, JSObject*, unsigned, long*, long*) + 436 (xpcwrappednativejsops.cpp:1444)
+218 libmozjs.dylib                 	0x0055fafc js_Invoke + 4556 (jsinterp.c:1177)
+219 libmozjs.dylib                 	0x00572b98 js_Interpret + 69588 (jsinterp.c:3522)
+220 libmozjs.dylib                 	0x0055fb88 js_Invoke + 4696 (jsinterp.c:1197)
+221 libmozjs.dylib                 	0x0055fff0 js_InternalInvoke + 448 (jsinterp.c:1274)
+222 libmozjs.dylib                 	0x00516e94 JS_CallFunctionValue + 76 (jsapi.c:4158)
+223 libgklayout.dylib              	0x077d99d8 nsJSContext::CallEventHandler(JSObject*, JSObject*, unsigned, long*, long*) + 484 (nsJSEnvironment.cpp:1410)
+224 libgklayout.dylib              	0x07838aac nsJSEventListener::HandleEvent(nsIDOMEvent*) + 1972 (nsJSEventListener.cpp:185)
+225 libgklayout.dylib              	0x0777c740 nsXBLPrototypeHandler::ExecuteHandler(nsIDOMEventReceiver*, nsIDOMEvent*) + 7456 (nsXBLPrototypeHandler.cpp:505)
+226 libgklayout.dylib              	0x07776e3c nsXBLKeyEventHandler::HandleEvent(nsIDOMEvent*) + 624 (nsXBLEventHandler.cpp:146)
+227 libgklayout.dylib              	0x07698f18 nsEventListenerManager::HandleEventSubType(nsListenerStruct*, nsIDOMEvent*, nsIDOMEventTarget*, unsigned, unsigned) + 848 (nsEventListenerManager.cpp:1685)
+228 libgklayout.dylib              	0x07699468 nsEventListenerManager::HandleEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, nsIDOMEventTarget*, unsigned, nsEventStatus*) + 1248 (nsEventListenerManager.cpp:1766)
+229 libgklayout.dylib              	0x0778f9c0 nsXULElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 4200 (nsXULElement.cpp:2153)
+230 libgklayout.dylib              	0x07793864 nsXULElement::HandleChromeEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 120 (nsXULElement.cpp:2833)
+231 libgklayout.dylib              	0x077e4c24 nsGlobalWindow::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 1908 (nsGlobalWindow.cpp:1574)
+232 libgklayout.dylib              	0x07635310 nsDocument::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 680 (nsDocument.cpp:4013)
+233 libgklayout.dylib              	0x07657774 nsGenericElement::HandleDOMEvent(nsPresContext*, nsEvent*, nsIDOMEvent**, unsigned, nsEventStatus*) + 3320 (nsGenericElement.cpp:2204)
+234 libgklayout.dylib              	0x073b43fc PresShell::HandleEventInternal(nsEvent*, nsIView*, unsigned, nsEventStatus*) + 1996 (nsPresShell.cpp:6418)
+235 libgklayout.dylib              	0x073b3878 PresShell::HandleEvent(nsIView*, nsGUIEvent*, nsEventStatus*, int, int&) + 2448 (nsPresShell.cpp:6202)
+236 libgklayout.dylib              	0x077caf34 nsViewManager::HandleEvent(nsView*, nsGUIEvent*, int) + 428 (nsViewManager.cpp:2514)
+237 libgklayout.dylib              	0x077ca448 nsViewManager::DispatchEvent(nsGUIEvent*, nsEventStatus*) + 4312 (nsViewManager.cpp:2246)
+238 libgklayout.dylib              	0x077bde60 HandleEvent(nsGUIEvent*) + 112 (nsView.cpp:174)
+239 libwidget_mac.dylib            	0x1cfed75c nsWindow::DispatchEvent(nsGUIEvent*, nsEventStatus&) + 236 (nsWindow.cpp:1809)
+240 libwidget_mac.dylib            	0x1cfed854 nsWindow::DispatchWindowEvent(nsGUIEvent&) + 68 (nsWindow.cpp:1825)
+241 libwidget_mac.dylib            	0x1cfc9420 nsMacEventHandler::HandleUKeyEvent(unsigned short const*, long, EventRecord&) + 952 (nsMacEventHandler.cpp:1228)
+242 libwidget_mac.dylib            	0x1cfd037c nsMacTSMMessagePump::UnicodeNotFromInputMethodHandler(AEDesc const*, AEDesc*, long) + 380 (nsMacTSMMessagePump.cpp:531)
+243 com.apple.AE                   	0x914ab960 aeDispatchAppleEvent(AEDesc const*, AEDesc*, unsigned long, unsigned char*) + 208
+244 com.apple.AE                   	0x914b6fc0 sendToSelf(AEDesc const*, AEDesc*, long, long) + 372
+245 com.apple.AE                   	0x914af8f8 AESendMessage + 648
+246 com.apple.AE                   	0x914af3d4 aeSend + 224
+247 com.apple.HIToolbox            	0x9323459c AESend + 108
+248 com.apple.HIToolbox            	0x93299e68 HandleTextInputEvent(OpaqueEventRef*) + 296
+249 com.apple.HIToolbox            	0x9318b874 ToolboxEventDispatcherHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 524
+250 com.apple.HIToolbox            	0x93185244 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 1284
+251 com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+252 com.apple.HIToolbox            	0x9318b4ec SendEventToEventTarget + 40
+253 com.apple.HIToolbox            	0x93299c74 SendTSMEvent + 228
+254 com.apple.HIToolbox            	0x932993c4 SendUnicodeTextAEToUnicodeDoc + 928
+255 com.apple.HIToolbox            	0x93298df0 utDeliverTSMEvent + 1024
+256 com.apple.HIToolbox            	0x932989d4 TSMKeyEvent + 88
+257 com.apple.HIToolbox            	0x9324f7a4 TSMProcessRawKeyEvent + 920
+258 com.apple.HIToolbox            	0x9324f26c HandleCompatibilityKeyEvent(OpaqueEventRef*) + 308
+259 com.apple.HIToolbox            	0x93181d60 HIApplication::EventHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 788
+260 com.apple.HIToolbox            	0x93184ff4 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 692
+261 com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+262 com.apple.HIToolbox            	0x931845c8 SendEventToEventTargetWithOptions + 40
+263 com.apple.HIToolbox            	0x9324ef14 HandleKeyboardEvent(OpaqueEventRef*, unsigned long) + 352
+264 com.apple.HIToolbox            	0x9318b868 ToolboxEventDispatcherHandler(OpaqueEventHandlerCallRef*, OpaqueEventRef*, void*) + 512
+265 com.apple.HIToolbox            	0x93185244 DispatchEventToHandlers(EventTargetRec*, OpaqueEventRef*, HandlerCallRec*) + 1284
+266 com.apple.HIToolbox            	0x9318474c SendEventToEventTargetInternal(OpaqueEventRef*, OpaqueEventTargetRef*, HandlerCallRec*) + 372
+267 com.apple.HIToolbox            	0x9318b4ec SendEventToEventTarget + 40
+268 com.apple.HIToolbox            	0x931cc564 ToolboxEventDispatcher + 92
+269 com.apple.HIToolbox            	0x9326b5b8 TryEventDispatcher + 112
+270 com.apple.HIToolbox            	0x9326b20c GetOrPeekEvent + 304
+271 com.apple.HIToolbox            	0x9326af48 GetNextEventMatchingMask + 156
+272 com.apple.HIToolbox            	0x9326adf0 WNEInternal + 140
+273 com.apple.HIToolbox            	0x9326ad50 WaitNextEvent + 76
+274 libwidget_mac.dylib            	0x1cfcd038 nsMacMessagePump::GetEvent(EventRecord&) + 180 (nsMacMessagePump.cpp:384)
+275 libwidget_mac.dylib            	0x1cfcce94 nsMacMessagePump::DoMessagePump() + 64 (nsMacMessagePump.cpp:281)
+276 libwidget_mac.dylib            	0x1cfba694 nsAppShell::Run() + 132 (nsAppShell.cpp:114)
+277 libtoolkitcomps.dylib          	0x1a3b50b8 nsAppStartup::Run() + 104 (nsAppStartup.cpp:150)
+278 org.mozilla.firefox            	0x0000cf48 XRE_main + 9904 (nsAppRunner.cpp:2313)
+279 org.mozilla.firefox            	0x000032e4 main + 56 (nsBrowserApp.cpp:61)
+280 org.mozilla.firefox            	0x00002b08 _start + 340 (crt.c:272)
+281 org.mozilla.firefox            	0x000029b0 start + 60
+
+Thread 1:
+0   libSystem.B.dylib              	0x9001f20c select + 12
+1   libnspr4.dylib                 	0x01d64c48 poll + 788 (unix.c:3669)
+2   libnspr4.dylib                 	0x01d5e570 _pr_poll_with_poll + 1900 (ptio.c:3877)
+3   libnspr4.dylib                 	0x01d5e8f8 PR_Poll + 48 (ptio.c:4279)
+4   libnecko.dylib                 	0x16e75abc nsSocketTransportService::Poll(unsigned*) + 196 (nsSocketTransportService2.cpp:359)
+5   libnecko.dylib                 	0x16e7681c nsSocketTransportService::Run() + 940 (nsSocketTransportService2.cpp:568)
+6   libxpcom_core.dylib            	0x01091fd0 nsThread::Main(void*) + 228 (nsThread.cpp:118)
+7   libnspr4.dylib                 	0x01d60874 _pt_root + 396 (ptthread.c:223)
+8   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 2:
+0   libSystem.B.dylib              	0x90053f68 semaphore_timedwait_signal_trap + 8
+1   libSystem.B.dylib              	0x90053dc8 pthread_cond_timedwait + 672
+2   libnspr4.dylib                 	0x01d56e1c pt_TimedWait + 256 (ptsynch.c:280)
+3   libnspr4.dylib                 	0x01d574c4 PR_WaitCondVar + 424 (ptsynch.c:407)
+4   libxpcom_core.dylib            	0x010977a4 TimerThread::Run() + 780 (TimerThread.cpp:319)
+5   libxpcom_core.dylib            	0x01091fd0 nsThread::Main(void*) + 228 (nsThread.cpp:118)
+6   libnspr4.dylib                 	0x01d60874 _pt_root + 396 (ptthread.c:223)
+7   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 3:
+0   libSystem.B.dylib              	0x90053f68 semaphore_timedwait_signal_trap + 8
+1   libSystem.B.dylib              	0x90053dc8 pthread_cond_timedwait + 672
+2   libnspr4.dylib                 	0x01d56e1c pt_TimedWait + 256 (ptsynch.c:280)
+3   libnspr4.dylib                 	0x01d574c4 PR_WaitCondVar + 424 (ptsynch.c:407)
+4   libnecko.dylib                 	0x16e3e694 nsIOThreadPool::ThreadFunc(void*) + 204 (nsIOThreadPool.cpp:255)
+5   libnspr4.dylib                 	0x01d60874 _pt_root + 396 (ptthread.c:223)
+6   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 4:
+0   libSystem.B.dylib              	0x9002e44c kevent + 12
+1   com.apple.DesktopServices      	0x927ee5d4 TFSNotificationTask::FSNotificationTaskProc(void*) + 56
+2   ...ple.CoreServices.CarbonCore 	0x90b41a44 PrivateMPEntryPoint + 76
+3   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 5:
+0   libSystem.B.dylib              	0x9002b8a8 semaphore_wait_signal_trap + 8
+1   libSystem.B.dylib              	0x9003001c pthread_cond_wait + 488
+2   ...ple.CoreServices.CarbonCore 	0x90b41c34 MPWaitOnQueue + 224
+3   com.apple.DesktopServices      	0x927eee20 TNodeSyncTask::SyncTaskProc(void*) + 112
+4   ...ple.CoreServices.CarbonCore 	0x90b41a44 PrivateMPEntryPoint + 76
+5   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 6:
+0   libSystem.B.dylib              	0x90053f68 semaphore_timedwait_signal_trap + 8
+1   libSystem.B.dylib              	0x90053dc8 pthread_cond_timedwait + 672
+2   libnspr4.dylib                 	0x01d56e1c pt_TimedWait + 256 (ptsynch.c:280)
+3   libnspr4.dylib                 	0x01d574c4 PR_WaitCondVar + 424 (ptsynch.c:407)
+4   libnecko.dylib                 	0x16e3e694 nsIOThreadPool::ThreadFunc(void*) + 204 (nsIOThreadPool.cpp:255)
+5   libnspr4.dylib                 	0x01d60874 _pt_root + 396 (ptthread.c:223)
+6   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 7:
+0   libSystem.B.dylib              	0x90053f68 semaphore_timedwait_signal_trap + 8
+1   libSystem.B.dylib              	0x90053dc8 pthread_cond_timedwait + 672
+2   libnspr4.dylib                 	0x01d56e1c pt_TimedWait + 256 (ptsynch.c:280)
+3   libnspr4.dylib                 	0x01d574c4 PR_WaitCondVar + 424 (ptsynch.c:407)
+4   libnecko.dylib                 	0x16e8a7e8 nsHostResolver::GetHostToLookup(nsHostRecord**) + 160 (nsHostResolver.cpp:557)
+5   libnecko.dylib                 	0x16e8abf8 nsHostResolver::ThreadFunc(void*) + 92 (nsHostResolver.cpp:641)
+6   libnspr4.dylib                 	0x01d60874 _pt_root + 396 (ptthread.c:223)
+7   libSystem.B.dylib              	0x9002b200 _pthread_body + 96
+
+Thread 0 crashed with PPC Thread State 64:
+  srr0: 0x0000000000000000 srr1: 0x000000004200f030                        vrsave: 0x0000000000000000
+    cr: 0x24022244          xer: 0x0000000020000004   lr: 0x000000000760d024  ctr: 0x0000000000000000
+    r0: 0x0000000000000000   r1: 0x00000000bffecaf0   r2: 0x000000002c37cb4c   r3: 0x000000002db72c40
+    r4: 0x00000000246adf90   r5: 0x00000000246adf90   r6: 0x0000000000000000   r7: 0x000000000000001c
+    r8: 0x0000000028a92730   r9: 0x000000002f1e5bdb  r10: 0x000000000791f094  r11: 0x0000000007b2b920
+   r12: 0x0000000000000000  r13: 0x0000000000000007  r14: 0x0000000000000000  r15: 0x00000000a3184d58
+   r16: 0x000000002dbf2f30  r17: 0x00000000bfff33f0  r18: 0x0000000000000000  r19: 0x0000000000000000
+   r20: 0x00000000bfff3160  r21: 0x00000000bfff2fe0  r22: 0x00000000bfff32e0  r23: 0x0000000000000000
+   r24: 0x00000000bfff32d0  r25: 0x0000000026e3ce80  r26: 0x0000000000000000  r27: 0x000000002461118c
+   r28: 0x0000000007afed70  r29: 0x0000000007b18cf4  r30: 0x00000000bffecaf0  r31: 0x000000000760cf68
+
+Binary Images Description:
+    0x1000 -    0x71fff org.mozilla.firefox 1.5	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/firefox-bin
+  0x392000 -   0x393fff libxpcom.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/libxpcom.dylib
+  0x39a000 -   0x3a8fff libplds4.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/libplds4.dylib
+  0x3b3000 -   0x3c3fff libplc4.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/libplc4.dylib
+  0x505000 -   0x60ffff libmozjs.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/libmozjs.dylib
+  0x7c9000 -   0x7e2fff libmozz.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/libmozz.dylib
+ 0x1008000 -  0x1165fff libxpcom_core.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/libxpcom_core.dylib
+ 0x1d2a000 -  0x1d7cfff libnspr4.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/libnspr4.dylib
+ 0x1e62000 -  0x1e71fff libauth.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libauth.dylib
+ 0x1eed000 -  0x1f06fff libautoconfig.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libautoconfig.dylib
+ 0x2808000 -  0x2814fff libbrowserdirprovider.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libbrowserdirprovider.dylib
+ 0x284a000 -  0x285bfff libcommandlines.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libcommandlines.dylib
+ 0x28c8000 -  0x28d0fff libmozfind.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libmozfind.dylib
+ 0x2a05000 -  0x2a88fff libaccessibility.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libaccessibility.dylib
+ 0x37dc000 -  0x3816fff libgkgfx.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/libgkgfx.dylib
+ 0x39a5000 -  0x39e6fff libappcomps.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libappcomps.dylib
+ 0x3c6e000 -  0x3ceafff libbrowsercomps.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libbrowsercomps.dylib
+ 0x4247000 -  0x4275fff libxpcom_compat.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/libxpcom_compat.dylib
+ 0x436e000 -  0x439efff libcaps.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libcaps.dylib
+ 0x450e000 -  0x4540fff libchrome.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libchrome.dylib
+ 0x46d6000 -  0x470ffff libcomposer.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libcomposer.dylib
+ 0x499d000 -  0x49b9fff libcookie.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libcookie.dylib
+ 0x4ab1000 -  0x4b6bfff libdocshell.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libdocshell.dylib
+ 0x5406000 -  0x555bfff libeditor.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libeditor.dylib
+ 0x681f000 -  0x689dfff libembedcomponents.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libembedcomponents.dylib
+ 0x6e7d000 -  0x6ecbfff libgfx_mac.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libgfx_mac.dylib
+ 0x733c000 -  0x7ad1fff libgklayout.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libgklayout.dylib
+0x154c0000 - 0x15521fff libgkplugin.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libgkplugin.dylib
+0x158c5000 - 0x15961fff libhtmlpars.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libhtmlpars.dylib
+0x15dbd000 - 0x15e23fff libi18n.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libi18n.dylib
+0x161e4000 - 0x161fbfff libimgicon.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libimgicon.dylib
+0x162c6000 - 0x16329fff libimglib2.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libimglib2.dylib
+0x165d8000 - 0x16606fff libjar50.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libjar50.dylib
+0x167b8000 - 0x167e6fff libjsd.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libjsd.dylib
+0x168ab000 - 0x168fbfff libmork.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libmork.dylib
+0x16e26000 - 0x16e2efff libMyService.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libMyService.dylib
+0x16e39000 - 0x16fb1fff libnecko.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libnecko.dylib
+0x182f7000 - 0x1831afff libnecko2.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libnecko2.dylib
+0x184b0000 - 0x184f3fff libnsappshell.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libnsappshell.dylib
+0x188c7000 - 0x188f7fff liboji.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/liboji.dylib
+0x18b5b000 - 0x18b84fff libjsj.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/libjsj.dylib
+0x18c38000 - 0x18c45fff libpermissions.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libpermissions.dylib
+0x18cb6000 - 0x18cd0fff libpipboot.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libpipboot.dylib
+0x18db6000 - 0x18e55fff libpipnss.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libpipnss.dylib
+0x1954e000 - 0x19580fff libsmime3.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/libsmime3.dylib
+0x19683000 - 0x196bafff libssl3.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/libssl3.dylib
+0x19758000 - 0x19807fff libnss3.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/libnss3.dylib
+0x199cf000 - 0x19a92fff libsoftokn3.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/libsoftokn3.dylib
+0x19b8f000 - 0x19ba6fff libpippki.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libpippki.dylib
+0x19c6a000 - 0x19c90fff libpref.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libpref.dylib
+0x19dc5000 - 0x19e23fff librdf.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/librdf.dylib
+0x1a200000 - 0x1a24afff libsearchservice.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libsearchservice.dylib
+0x1a39f000 - 0x1a3a7fff libtestdynamic.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libtestdynamic.dylib
+0x1a3b2000 - 0x1a444fff libtoolkitcomps.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libtoolkitcomps.dylib
+0x1aa7e000 - 0x1ab39fff libtransformiix.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libtransformiix.dylib
+0x1bb79000 - 0x1bb88fff libtxmgr.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libtxmgr.dylib
+0x1bbc2000 - 0x1bca4fff libuconv.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libuconv.dylib
+0x1bfd9000 - 0x1bfeafff libucvmath.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libucvmath.dylib
+0x1c085000 - 0x1c0a1fff libuniversalchardet.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libuniversalchardet.dylib
+0x1c0fa000 - 0x1c141fff libwebbrwsr.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libwebbrwsr.dylib
+0x1c4d4000 - 0x1c5b9fff libwebsrvcs.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libwebsrvcs.dylib
+0x1cfb9000 - 0x1d047fff libwidget_mac.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libwidget_mac.dylib
+0x1d828000 - 0x1d843fff libwsproxytest.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libwsproxytest.dylib
+0x1d8ca000 - 0x1d905fff libxmlextras.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libxmlextras.dylib
+0x1db9c000 - 0x1dbabfff libxpcom_compat_c.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libxpcom_compat_c.dylib
+0x1dbf4000 - 0x1dc03fff libxpcomsample.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libxpcomsample.dylib
+0x1dc3e000 - 0x1dcd3fff libxpconnect.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libxpconnect.dylib
+0x1e6b8000 - 0x1e6d8fff libxpctest.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libxpctest.dylib
+0x1e7c2000 - 0x1e829fff libxpinstall.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/components/libxpinstall.dylib
+0x1ee51000 - 0x1ee7cfff libinspector.dylib 	/Users/fuzz/DeerParkDebug.app/Contents/MacOS/extensions/inspector@mozilla.org/components/libinspector.dylib
+0x214f4000 - 0x214f6fff com.apple.textencoding.unicode 2.0	/System/Library/TextEncodings/Unicode Encodings.bundle/Contents/MacOS/Unicode Encodings
+0x22029000 - 0x22054fff libnssckbi.dylib 	/Applications/Firefox.app/Contents/MacOS/libnssckbi.dylib
+0x2528e000 - 0x2529afff com.netscape.DefaultPlugin ??? (1.0)	/Users/cooksey/src/mozilla/firefox-obj/modules/plugin/samples/default/mac/build/Development/Default Plugin.plugin/Contents/MacOS/Default Plugin
+0x252c0000 - 0x252ebfff com.adobe.acrobat.pdfviewer 7.0.5	/Library/Internet Plug-Ins/AdobePDFViewer.plugin/Contents/MacOS/AdobePDFViewer
+0x25470680 - 0x25470763 CFMPriv_FindByContent 	PEF binary: CFMPriv_FindByContent
+0x254ae060 - 0x254ae137 CFMPriv_ColorSync 	PEF binary: CFMPriv_ColorSync
+0x254dce00 - 0x254dcee6 CFMPriv_LaunchServices 	PEF binary: CFMPriv_LaunchServices
+0x254f62e0 - 0x254f63a2 CFMPriv_QD 	PEF binary: CFMPriv_QD
+0x25685000 - 0x256d43c7 CarbonLibpwpc 	PEF binary: CarbonLibpwpc
+0x256d43d0 - 0x256ec6bd Apple;Carbon;Multimedia 	PEF binary: Apple;Carbon;Multimedia
+0x256edc00 - 0x256ef98b Apple;Carbon;Networking 	PEF binary: Apple;Carbon;Networking
+0x2570f4f0 - 0x2570f5ca CFMPriv_HIServices 	PEF binary: CFMPriv_HIServices
+0x257463a0 - 0x25746473 CFMPriv_CommonPanels 	PEF binary: CFMPriv_CommonPanels
+0x25761920 - 0x257619f7 CFMPriv_PrintCore 	PEF binary: CFMPriv_PrintCore
+0x25763780 - 0x25763853 CFMPriv_OSServices 	PEF binary: CFMPriv_OSServices
+0x2577c6b0 - 0x2577c76e CFMPriv_Print 	PEF binary: CFMPriv_Print
+0x25784c60 - 0x25784d25 CFMPriv_ATS 	PEF binary: CFMPriv_ATS
+0x257b2110 - 0x257b21e6 CFMPriv_HTMLRendering 	PEF binary: CFMPriv_HTMLRendering
+0x257c14b0 - 0x257c1583 CFMPriv_ImageCapture 	PEF binary: CFMPriv_ImageCapture
+0x257c1850 - 0x257c1912 CFMPriv_AE 	PEF binary: CFMPriv_AE
+0x257c7b20 - 0x257c7c05 CFMPriv_NavigationServices 	PEF binary: CFMPriv_NavigationServices
+0x257c8130 - 0x257c8203 CFMPriv_CarbonCore 	PEF binary: CFMPriv_CarbonCore
+0x257c9f90 - 0x257ca04b CFMPriv_Help 	PEF binary: CFMPriv_Help
+0x257d8320 - 0x257d83f0 CFMPriv_CarbonSound 	PEF binary: CFMPriv_CarbonSound
+0x257dd680 - 0x257dd723 CFMPriv_QuickTime 	PEF binary: CFMPriv_QuickTime
+0x257de5c0 - 0x257de6a0 CFMPriv_LangAnalysis 	PEF binary: CFMPriv_LangAnalysis
+0x257de7b0 - 0x257de87d CFMPriv_SecurityHI 	PEF binary: CFMPriv_SecurityHI
+0x257e3910 - 0x257e39e6 CFMPriv_OpenScripting 	PEF binary: CFMPriv_OpenScripting
+0x257feba0 - 0x257fec82 CFMPriv_SpeechRecognition 	PEF binary: CFMPriv_SpeechRecognition
+0x25942120 - 0x259421ea CFMPriv_HIToolbox 	PEF binary: CFMPriv_HIToolbox
+0x25945690 - 0x25945707 CFMPriv_System 	PEF binary: CFMPriv_System
+0x25946290 - 0x25946342 CFMPriv_CoreFoundation 	PEF binary: CFMPriv_CoreFoundation
+0x25946380 - 0x25946469 CFMPriv_SpeechSynthesis 	PEF binary: CFMPriv_SpeechSynthesis
+0x25947df0 - 0x25947ea5 CFMPriv_DVComponentGlue 	PEF binary: CFMPriv_DVComponentGlue
+0x25a05000 - 0x25a4bfff com.netscape.MRJPlugin MRJ Plugin version 1.0-JEP-0.9.5 (1.0-JEP-0.9.5)	/Users/cooksey/src/mozilla/firefox-obj/plugin/oji/JEP/MRJPlugin.plugin/Contents/MacOS/MRJPlugin
+0x25be3000 - 0x25d1be45 Flash Player 	PEF binary: Flash Player
+0x8fe00000 - 0x8fe54fff dyld 44.2	/usr/lib/dyld
+0x90000000 - 0x901b3fff libSystem.B.dylib 	/usr/lib/libSystem.B.dylib
+0x9020b000 - 0x9020ffff libmathCommon.A.dylib 	/usr/lib/system/libmathCommon.A.dylib
+0x90211000 - 0x90264fff com.apple.CoreText 1.0.1 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreText.framework/Versions/A/CoreText
+0x90291000 - 0x90342fff ATS 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+0x90371000 - 0x906aefff com.apple.CoreGraphics 1.256.27 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
+0x9073a000 - 0x90813fff com.apple.CoreFoundation 6.4.4 (368.25)	/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+0x9085c000 - 0x9085cfff com.apple.CoreServices 10.4 (???)	/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+0x9085e000 - 0x90960fff libicucore.A.dylib 	/usr/lib/libicucore.A.dylib
+0x909ba000 - 0x90a3efff libobjc.A.dylib 	/usr/lib/libobjc.A.dylib
+0x90a68000 - 0x90ad6fff com.apple.framework.IOKit 1.4 (???)	/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+0x90aed000 - 0x90afffff libauto.dylib 	/usr/lib/libauto.dylib
+0x90b06000 - 0x90dddfff com.apple.CoreServices.CarbonCore 671.2	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+0x90e43000 - 0x90ec3fff com.apple.CoreServices.OSServices 4.1	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+0x90f0d000 - 0x90f4efff com.apple.CFNetwork 10.4.3 (129.2)	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+0x90f63000 - 0x90f7bfff com.apple.WebServices 1.1.2 (1.1.0)	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebServicesCore.framework/Versions/A/WebServicesCore
+0x90f8b000 - 0x9100cfff com.apple.SearchKit 1.0.4	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+0x91052000 - 0x9107bfff com.apple.Metadata 10.4.3 (121.20.2)	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+0x9108c000 - 0x9109afff libz.1.dylib 	/usr/lib/libz.1.dylib
+0x9109d000 - 0x9125ffff com.apple.security 4.2 (24844)	/System/Library/Frameworks/Security.framework/Versions/A/Security
+0x91362000 - 0x9136bfff com.apple.DiskArbitration 2.1	/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration
+0x91372000 - 0x91399fff com.apple.SystemConfiguration 1.8.1	/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+0x913ac000 - 0x913b4fff libgcc_s.1.dylib 	/usr/lib/libgcc_s.1.dylib
+0x913b9000 - 0x913d9fff libmx.A.dylib 	/usr/lib/libmx.A.dylib
+0x913df000 - 0x913e7fff libbsm.dylib 	/usr/lib/libbsm.dylib
+0x913eb000 - 0x91469fff com.apple.audio.CoreAudio 3.0.1	/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
+0x914a7000 - 0x914a7fff com.apple.ApplicationServices 10.4 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+0x914a9000 - 0x914e1fff com.apple.AE 1.5 (297)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+0x914fc000 - 0x915c9fff com.apple.ColorSync 4.4.3	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+0x9161e000 - 0x916b1fff com.apple.print.framework.PrintCore 4.3 (172.3)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+0x916f8000 - 0x917b5fff com.apple.QD 3.8.18 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+0x917f3000 - 0x91851fff com.apple.HIServices 1.5.1 (???)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+0x9187f000 - 0x918a3fff com.apple.LangAnalysis 1.6.1	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+0x918b7000 - 0x918dcfff com.apple.FindByContent 1.5	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/FindByContent.framework/Versions/A/FindByContent
+0x918ef000 - 0x91931fff com.apple.LaunchServices 10.4.5 (168)	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+0x9194d000 - 0x91961fff com.apple.speech.synthesis.framework 3.3	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+0x9196f000 - 0x919a8fff com.apple.ImageIO.framework 1.4.3	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/ImageIO
+0x919bd000 - 0x91a85fff libcrypto.0.9.7.dylib 	/usr/lib/libcrypto.0.9.7.dylib
+0x91ad3000 - 0x91ae8fff libcups.2.dylib 	/usr/lib/libcups.2.dylib
+0x91aed000 - 0x91b09fff libJPEG.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib
+0x91b0e000 - 0x91b7dfff libJP2.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libJP2.dylib
+0x91b94000 - 0x91b98fff libGIF.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib
+0x91b9a000 - 0x91bcbfff libRaw.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libRaw.dylib
+0x91bcf000 - 0x91c12fff libTIFF.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libTIFF.dylib
+0x91c19000 - 0x91c32fff libPng.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libPng.dylib
+0x91c37000 - 0x91c3afff libRadiance.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib
+0x91c3c000 - 0x91c3cfff com.apple.Accelerate 1.1.1 (Accelerate 1.1.1)	/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
+0x91c3e000 - 0x91d28fff com.apple.vImage 2.0	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
+0x91d30000 - 0x91d4ffff com.apple.Accelerate.vecLib 3.1.1 (vecLib 3.1.1)	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
+0x91dbb000 - 0x91e20fff libvMisc.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
+0x91e2a000 - 0x91ebcfff libvDSP.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
+0x91ed6000 - 0x92466fff libBLAS.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+0x924ae000 - 0x927befff libLAPACK.dylib 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+0x927eb000 - 0x92877fff com.apple.DesktopServices 1.3.1	/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
+0x928b9000 - 0x92ae3fff com.apple.Foundation 6.4.2 (567.21)	/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+0x92c01000 - 0x92cdffff libxml2.2.dylib 	/usr/lib/libxml2.2.dylib
+0x92cff000 - 0x92dedfff libiconv.2.dylib 	/usr/lib/libiconv.2.dylib
+0x92dff000 - 0x92e1dfff libGL.dylib 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+0x92e28000 - 0x92e82fff libGLU.dylib 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+0x92ea0000 - 0x92ea0fff com.apple.Carbon 10.4 (???)	/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
+0x92ea2000 - 0x92eb6fff com.apple.ImageCapture 3.0	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture
+0x92ece000 - 0x92edefff com.apple.speech.recognition.framework 3.4	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition
+0x92eea000 - 0x92efffff com.apple.securityhi 2.0 (203)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI
+0x92f11000 - 0x92f98fff com.apple.ink.framework 101.2 (69)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink
+0x92fac000 - 0x92fb7fff com.apple.help 1.0.3 (32)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help
+0x92fc1000 - 0x92feefff com.apple.openscripting 1.2.3 (???)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting
+0x93008000 - 0x93018fff com.apple.print.framework.Print 5.0 (190.1)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print
+0x93024000 - 0x9308afff com.apple.htmlrendering 1.1.2	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering
+0x930bb000 - 0x9310dfff com.apple.NavigationServices 3.4.2	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices
+0x93139000 - 0x93156fff com.apple.audio.SoundManager 3.9	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound
+0x93168000 - 0x93175fff com.apple.CommonPanels 1.2.2 (73)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels
+0x9317e000 - 0x93490fff com.apple.HIToolbox 1.4.4 (???)	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+0x935dc000 - 0x935e8fff com.apple.opengl 1.4.6	/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL
+0x9361b000 - 0x9361ffff com.apple.JavaVM 11.2.0	/System/Library/Frameworks/JavaVM.framework/Versions/A/JavaVM
+0x9367a000 - 0x9367afff com.apple.Cocoa 6.4 (???)	/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa
+0x9367c000 - 0x93caffff com.apple.AppKit 6.4.3 (824.23)	/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+0x9403b000 - 0x940aafff com.apple.CoreData 50 (77)	/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
+0x940e3000 - 0x941adfff com.apple.audio.toolbox.AudioToolbox 1.4.1	/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
+0x94201000 - 0x94201fff com.apple.audio.units.AudioUnit 1.4	/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit
+0x94203000 - 0x9437bfff com.apple.QuartzCore 1.4.3	/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore
+0x943c5000 - 0x94402fff libsqlite3.0.dylib 	/usr/lib/libsqlite3.0.dylib
+0x9440a000 - 0x9445afff libGLImage.dylib 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib
+0x945fc000 - 0x9460bfff libCGATS.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGATS.A.dylib
+0x94613000 - 0x9461ffff libCSync.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib
+0x94664000 - 0x9467cfff libRIP.A.dylib 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib
+0x94683000 - 0x948edfff com.apple.QuickTime 7.0.3	/System/Library/Frameworks/QuickTime.framework/Versions/A/QuickTime
+0x94f1e000 - 0x94f1ffff com.apple.JavaCarbonSupport 10.0.2	/System/Library/PrivateFrameworks/JavaCarbonSupport.framework/Versions/A/JavaCarbonSupport
+0x988ee000 - 0x988fcfff com.apple.JavaEmbedding 10.0.2	/System/Library/Frameworks/JavaEmbedding.framework/JavaEmbedding
+0x9aea3000 - 0x9aea4fff com.apple.iokit.dvcomponentglue 1.7.5	/System/Library/Frameworks/DVComponentGlue.framework/Versions/A/DVComponentGlue

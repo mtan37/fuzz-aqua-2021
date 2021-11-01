@@ -1,0 +1,40 @@
+Date/Time:      2005-12-18 15:29:46.250 -0600
+OS Version:     10.4.3 (Build 8F46)
+Report Version: 3
+
+Command: Adium
+Path:    /Applications/Adium.app/Contents/MacOS/Adium
+Parent:  WindowServer [110]
+
+Version: 0.87 (0.87)
+
+PID:    8658
+Thread: 5
+
+Exception:  EXC_BAD_ACCESS (0x0001)
+Codes:      KERN_PROTECTION_FAILURE (0x0002) at 0x0000000a
+
+Thread 0:
+0   libSystem.B.dylib			0x9000b208 mach_msg_trap + 8
+1   libSystem.B.dylib			0x9000b15c mach_msg + 60
+2   com.apple.CoreGraphics		0x903d6e10 _CGSFlushRegionInline + 156
+3   com.apple.CoreGraphics		0x903d67c8 _CGSFlushWindowRegion + 296
+4   com.apple.CoreGraphics		0x903d62f8 CGSDeviceSynchronize + 552
+5   libRIP.A.dylib			0x946668dc ripc_Context + 124
+6   com.apple.AppKit			0x936cecec -[NSWindow flushWindow] + 256
+7   com.apple.AppKit			0x936c2e7c -[NSView _displayRectIgnoringOpacity:isVisibleRect:rectIsVisibleRectForView:] + 472
+8   com.apple.AppKit			0x936b8118 -[NSView displayIfNeeded] + 248
+9   com.apple.AppKit			0x936b7f88 -[NSWindow displayIfNeeded] + 180
+10  com.apple.AppKit			0x936b7e34 _handleWindowNeedsDisplay + 200
+11  com.apple.CoreFoundation		0x9075ccd8 __CFRunLoopDoObservers + 352
+12  com.apple.CoreFoundation		0x9075cf78 __CFRunLoopRun + 420
+13  com.apple.CoreFoundation		0x9075ca18 CFRunLoopRunSpecific + 268
+14  com.apple.HIToolbox			0x931861e0 RunCurrentEventLoopInMode + 264
+15  com.apple.HIToolbox			0x931857ec ReceiveNextEventCommon + 244
+16  com.apple.HIToolbox			0x931856e0 BlockUntilNextEventMatchingListInMode + 96
+17  com.apple.AppKit			0x93684904 _DPSNextEvent + 384
+18  com.apple.AppKit			0x936845c8 -[NSApplication nextEventMatchingMask:untilDate:inMode:dequeue:] + 116
+19  com.apple.AppKit			0x93680b0c -[NSApplication run] + 472
+20  com.apple.AppKit			0x93771618 NSApplicationMain + 452
+21  com.adiumX.adiumX			0x000022e0 _start + 392 (crt.c:267)
+22  dyld				0x8fe01048 _dyld_start + 60
