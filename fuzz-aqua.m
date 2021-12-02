@@ -240,6 +240,14 @@ By default, Cmd+(Q|M|Opt+Esc) are suppressed.");
   if (optind >= argc) eventCount = 1000;
   else eventCount = atol(argv[optind]);
 
+  // check if the process has access to accessibility object
+  // if no just exit
+  if (!AXIsProcessTrusted()){
+    printf("Process has no access to the accessiblity object. Exit now\n");
+    printf("Please give it proper access in system settings\n");
+    exit(0);
+  }
+
   /* We need an autorelease pool to use any objects */
   pool = [[NSAutoreleasePool alloc] init];
 
