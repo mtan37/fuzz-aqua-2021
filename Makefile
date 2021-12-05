@@ -10,7 +10,7 @@ monitor: monitor.c
 	gcc $(CFLAGS) -framework Carbon -o monitor monitor.c
 
 clean:
-	-rm *.o proclist fuzz-aqua
+	-rm *.o monitor fuzz-aqua
 
 clean-all: clean clean-backups
 

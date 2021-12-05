@@ -465,9 +465,9 @@ void sendNonOverlappingEvents(int count) {
             if(drag) printf(" --> (%.0f, %.0f). IS DRAGGING\n", pup.x, pup.y);
             else     printf("\n");
           #endif
-          status = [target postMouseMoveTo: pdown];
+          status = [target postMouseMoveTo: pdown isDragged: false];
           status = status && [target postMouseButton: button downAtPoint: pdown];
-          if(drag) status = status && [target postMouseMoveTo: pup];
+          if(drag) status = status && [target postMouseMoveTo: pup isDragged: true];
           status = status && [target postMouseButton: button upAtPoint: pup];
           #if PROBLEM_OUTPUT
             if(!status) NSLog(@"Error posting %s!", drag? "drag":"click");
@@ -478,7 +478,7 @@ void sendNonOverlappingEvents(int count) {
           #if EVENT_OUTPUT
             printf(" MOUSE DOUBLE-CLICK: %d(%.0f, %.0f)\n", button, pdown.x, pdown.y);
           #endif
-          status = [target postMouseMoveTo: pdown];
+          status = [target postMouseMoveTo: pdown isDragged: false];
           status = status && [target postClicks: 2
                   withButton: button
                   atPoint: pdown];

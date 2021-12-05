@@ -439,7 +439,6 @@
 - (BOOL) postMouseButton: (int) button
 		   state: (BOOL) state
 		 atPoint: (CGPoint) point {
-  CGError cg_status;
   BOOL prevstate = buttonStates[button];
   if(prevstate == state) {
     /* stupid-sounding error message */
@@ -490,16 +489,8 @@
 
   // TODO how to check event status using this????
   // assume successful for now 
-  if (kCGErrorSuccess == kCGErrorSuccess) {
-    numButtonsDown += state ? 1 : -1;
-    return true;
-  } else {
-    buttonStates[button] = prevstate;
-    errorCode = (int) cg_status;
-    NSLog(@"Error posting mouse event (%d %s): %d",
-	  button, state?"down":"up", cg_status);
-    return false;
-  }
+  numButtonsDown += state ? 1 : -1;
+  return true;
 }
 
 /* Handles all updating of keyStates and numKeysDown. */
@@ -580,17 +571,29 @@
   return [self postClicks: 1 withButton: kCGMouseButtonRight atPoint: point];
 }
 
-- (BOOL) postMouseMoveTo: (CGPoint) point {
-  CGError cg_status;
-  cg_status = CGPostMouseEvent(point, true, (CGButtonCount) 1, buttonStates[0]);
-  if (cg_status != kCGErrorSuccess) {
-    errorCode = (int) cg_status;
-    NSLog(@"Error sending mouse move (%d)", (int) cg_status);
-    return false;
-  } else {
-    currentMousePosition = point;
-    return true;
-  }
+- (BOOL) postMouseMoveTo: (CGPoint) point isDragged: (BOOL) isDragged {
+  // compute CGEventType for the mouse event
+  CGEventType mouseType = kCGEventNull;
+
+  if (isDragged && buttonStates[0]) mouseType = kCGEventLeftMouseDragged;
+  else if (isDragged && buttonStates[1]) mouseType = kCGEventRightMouseDragged;
+  else mouseType = kCGEventMouseMoved;
+
+  /* Assume that the point has already been checked and is within the target
+   * application.
+   */
+  /* Assume that the target application has already been made the foreground
+   * process.
+   */
+  CGEventRef mouseEvent = CGEventCreateMouseEvent(
+            NULL, mouseType, point, (CGMouseButton) kCGMouseButtonLeft);
+  CGEventPost((CGEventTapLocation)kCGHIDEventTap, mouseEvent);
+  CFRelease(mouseEvent);// release the event
+
+  // TODO how to check event status using this????
+  // assume successful for now 
+  currentMousePosition = point;
+  return true;
 } /* -postMouseMoveTo: */
 
 - (BOOL) postMouseMoveFrom: (CGPoint) start to: (CGPoint) end {
@@ -602,7 +605,7 @@
     NSLog(@"Error setting start of mouse move (%d)", (int) cg_status);
     return false;
   }
-  return [self postMouseMoveTo: end];
+  return [self postMouseMoveTo: end isDragged: false];
 } /* -postMouseMoveFrom:to: */
 
 - (BOOL) postMouseMoveDeltaX: (int) deltaX y: (int) deltaY {
@@ -650,7 +653,7 @@
 		 state: !state
 		 atPoint: currentMousePosition];
   case fteMouseMove:
-    return [self postMouseMoveTo: [event point]];
+    return [self postMouseMoveTo: [event point] isDragged: false];
   case fteScrollWheel:
     return [self postScrollWheelDelta1: [event delta1]
 		                delta2: [event delta2]

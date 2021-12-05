@@ -210,7 +210,7 @@ enum _FuzzTargetConstants {
 /* Posts a mouse move to the specified point.
  * Returns true on success, false on failure.
  */
-- (BOOL) postMouseMoveTo: (CGPoint) point;
+- (BOOL) postMouseMoveTo: (CGPoint) point isDragged: (BOOL) isDragged;
 
 /* Posts a mouse move event from the start point to the end point (I hope).
  * Also updates the internal position state to be the end point of the move.
