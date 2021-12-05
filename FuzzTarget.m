@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <Carbon/Carbon.h>
+#include <Cocoa/Cocoa.h>
 
 /* Import the header for this class.  It's where the other header
  * includes/imports are defined, and it declares the instance variables and
@@ -429,9 +429,11 @@
   return numButtonsDown;
 } /* -buttonsDown */
 
-/* I'm hardcoding this method to work only if MAX_MOUSE_BUTTONS == 32
- * because I don't know how to work with varargs at a low level
- *
+/* 
+ * passed in button value are expected to be either 0, 1 or 2. 
+ * 1 - left mouse button
+ * 2 - right mouse button
+ * 3 - middle mouse button
  * Handles all updating of buttonStates and numButtonsDown.
  */
 - (BOOL) postMouseButton: (int) button
@@ -446,40 +448,49 @@
     return true;
   }
 
-  if (MAX_MOUSE_BUTTONS != 32) {
-    NSLog(@"FuzzTarget -postMouseButton:downAtPoint: MAX_MOUSE_BUTTONS != 32");
+  // check if the button given is valid
+  if ((button < 0) || (button >= 3)) {
     errorCode = 0; /* Don't know what to use for invalid argument */
     return false;
   }
-  if ((button < 0) || (button >= MAX_MOUSE_BUTTONS)) {
-    errorCode = 0; /* Don't know what to use for invalid argument */
-    return false;
+
+  // compute CGEventType for the mouse event
+  CGEventType mouseType = kCGEventNull;
+  CGMouseButton mouseButton = kCGMouseButtonLeft;
+
+  if (button == 0) {// left mouse key
+    mouseButton = kCGMouseButtonLeft;
+
+    if (state) mouseType = kCGEventLeftMouseDown;
+    else mouseType = kCGEventLeftMouseUp;
+
+  } else if (button == 1) { // right mouse key
+    mouseButton = kCGMouseButtonRight;
+
+    if (state) mouseType = kCGEventRightMouseDown;
+    else mouseType = kCGEventRightMouseUp;
+
+  } else { // middle mouse key
+    mouseButton = kCGMouseButtonCenter;
+
+    if (state) mouseType = kCGEventOtherMouseDown;
+    else mouseType = kCGEventOtherMouseUp;
   }
+
   /* Assume that the point has already been checked and is within the target
    * application.
    */
   /* Assume that the target application has already been made the foreground
    * process.
    */
+  CGEventRef mouseEvent = CGEventCreateMouseEvent(NULL, mouseType, point, mouseButton);
+  CGEventPost((CGEventTapLocation)kCGHIDEventTap, mouseEvent);
   buttonStates[button] = state;
-  cg_status = CGPostMouseEvent(point, true, MAX_MOUSE_BUTTONS, buttonStates[0],
-			       buttonStates[1], buttonStates[2],
-			       buttonStates[3], buttonStates[4],
-			       buttonStates[5], buttonStates[6],
-			       buttonStates[7], buttonStates[8],
-			       buttonStates[9], buttonStates[10],
-			       buttonStates[11], buttonStates[12],
-			       buttonStates[13], buttonStates[14],
-			       buttonStates[15], buttonStates[16],
-			       buttonStates[17], buttonStates[18],
-			       buttonStates[19], buttonStates[20],
-			       buttonStates[21], buttonStates[22],
-			       buttonStates[23], buttonStates[24],
-			       buttonStates[25], buttonStates[26],
-			       buttonStates[27], buttonStates[28],
-			       buttonStates[29], buttonStates[30],
-			       buttonStates[31]);
-  if (cg_status == kCGErrorSuccess) {
+  CFRelease(mouseEvent);// release the event
+
+  // TODO how to check event status using this????
+  // assume successful for now 
+  if (kCGErrorSuccess == kCGErrorSuccess) {
     numButtonsDown += state ? 1 : -1;
     return true;
   } else {

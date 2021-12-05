@@ -1,7 +1,7 @@
 /* This file defines the interface to the FuzzTarget class. */
 
 /* Objective-C programs can use normal C header files and functions */
-#include <Carbon/Carbon.h>
+#include <Cocoa/Cocoa.h>
 
 /* They also use Objective-C headers, with the #import statement.  I'm not sure
  * what all the differences are between #include and #import, but for one thing,
@@ -21,7 +21,7 @@
 
 /* Apparently enums are the proper way to declare constants */
 enum _FuzzTargetConstants {
-  MAX_MOUSE_BUTTONS = 32,
+  MAX_MOUSE_BUTTONS = 3,
   MAX_KEYS = 128
 };
 
