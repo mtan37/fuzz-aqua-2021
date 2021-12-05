@@ -86,11 +86,11 @@ static const char Copyright[] =
 /* Turn this on to have fuzz-aqua print a line representing each non-overlapping
  * event it sends
  */
-#define EVENT_OUTPUT 0
+#define EVENT_OUTPUT 1
 /* Turn this on to have fuzz-aqua complain about problems with sending events
  */
-#ifndef PROBLEM_OUTPUT
-#define PROBLEM_OUTPUT 0
+  #ifndef PROBLEM_OUTPUT
+  #define PROBLEM_OUTPUT 1
 #endif
 
 int flagv = 0;      /* -v: Invalid input */
@@ -322,6 +322,8 @@ typedef enum {
 } FEType;
 
 void sendNonOverlappingEvents(int count) {
+  printf("Sending out Non-Overlapping events\n");
+  
   float f_type; /* To hold random float */
   FEType type; /* The type of event to generate {key, mouse, scroll} */
   int i; /* Counter */
@@ -348,153 +350,152 @@ void sendNonOverlappingEvents(int count) {
   for (i = 0; i < count; i++) {
     @try {
       if(![target goToFront]) {
-	/* What's the appropriate error? */
-#if PROBLEM_OUTPUT
-	NSLog(@"Target application couldn't be brought to foreground (event %d).",
-	      i);
-#else
-	printf("Target application couldn't be brought to foreground.\n");
-#endif
-	return;
+	      // Have trouble bring the targe application to the foreground
+        #if PROBLEM_OUTPUT
+          NSLog(@"Target application couldn't be brought to foreground (event %d).",
+                i);
+        #else
+          printf("Target application couldn't be brought to foreground.\n");
+        #endif
+        return;
       }
 
       /* Decide which event type this should be */
       f_type = randf();
-      if(f_type < 0.45) {
-	type = feKeypress;
-      } else if(f_type < 0.80) {
-	type = feMouseClick; /* includes MouseMove, if dragging */
-      } else if (f_type < 0.90) {
-	type = feMouseDoubleClick;
-      } else {
-	type = feScrollWheel;
-      }
+      if(f_type < 0.45) type = feKeypress;
+      else if(f_type < 0.80) type = feMouseClick; /* includes MouseMove, if dragging */
+      else if (f_type < 0.90) type = feMouseDoubleClick;
+      else type = feScrollWheel;
 
-      /* For each type, pick relevant parameters */
+      /* For each type, compute relevant parameters */
       switch(type) {
-      case feKeypress:
-	keyndx = randint(keyCodeMapLen);
-	key    = keyCodeMap[keyndx];
-	break;
-	
-      case feMouseClick:
-	f_button = randf();
-	/* 1. Pick mouse button, with preference toward lower-indexed buttons */
-	button = getint(NUM_BUTTONS_TO_USE, f_button*f_button*f_button*f_button);
-	/* 2. Is this a drag or just a click? */
-	drag = (randf() < 0.3);
-	/* 3. Pick points to click down and up */
-	pdown = [target findValidPoint];
-	pup   = drag ? [target randomPoint] : pdown;
-	break;
+        case feKeypress:
+          keyndx = randint(keyCodeMapLen);
+          key    = keyCodeMap[keyndx];
+          break;
 
-      case feMouseDoubleClick:
-	f_button = randf();
-	button = getint(NUM_BUTTONS_TO_USE,
-			f_button * f_button * f_button * f_button);
-	pdown = [target findValidPointAllowingTitlebar: false];
-	break;
+        case feMouseClick:
+          f_button = randf();
+          /* 1. Pick mouse button, with preference toward lower-indexed buttons */
+          button = getint(NUM_BUTTONS_TO_USE, f_button*f_button*f_button*f_button);
+          /* 2. Is this a drag or just a click? */
+          drag = (randf() < 0.3);
+          /* 3. Pick points to click down and up */
+          pdown = [target findValidPoint];
+          pup   = drag ? [target randomPoint] : pdown;
+          break;
 
-      case feScrollWheel:
-	do {
-	  d1 = randint(SCROLL_RANGE_SIZE) - MAX_SCROLL_DELTA;
-	  d2 = (randf() < 0.2) ? randint(SCROLL_RANGE_SIZE) - MAX_SCROLL_DELTA : 0;
-	  d3 = (randf() < 0.1) ? randint(SCROLL_RANGE_SIZE) - MAX_SCROLL_DELTA : 0;
-	} while(!d1 && !d2 && !d3);
-	break;
+        case feMouseDoubleClick:
+          f_button = randf();
+          button = getint(NUM_BUTTONS_TO_USE,
+              f_button * f_button * f_button * f_button);
+          pdown = [target findValidPointAllowingTitlebar: false];
+          break;
+
+        case feScrollWheel:
+          do {
+            d1 = randint(SCROLL_RANGE_SIZE) - MAX_SCROLL_DELTA;
+            d2 = (randf() < 0.2) ? randint(SCROLL_RANGE_SIZE) - MAX_SCROLL_DELTA : 0;
+            d3 = (randf() < 0.1) ? randint(SCROLL_RANGE_SIZE) - MAX_SCROLL_DELTA : 0;
+          } while(!d1 && !d2 && !d3);
+          break;
       }
 
-      /* If keypress or click, pick modifier keys */
-      if(type == feKeypress || type == feMouseClick
-	 || type == feMouseDoubleClick) {
-	shift = (randf() < 0.1);
-	ctrl  = (randf() < 0.03);
-	opt   = (randf() < 0.03);
-	cmd   = ((type != feKeypress ||
-		  ((key != KEY_Q) && /* Cmd+Q quits */
-		   (key != KEY_M) && /* Cmd+M minimizes window */
-		   /*(key != KEY_P) && *//* Cmd+P prints (did we mean to block this one?) */
-		   (!opt || key != ESCAPE))) && /* Cmd+Opt+Esc does force quit */
-		 (randf() < 0.03));
-	if(shift) {
-#if EVENT_OUTPUT
-	  printf("s");
-#endif
-	  status = (shift = [target postKeyDown: (CGKeyCode) SHIFT]) && status;
-	}
-	if(ctrl) {
-#if EVENT_OUTPUT
-	  printf("c");
-#endif
-	  status = (ctrl = [target postKeyDown: (CGKeyCode) CONTROL]) && status;
-	}
-	if(opt) {
-#if EVENT_OUTPUT
-	  printf("o");
-#endif
-	  status = (opt = [target postKeyDown: (CGKeyCode) OPTION]) && status;
-	}
-	if(cmd) {
-#if EVENT_OUTPUT
-	  printf("m");
-#endif
-	  status = (cmd = [target postKeyDown: (CGKeyCode) COMMAND]) && status;
-	}
-#if PROBLEM_OUTPUT
-	if(!status) NSLog(@"Error posting modifier keys down!");
-#endif
+      if(type == feKeypress || type == feMouseClick || type == feMouseDoubleClick) {
+        // if is a keypress or click event
+        // add modifier keys
+        shift = (randf() < 0.1);
+        ctrl  = (randf() < 0.03);
+        opt   = (randf() < 0.03);
+	      cmd   = ((type != feKeypress
+                  || ((key != KEY_Q)/* Cmd+Q quits */
+                      && (key != KEY_M) /* Cmd+M minimizes window */
+                      && (!opt || key != ESCAPE))) /* Cmd+Opt+Esc does force quit */
+                && (randf() < 0.03));
+
+        if(shift) {
+          #if EVENT_OUTPUT
+              printf("shift key pressed - ");
+          #endif
+          status = (shift = [target postKeyDown: (CGKeyCode) SHIFT]) && status;
+        }
+
+        if(ctrl) {
+          #if EVENT_OUTPUT
+              printf("control key pressed - ");
+          #endif
+          status = (ctrl = [target postKeyDown: (CGKeyCode) CONTROL]) && status;
+        }
+
+        if(opt) {
+          #if EVENT_OUTPUT
+              printf("option key pressed - ");
+          #endif
+          status = (opt = [target postKeyDown: (CGKeyCode) OPTION]) && status;
+        }
+
+        if(cmd) {
+          #if EVENT_OUTPUT
+              printf("command key pressed - ");
+          #endif
+          status = (cmd = [target postKeyDown: (CGKeyCode) COMMAND]) && status;
+        }
+
+        #if PROBLEM_OUTPUT
+          if(!status) NSLog(@"Error posting modifier keys down!");
+        #endif
       }
 
       /* Now we can send the event(s) we've chosen */
       switch(type) {
-      case feKeypress:
-#if EVENT_OUTPUT
-	printf(" %s\n", keyCodeNames[keyndx]);
-#endif
-	status = [target postKeyDown: key];
-	status = status && [target postKeyUp: key];
-#if PROBLEM_OUTPUT
-	if(!status) NSLog(@"Error posting keypress!");
-#endif
-	break;
+        case feKeypress:
+          #if EVENT_OUTPUT
+            printf(" %s\n", keyCodeNames[keyndx]);
+          #endif
+          status = [target postKeyDown: key];
+          status = status && [target postKeyUp: key];
+          #if PROBLEM_OUTPUT
+            if(!status) NSLog(@"Error posting keypress!");
+          #endif
+          break;
 
-      case feMouseClick:
-#if EVENT_OUTPUT
-	printf(" %d(%.0f, %.0f)", button, pdown.x, pdown.y);
-	if(drag) printf(" --> (%.0f, %.0f)\n", pup.x, pup.y);
-	else     printf("\n");
-#endif
-	status   = [target postMouseMoveTo: pdown];
-	status = status && [target postMouseButton: button downAtPoint: pdown];
-	if(drag) status = status && [target postMouseMoveTo: pup];
-	status = status && [target postMouseButton: button upAtPoint: pup];
-#if PROBLEM_OUTPUT
-	if(!status) NSLog(@"Error posting %s!", drag? "drag":"click");
-#endif
-	break;
+        case feMouseClick:
+          #if EVENT_OUTPUT
+            printf(" MOUSE CLICK: %d(%.0f, %.0f)", button, pdown.x, pdown.y);
+            if(drag) printf(" --> (%.0f, %.0f). IS DRAGGING\n", pup.x, pup.y);
+            else     printf("\n");
+          #endif
+          status = [target postMouseMoveTo: pdown];
+          status = status && [target postMouseButton: button downAtPoint: pdown];
+          if(drag) status = status && [target postMouseMoveTo: pup];
+          status = status && [target postMouseButton: button upAtPoint: pup];
+          #if PROBLEM_OUTPUT
+            if(!status) NSLog(@"Error posting %s!", drag? "drag":"click");
+          #endif
+          break;
 
-      case feMouseDoubleClick:
-#if EVENT_OUTPUT
-	printf(" d%d(%.0f, %.0f)\n", button, pdown.x, pdown.y);
-#endif
-	status = [target postMouseMoveTo: pdown];
-	status = status && [target postClicks: 2
-				   withButton: button
-				   atPoint: pdown];
-#if PROBLEM_OUTPUT
-	if (!status) NSLog(@"Error posting double-click!");
-#endif
-	break;
+        case feMouseDoubleClick:
+          #if EVENT_OUTPUT
+            printf(" MOUSE DOUBLE-CLICK: %d(%.0f, %.0f)\n", button, pdown.x, pdown.y);
+          #endif
+          status = [target postMouseMoveTo: pdown];
+          status = status && [target postClicks: 2
+                  withButton: button
+                  atPoint: pdown];
+          #if PROBLEM_OUTPUT
+            if (!status) NSLog(@"Error posting double-click!");
+          #endif
+          break;
 
-      case feScrollWheel:
-#if EVENT_OUTPUT
-	printf(" scroll(%d, %d, %d)\n", d1, d2, d3);
-#endif
-	status = [target postScrollWheelDelta1: d1 delta2: d2 delta3: d3];
-#if PROBLEM_OUTPUT
-	if(!status) NSLog(@"Error posting scroll wheel!");
-#endif
-	break;
+        case feScrollWheel:
+          #if EVENT_OUTPUT
+            printf(" scroll(%d, %d, %d)\n", d1, d2, d3);
+          #endif
+            status = [target postScrollWheelDelta1: d1 delta2: d2 delta3: d3];
+          #if PROBLEM_OUTPUT
+            if(!status) NSLog(@"Error posting scroll wheel!");
+          #endif
+          break;
       }
 
       /* Now bring all the modifier keys back up */
@@ -507,16 +508,16 @@ void sendNonOverlappingEvents(int count) {
 			&& status;
       if (shift) status = !(shift = ![target postKeyUp: (CGKeyCode) SHIFT])
 			&& status;
-#if PROBLEM_OUTPUT
-      if(!status) NSLog(@"Error posting modifier keys up!");
-#endif
+      #if PROBLEM_OUTPUT
+            if(!status) NSLog(@"Error posting modifier keys up!");
+      #endif
       usleep(flagd);
     } @catch (NSException *e) {
       if ([[e name] isEqualToString:@"FuzzApplicationMissingException"]) {
-	printf("Target application terminated\n");
-	return;
+	      printf("Target application terminated\n");
+	      return;
       } else {
-	@throw;
+	      @throw;
       }
     }
   } /* for i in [0, count) */
@@ -524,6 +525,7 @@ void sendNonOverlappingEvents(int count) {
 
 /* Send a bunch of random valid events to the target */ 
 void sendValidEvents(int numEvents) {
+  printf("Sending out valid events\n");
   float f;
   int i;
   id* events;
@@ -539,7 +541,7 @@ void sendValidEvents(int numEvents) {
       /* Add a keypress to the bag */
       CGKeyCode key = (CGKeyCode) randint(128);
       if (i == (numEvents - 1)) {
-	continue; /* Need room for two events to do a keypress */
+	      continue; /* Need room for two events to do a keypress */
       }
       events[i++] = [FuzzToggleEvent fuzzToggleEventWithKeyCode: key];
       events[i] = [FuzzToggleEvent fuzzToggleEventWithKeyCode: key];
@@ -547,7 +549,7 @@ void sendValidEvents(int numEvents) {
       /* Add a mouse click to the bag */
       CGButtonCount button = (CGButtonCount) randint(32);
       if (i == (numEvents - 1)) {
-	continue; /* Need room for two events to do a mouse click */
+	      continue; /* Need room for two events to do a mouse click */
       }
       events[i++] = [FuzzToggleEvent fuzzToggleEventWithMouseButton: button];
       events[i] = [FuzzToggleEvent fuzzToggleEventWithMouseButton: button];
