@@ -596,27 +596,6 @@
   return true;
 } /* -postMouseMoveTo: */
 
-- (BOOL) postMouseMoveFrom: (CGPoint) start to: (CGPoint) end {
-  CGError cg_status;
-
-  cg_status = CGWarpMouseCursorPosition(start);
-  if (cg_status != kCGErrorSuccess) {
-    errorCode = (int) cg_status;
-    NSLog(@"Error setting start of mouse move (%d)", (int) cg_status);
-    return false;
-  }
-  return [self postMouseMoveTo: end isDragged: false];
-} /* -postMouseMoveFrom:to: */
-
-- (BOOL) postMouseMoveDeltaX: (int) deltaX y: (int) deltaY {
-  CGPoint end;
-
-  end.x = currentMousePosition.x + (float) deltaX;
-  end.y = currentMousePosition.y + (float) deltaY;
-
-  return [self postMouseMoveFrom: currentMousePosition to: end];
-} /* -postMouseMoveDeltaX:y: */
-
 - (BOOL) postScrollWheelDelta1: (int) delta1
 			delta2: (int) delta2
 			delta3: (int) delta3 {

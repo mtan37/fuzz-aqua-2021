@@ -212,17 +212,6 @@ enum _FuzzTargetConstants {
  */
 - (BOOL) postMouseMoveTo: (CGPoint) point isDragged: (BOOL) isDragged;
 
-/* Posts a mouse move event from the start point to the end point (I hope).
- * Also updates the internal position state to be the end point of the move.
- * Returns true on success, false on failure.
- */
-- (BOOL) postMouseMoveFrom: (CGPoint) start to: (CGPoint) end;
-
-/* Posts a mouse move event from currentMousePosition with the given deltas.
- * Returns true on success, false on failure.
- */
-- (BOOL) postMouseMoveDeltaX: (int) deltaX y: (int) deltaY;
-
 /* Posts a single right click at the specified point, as long as it's within
  * the bounds of the target.  Returns true on success, false on failure.
  */
