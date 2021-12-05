@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <Cocoa/Cocoa.h>
 
 /* Import the header for this class.  It's where the other header
  * includes/imports are defined, and it declares the instance variables and
@@ -62,9 +61,8 @@
   winX = winY = width = height = -1;
 
   pid = target_pid;
-
-  status = GetProcessForPID(pid, &psn);
-  if (status != noErr) {
+  currApp = [NSRunningApplication runningApplicationWithProcessIdentifier: pid];
+  if (currApp == nil) {
     /* The autorelease method tells the runtime system that this object can
      * be released (its memory freed) when the runtime gets around to it.
      * I don't need the pointer in self anymore at this point, but I don't think
@@ -80,12 +78,13 @@
       return nil;
     }
   }
+
   targetAXUI = AXUIElementCreateApplication(pid);
   status = AXUIElementCopyAttributeValue(targetAXUI, kAXTitleAttribute,
 					 (CFTypeRef *) &processName);
   if (status != noErr) {
     NSLog(@"FuzzTarget -init..: AXUI name error, trying ProcMan");
-    status = CopyProcessName(&psn, (CFStringRef *) &processName);
+    processName  = [currApp localizedName];
     if (status != noErr) {
       NSLog(@"FuzzTarget -init..: Couldn't get process name of target");
       processName = nil;
@@ -134,21 +133,11 @@
   [super dealloc];
 }
 
-- (ProcessSerialNumber) psn {
-  return psn;
-}
-
 - (BOOL) goToFront {
-  OSErr status;
-  status = SetFrontProcess(&psn);
-  if (procNotFound == status) {
-    NSException *e = 
-        [NSException exceptionWithName: @"FuzzApplicationMissingException"
-		                reason: @"Application not found"
-		              userInfo: nil];
-    @throw e;
-  }
-  return (errorCode = (int) status) == noErr;
+  [currApp activateWithOptions:(NSApplicationActivateAllWindows | NSApplicationActivateIgnoringOtherApps)];
+
+  // todo ERROR check
+  return true;
 } /* -goToFront */
 
 - (BOOL) isPointInTarget: (CGPoint) point {
@@ -370,14 +359,6 @@
     return false;
   }
   return [self postKey: code state: state];
-  /*
-  ev = CGEventCreateKeyboardEvent(source, code, state);
-  if(ev) {
-    CGEventPostToPSN(&psn, ev);
-    CFRelease(ev);
-  }
-  return true;
-  */
 }
 
 - (BOOL) postKeyDown: (CGKeyCode) code {
@@ -503,7 +484,7 @@
   }
   CGEventRef ev = CGEventCreateKeyboardEvent(source, code, state);
   if(ev) {
-    CGEventPostToPSN(&psn, ev); /* void function */
+    CGEventPostToPid(pid, ev); /* void function */
     CFRelease(ev);
     numKeysDown += state ? 1 : -1;
     keyStates[code] = state;

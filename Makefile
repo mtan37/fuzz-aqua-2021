@@ -1,16 +1,13 @@
 CFLAGS =	-g -Wall -DDEBUG  #-pedantic
 OBJCFLAGS =	-fobjc-exceptions
 
-all: monitor fuzz-aqua
+all: fuzz-aqua
 
 fuzz-aqua: fuzz-aqua.m util.o FuzzTarget.o FuzzToggleEvent.o
-	gcc $(CFLAGS) $(OBJCFLAGS) -framework Carbon -framework Foundation -o fuzz-aqua fuzz-aqua.m FuzzTarget.o util.o FuzzToggleEvent.o
-
-monitor: monitor.c
-	gcc $(CFLAGS) -framework Carbon -o monitor monitor.c
+	gcc $(CFLAGS) $(OBJCFLAGS) -framework Cocoa -o fuzz-aqua fuzz-aqua.m FuzzTarget.o util.o FuzzToggleEvent.o
 
 clean:
-	-rm *.o monitor fuzz-aqua
+	-rm *.o fuzz-aqua
 
 clean-all: clean clean-backups
 

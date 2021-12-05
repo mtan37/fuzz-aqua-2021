@@ -2,22 +2,10 @@
 
 /* Objective-C programs can use normal C header files and functions */
 #include <Cocoa/Cocoa.h>
-
-/* They also use Objective-C headers, with the #import statement.  I'm not sure
- * what all the differences are between #include and #import, but for one thing,
- * #import will only include the file once in the compile so I don't need to
- * bracket the whole thing with #ifndef FUZZ_TARGET_H or whatever.
- *
- * The Foundation framework declares all kinds of useful stuff for Objective-C.
- * It's where the definition of NSObject is.  All Objective-C programs will need
- * to use the Foundation framework as far as I can tell.  Think of it as the
- * equivalent of Java.lang.
- */
-#import <Foundation/Foundation.h>
 /* FuzzToggleEvent represents an atomic user-input event.  See FuzzToggleEvent.h
  * for a more pedantic explanation.
  */
-#import "FuzzToggleEvent.h"
+#include "FuzzToggleEvent.h"
 
 /* Apparently enums are the proper way to declare constants */
 enum _FuzzTargetConstants {
@@ -36,7 +24,7 @@ enum _FuzzTargetConstants {
    * we can look them up if we need them.
    */
   pid_t pid;
-  ProcessSerialNumber psn;
+  NSRunningApplication *currApp;
   /* The name of the application, as provided by the Process Manager */
   NSString* processName;
   CGEventSourceRef source;
@@ -97,8 +85,6 @@ enum _FuzzTargetConstants {
 		     screenY: (int) ySize;
 
 - (void) dealloc;
-
-- (ProcessSerialNumber) psn;
 
 /* Makes the target the foreground process.
  * Returns true on success, false on error.
