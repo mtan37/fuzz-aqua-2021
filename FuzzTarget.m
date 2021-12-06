@@ -101,9 +101,6 @@
   currentMousePosition.x = 0.0;
   currentMousePosition.y = 0.0;
 
-  /* Don't want my mouse events getting confused with the system's */
-  CGEnableEventStateCombining(false);
-
   return self;
 }
 
@@ -580,15 +577,10 @@
 - (BOOL) postScrollWheelDelta1: (int) delta1
 			delta2: (int) delta2
 			delta3: (int) delta3 {
-  CGError cg_status;
-  
-  cg_status = CGPostScrollWheelEvent((CGWheelCount) 3, delta1, delta2,
-				     delta3);
-  if (cg_status != kCGErrorSuccess) {
-    errorCode = (int) cg_status;
-    NSLog(@"Error posting scroll wheel event (%d)\n", (int) cg_status);
-    return false;
-  }
+
+  CGEventRef event = CGEventCreateScrollWheelEvent(NULL, (CGScrollEventUnit) kCGScrollEventUnitPixel, (uint32_t) 3, delta1, delta2, delta3);
+  CGEventPost((CGEventTapLocation)kCGHIDEventTap, event);
+  CFRelease(event);
   return true;
 } /* -postScrollWheelDelta1:delta2:delta3: */
 
